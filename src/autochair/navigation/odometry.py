@@ -10,3 +10,13 @@ class Odometry:
 
     def reset(self) -> None:
         self.pose = Pose()
+
+    def update(
+        self,
+        distance_m: float,
+        heading_deg: float | None = None,
+    ) -> None:
+        self.pose.x_m += distance_m
+
+        if heading_deg is not None:
+            self.pose.heading_deg = heading_deg
