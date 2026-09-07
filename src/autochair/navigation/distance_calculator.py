@@ -1,5 +1,6 @@
 import math
 
+from autochair.navigation.encoder_resolution import EncoderResolution
 from autochair.navigation.wheel_geometry import WheelGeometry
 
 
@@ -7,20 +8,19 @@ class DistanceCalculator:
     def __init__(
         self,
         geometry: WheelGeometry | None = None,
-        ticks_per_revolution: int = 600,
+        resolution: EncoderResolution | None = None,
     ):
-        if ticks_per_revolution <= 0:
-            raise ValueError("Ticks per revolution must be greater than zero.")
-
         self.geometry = geometry or WheelGeometry()
-        self.ticks_per_revolution = ticks_per_revolution
+        self.resolution = resolution or EncoderResolution()
 
     def ticks_to_distance(self, ticks: int) -> float:
         wheel_circumference_m = (
             math.pi * self.geometry.wheel_diameter_m
         )
 
-        revolutions = ticks / self.ticks_per_revolution
+        revolutions = (
+            ticks / self.resolution.counts_per_revolution
+        )
 
         return revolutions * wheel_circumference_m
 
