@@ -73,3 +73,53 @@ def test_infinite_right_distance_rejected():
             left_distance_m=1.0,
             right_distance_m=float("inf"),
         )
+def test_update_from_encoder_ticks_straight_line():
+    odometry = DifferentialOdometry()
+
+    odometry.update_from_encoder_ticks(
+        left_ticks=600,
+        right_ticks=600,
+    )
+
+    pose = odometry.get_pose()
+
+    assert math.isclose(pose.x_m, math.pi * 0.30)
+    assert math.isclose(pose.y_m, 0.0)
+    assert math.isclose(pose.heading_deg, 0.0)
+
+
+def test_update_from_encoder_ticks_turning():
+    odometry = DifferentialOdometry()
+
+    odometry.update_from_encoder_ticks(
+        left_ticks=300,
+        right_ticks=600,
+    )
+
+    pose = odometry.get_pose()
+
+    left_distance = math.pi * 0.30 * 0.5
+    right_distance = math.pi * 0.30
+
+    expected_distance = (
+        left_distance + right_distance
+    ) / 2
+
+    expected_heading = math.degrees(
+        (right_distance - left_distance) / 0.50
+    )
+
+    assert math.isclose(
+        pose.x_m,
+        expected_distance,
+    )
+
+    assert math.isclose(
+        pose.y_m,
+        0.0,
+    )
+
+    assert math.isclose(
+        pose.heading_deg,
+        expected_heading,
+    )

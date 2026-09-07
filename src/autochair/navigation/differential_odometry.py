@@ -1,5 +1,7 @@
 import math
 
+from autochair.navigation.distance_calculator import DistanceCalculator
+from autochair.navigation.encoder_resolution import EncoderResolution
 from autochair.navigation.pose import Pose
 from autochair.navigation.wheel_geometry import WheelGeometry
 
@@ -8,8 +10,13 @@ class DifferentialOdometry:
     def __init__(
         self,
         geometry: WheelGeometry | None = None,
+        resolution: EncoderResolution | None = None,
     ):
         self.geometry = geometry or WheelGeometry()
+        self.distance_calculator = DistanceCalculator(
+            geometry=self.geometry,
+            resolution=resolution,
+        )
         self.pose = Pose()
 
     def get_pose(self) -> Pose:
@@ -55,3 +62,20 @@ class DifferentialOdometry:
         heading_rad += heading_change_rad
 
         self.pose.heading_deg = math.degrees(heading_rad)
+
+    def update_from_encoder_ticks(
+        self,
+        left_ticks: int,
+        right_ticks: int,
+    ) -> None:
+        left_distance_m, right_distance_m = (
+            self.distance_calculator.encoder_distances(
+                left_ticks,
+                right_ticks,
+            )
+        )
+
+        self.update(
+            left_distance_m=left_distance_m,
+            right_distance_m=right_distance_m,
+        )
