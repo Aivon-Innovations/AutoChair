@@ -23,7 +23,16 @@ class DifferentialOdometry:
         left_distance_m: float,
         right_distance_m: float,
     ) -> None:
+        if not math.isfinite(left_distance_m):
+            raise ValueError("Left wheel distance must be finite.")
+
+        if not math.isfinite(right_distance_m):
+            raise ValueError("Right wheel distance must be finite.")
+
         wheel_base = self.geometry.wheel_base_m
+
+        if wheel_base <= 0:
+            raise ValueError("Wheelbase must be greater than zero.")
 
         distance_change = (
             left_distance_m + right_distance_m
