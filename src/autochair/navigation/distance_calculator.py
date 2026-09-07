@@ -9,6 +9,9 @@ class DistanceCalculator:
         geometry: WheelGeometry | None = None,
         ticks_per_revolution: int = 600,
     ):
+        if ticks_per_revolution <= 0:
+            raise ValueError("Ticks per revolution must be greater than zero.")
+
         self.geometry = geometry or WheelGeometry()
         self.ticks_per_revolution = ticks_per_revolution
 

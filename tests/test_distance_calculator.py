@@ -1,4 +1,5 @@
 import math
+import pytest
 
 from autochair.navigation.distance_calculator import DistanceCalculator
 from autochair.navigation.wheel_geometry import WheelGeometry
@@ -60,3 +61,7 @@ def test_average_distance():
     ) / 2
 
     assert math.isclose(average, expected)
+
+def test_zero_ticks_per_revolution_is_rejected():
+    with pytest.raises(ValueError):
+        DistanceCalculator(ticks_per_revolution=0)
