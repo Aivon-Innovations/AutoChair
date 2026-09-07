@@ -30,11 +30,35 @@ def test_turning_movement():
 
     pose = odometry.get_pose()
 
-    assert math.isclose(pose.x_m, 0.75)
-    assert math.isclose(pose.y_m, 0.0)
+    distance_change = (0.5 + 1.0) / 2
+    heading_change_rad = (1.0 - 0.5) / 0.5
+    turning_radius = distance_change / heading_change_rad
+
+    expected_x = turning_radius * math.sin(
+        heading_change_rad
+    )
+
+    expected_y = turning_radius * (
+        1 - math.cos(heading_change_rad)
+    )
+
+    expected_heading = math.degrees(
+        heading_change_rad
+    )
+
+    assert math.isclose(
+        pose.x_m,
+        expected_x,
+    )
+
+    assert math.isclose(
+        pose.y_m,
+        expected_y,
+    )
+
     assert math.isclose(
         pose.heading_deg,
-        math.degrees(1.0),
+        expected_heading,
     )
 
 
@@ -73,6 +97,8 @@ def test_infinite_right_distance_rejected():
             left_distance_m=1.0,
             right_distance_m=float("inf"),
         )
+
+
 def test_update_from_encoder_ticks_straight_line():
     odometry = DifferentialOdometry()
 
@@ -83,9 +109,20 @@ def test_update_from_encoder_ticks_straight_line():
 
     pose = odometry.get_pose()
 
-    assert math.isclose(pose.x_m, math.pi * 0.30)
-    assert math.isclose(pose.y_m, 0.0)
-    assert math.isclose(pose.heading_deg, 0.0)
+    assert math.isclose(
+        pose.x_m,
+        math.pi * 0.30,
+    )
+
+    assert math.isclose(
+        pose.y_m,
+        0.0,
+    )
+
+    assert math.isclose(
+        pose.heading_deg,
+        0.0,
+    )
 
 
 def test_update_from_encoder_ticks_turning():
@@ -101,22 +138,38 @@ def test_update_from_encoder_ticks_turning():
     left_distance = math.pi * 0.30 * 0.5
     right_distance = math.pi * 0.30
 
-    expected_distance = (
+    distance_change = (
         left_distance + right_distance
     ) / 2
 
+    heading_change_rad = (
+        right_distance - left_distance
+    ) / 0.50
+
+    turning_radius = (
+        distance_change / heading_change_rad
+    )
+
+    expected_x = turning_radius * math.sin(
+        heading_change_rad
+    )
+
+    expected_y = turning_radius * (
+        1 - math.cos(heading_change_rad)
+    )
+
     expected_heading = math.degrees(
-        (right_distance - left_distance) / 0.50
+        heading_change_rad
     )
 
     assert math.isclose(
         pose.x_m,
-        expected_distance,
+        expected_x,
     )
 
     assert math.isclose(
         pose.y_m,
-        0.0,
+        expected_y,
     )
 
     assert math.isclose(

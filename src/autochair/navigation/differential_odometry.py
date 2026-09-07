@@ -41,6 +41,8 @@ class DifferentialOdometry:
         if wheel_base <= 0:
             raise ValueError("Wheelbase must be greater than zero.")
 
+        heading_rad = math.radians(self.pose.heading_deg)
+
         distance_change = (
             left_distance_m + right_distance_m
         ) / 2
@@ -49,15 +51,42 @@ class DifferentialOdometry:
             right_distance_m - left_distance_m
         ) / wheel_base
 
-        heading_rad = math.radians(self.pose.heading_deg)
+        if math.isclose(
+            heading_change_rad,
+            0.0,
+            abs_tol=1e-12,
+        ):
+            self.pose.x_m += (
+                distance_change * math.cos(heading_rad)
+            )
 
-        self.pose.x_m += (
-            distance_change * math.cos(heading_rad)
-        )
+            self.pose.y_m += (
+                distance_change * math.sin(heading_rad)
+            )
+        else:
+            turning_radius = (
+                distance_change / heading_change_rad
+            )
 
-        self.pose.y_m += (
-            distance_change * math.sin(heading_rad)
-        )
+            new_heading_rad = (
+                heading_rad + heading_change_rad
+            )
+
+            self.pose.x_m += (
+                turning_radius
+                * (
+                    math.sin(new_heading_rad)
+                    - math.sin(heading_rad)
+                )
+            )
+
+            self.pose.y_m += (
+                -turning_radius
+                * (
+                    math.cos(new_heading_rad)
+                    - math.cos(heading_rad)
+                )
+            )
 
         heading_rad += heading_change_rad
 
