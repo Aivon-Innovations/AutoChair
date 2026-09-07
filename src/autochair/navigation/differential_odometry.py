@@ -25,6 +25,9 @@ class DifferentialOdometry:
     def reset(self) -> None:
         self.pose = Pose()
 
+    def _normalize_heading(self, heading_deg: float) -> float:
+        return (heading_deg + 180.0) % 360.0 - 180.0
+
     def update(
         self,
         left_distance_m: float,
@@ -90,7 +93,9 @@ class DifferentialOdometry:
 
         heading_rad += heading_change_rad
 
-        self.pose.heading_deg = math.degrees(heading_rad)
+        self.pose.heading_deg = self._normalize_heading(
+            math.degrees(heading_rad)
+        )
 
     def update_from_encoder_ticks(
         self,

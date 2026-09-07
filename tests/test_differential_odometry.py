@@ -238,3 +238,33 @@ def test_multiple_odometry_updates():
         expected_heading,
     )
 
+def test_heading_wraps_above_180_degrees():
+    odometry = DifferentialOdometry()
+
+    odometry.pose.heading_deg = 170.0
+
+    odometry.update(
+        left_distance_m=0.0,
+        right_distance_m=1.0,
+    )
+
+    assert math.isclose(
+        odometry.get_pose().heading_deg,
+        -75.40844097383551,
+    )
+
+
+def test_heading_wraps_below_minus_180_degrees():
+    odometry = DifferentialOdometry()
+
+    odometry.pose.heading_deg = -170.0
+
+    odometry.update(
+        left_distance_m=1.0,
+        right_distance_m=0.0,
+    )
+
+    assert math.isclose(
+        odometry.get_pose().heading_deg,
+        75.40844097383551,
+    )
