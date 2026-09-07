@@ -176,3 +176,65 @@ def test_update_from_encoder_ticks_turning():
         pose.heading_deg,
         expected_heading,
     )
+
+def test_multiple_odometry_updates():
+    odometry = DifferentialOdometry()
+
+    # Step 1: Move straight for 1 metre.
+    odometry.update(
+        left_distance_m=1.0,
+        right_distance_m=1.0,
+    )
+
+    # Step 2: Turn while moving.
+    odometry.update(
+        left_distance_m=0.5,
+        right_distance_m=1.0,
+    )
+
+    pose = odometry.get_pose()
+
+    # Expected pose after the first straight movement.
+    first_x = 1.0
+    first_y = 0.0
+    first_heading_rad = 0.0
+
+    # Expected change during the second movement.
+    distance_change = (0.5 + 1.0) / 2
+    heading_change_rad = (1.0 - 0.5) / 0.5
+
+    turning_radius = (
+        distance_change / heading_change_rad
+    )
+
+    second_x = turning_radius * (
+        math.sin(first_heading_rad + heading_change_rad)
+        - math.sin(first_heading_rad)
+    )
+
+    second_y = -turning_radius * (
+        math.cos(first_heading_rad + heading_change_rad)
+        - math.cos(first_heading_rad)
+    )
+
+    expected_x = first_x + second_x
+    expected_y = first_y + second_y
+    expected_heading = math.degrees(
+        first_heading_rad + heading_change_rad
+    )
+
+    assert math.isclose(
+        pose.x_m,
+        expected_x,
+    )
+
+    assert math.isclose(
+        pose.y_m,
+        expected_y,
+    )
+
+    assert math.isclose(
+        pose.heading_deg,
+        expected_heading,
+    )
+
