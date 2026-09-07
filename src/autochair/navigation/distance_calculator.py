@@ -20,3 +20,25 @@ class DistanceCalculator:
         revolutions = ticks / self.ticks_per_revolution
 
         return revolutions * wheel_circumference_m
+
+    def encoder_distances(
+        self,
+        left_ticks: int,
+        right_ticks: int,
+    ) -> tuple[float, float]:
+        left_distance_m = self.ticks_to_distance(left_ticks)
+        right_distance_m = self.ticks_to_distance(right_ticks)
+
+        return left_distance_m, right_distance_m
+
+    def average_distance(
+        self,
+        left_ticks: int,
+        right_ticks: int,
+    ) -> float:
+        left_distance_m, right_distance_m = self.encoder_distances(
+            left_ticks,
+            right_ticks,
+        )
+
+        return (left_distance_m + right_distance_m) / 2

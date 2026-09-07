@@ -32,3 +32,31 @@ def test_custom_wheel_diameter():
     expected = math.pi * 0.40
 
     assert math.isclose(distance, expected)
+
+
+def test_encoder_distances():
+    calculator = DistanceCalculator()
+
+    left_distance, right_distance = calculator.encoder_distances(
+        600,
+        1200,
+    )
+
+    assert math.isclose(left_distance, math.pi * 0.30)
+    assert math.isclose(right_distance, math.pi * 0.30 * 2)
+
+
+def test_average_distance():
+    calculator = DistanceCalculator()
+
+    average = calculator.average_distance(
+        600,
+        1200,
+    )
+
+    expected = (
+        (math.pi * 0.30)
+        + (math.pi * 0.30 * 2)
+    ) / 2
+
+    assert math.isclose(average, expected)
