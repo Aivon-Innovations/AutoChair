@@ -49,3 +49,21 @@ def test_odometry_update_distance_and_heading():
     assert pose.x_m == 2.5
     assert pose.y_m == 0.0
     assert pose.heading_deg == 90.0
+
+def test_odometry_update_from_encoders():
+    from autochair.sensors.encoder import EncoderData
+
+    odometry = Odometry()
+
+    encoder_data = EncoderData(
+        left_ticks=1000,
+        right_ticks=1000,
+    )
+
+    odometry.update_from_encoders(encoder_data)
+
+    pose = odometry.get_pose()
+
+    assert pose.x_m == 1.0
+    assert pose.y_m == 0.0
+    assert pose.heading_deg == 0.0
