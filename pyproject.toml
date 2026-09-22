@@ -8,5 +8,21 @@ version = "0.1.0"
 description = "AutoChair assistive mobility software"
 requires-python = ">=3.13"
 
+[project.optional-dependencies]
+# Install on Raspberry Pi 4 only.
+# Mac development and unit tests do NOT require these packages.
+#
+# Usage on Pi:
+#   pip install -e ".[pi-audio]"
+#
+# Verified versions (Phase 2/3 Pi testing):
+#   pyalsaaudio 0.11.0
+#   vosk        0.3.45
+#   model       vosk-model-small-en-us-0.15 (download separately)
+pi-audio = [
+    "pyalsaaudio>=0.11.0",
+    "vosk>=0.3.45",
+]
+
 [tool.setuptools.packages.find]
 where = ["src"]
