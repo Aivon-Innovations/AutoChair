@@ -104,6 +104,10 @@ class AudioConfig:
     resample_output_rate : int
         Target sample rate for the AudioPreprocessor resampler.
         Should match vosk_sample_rate.
+
+    voice_session_duration_seconds : float
+        Maximum duration in seconds for a single voice capture session.
+        Phase 4A fixed-duration session policy (default: 5.0 s).
     """
 
     # ------------------------------------------------------------------ #
@@ -131,6 +135,11 @@ class AudioConfig:
     # ------------------------------------------------------------------ #
     resample_input_rate: int = 48000
     resample_output_rate: int = 16000
+
+    # ------------------------------------------------------------------ #
+    # Voice Session                                                        #
+    # ------------------------------------------------------------------ #
+    voice_session_duration_seconds: float = 5.0
 
     # ------------------------------------------------------------------ #
     # Derived helpers                                                       #
@@ -163,5 +172,9 @@ class AudioConfig:
             )
         if self.resample_input_rate <= 0 or self.resample_output_rate <= 0:
             raise ValueError("resample rates must be positive integers")
+        if self.voice_session_duration_seconds <= 0:
+            raise ValueError(
+                f"voice_session_duration_seconds must be > 0, got {self.voice_session_duration_seconds}"
+            )
         if "[unk]" not in self.vosk_grammar:
             self.vosk_grammar = list(self.vosk_grammar) + ["[unk]"]

@@ -65,6 +65,9 @@ class TestAudioConfigDefaults:
     def test_default_suppress_logs(self):
         assert AudioConfig().vosk_suppress_logs is True
 
+    def test_default_voice_session_duration_seconds(self):
+        assert AudioConfig().voice_session_duration_seconds == 5.0
+
 
 # ---------------------------------------------------------------------------
 # Derived properties
@@ -157,3 +160,11 @@ class TestAudioConfigValidationErrors:
     def test_negative_resample_rate_rejected(self):
         with pytest.raises(ValueError, match="resample rates"):
             AudioConfig(resample_input_rate=48000, resample_output_rate=-1)
+
+    def test_zero_voice_session_duration_rejected(self):
+        with pytest.raises(ValueError, match="voice_session_duration_seconds"):
+            AudioConfig(voice_session_duration_seconds=0.0)
+
+    def test_negative_voice_session_duration_rejected(self):
+        with pytest.raises(ValueError, match="voice_session_duration_seconds"):
+            AudioConfig(voice_session_duration_seconds=-1.0)
