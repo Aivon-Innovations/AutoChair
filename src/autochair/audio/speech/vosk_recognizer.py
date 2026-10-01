@@ -176,7 +176,7 @@ class VoskSpeechRecognizer(SpeechRecognizer):
             ) from exc
 
         # Build restricted grammar JSON
-        grammar_json = json.dumps(config.vosk_grammar)
+        grammar_json = json.dumps(config.vosk_grammar, ensure_ascii=False)
         logger.info(f"Vosk grammar: {grammar_json}")
 
         self._rec = vosk.KaldiRecognizer(  # type: ignore[union-attr]

@@ -97,6 +97,23 @@ class TestVoskSpeechRecognizerConstruction:
         assert "move forward" in grammar
         assert "[unk]" in grammar
 
+    def test_kaldi_recognizer_preserves_unicode_devanagari_characters(self):
+        """Vosk requires UTF-8 characters, not \\uXXXX escape sequences."""
+        vosk_mock = sys.modules["vosk"]
+        cfg = AudioConfig(
+            vosk_model_path="fake/model",
+            vosk_sample_rate=16000,
+            vosk_grammar=["लेफ्ट चलो", "राइट चलो", "[unk]"],
+            vosk_suppress_logs=True,
+        )
+        VoskSpeechRecognizer(cfg)
+        call_args = vosk_mock.KaldiRecognizer.call_args
+        grammar_arg = call_args[0][2]
+        # Must contain literal Devanagari characters, not escaped \u0932...
+        assert "लेफ्ट चलो" in grammar_arg
+        assert "राइट चलो" in grammar_arg
+        assert "\\u" not in grammar_arg
+
     def test_kaldi_recognizer_receives_correct_sample_rate(self, config):
         vosk_mock = sys.modules["vosk"]
         VoskSpeechRecognizer(config)
