@@ -36,6 +36,7 @@ _DEFAULT_GRAMMAR: list[str] = [
     "stop",
     "ruko",
     "rukko",
+    "रुको",
     # FORWARD
     "forward",
     "move forward",

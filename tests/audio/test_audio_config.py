@@ -70,6 +70,7 @@ class TestAudioConfigDefaults:
         assert "chalo" in grammar
         assert "ruko" in grammar
         assert "rukko" in grammar
+        assert "रुको" in grammar
         assert "aage chalo" in grammar
         assert "aage jao" in grammar
         assert "piche chalo" in grammar
