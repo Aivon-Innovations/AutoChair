@@ -16,8 +16,9 @@ All test data is constructed from known integer values.
 
 from __future__ import annotations
 
-import struct
 import array
+import math
+import struct
 
 import pytest
 
@@ -282,11 +283,13 @@ class TestAudioPreprocessor:
         assert isinstance(result, bytes)
 
     def test_output_length_is_one_third_of_input_frames(self, preprocessor):
-        """300 stereo frames → 100 output mono frames → 200 bytes (S16 × 100)."""
+        """300 stereo frames → 98 streaming output frames (2 buffered in FIR window) → 100 after flush."""
         raw = make_s32le_stereo([1000000] * 300, [0] * 300)
         result = preprocessor.process(raw)
-        # Each output sample = 2 bytes; 300 input frames / 3 decimation = 100 output
-        assert len(result) == 100 * 2
+        # 98 frames emitted immediately, 2 frames buffered in 15-tap FIR lookahead
+        assert len(result) == 98 * 2
+        flushed = preprocessor.flush()
+        assert len(result + flushed) == 100 * 2
 
     def test_left_channel_is_extracted(self, preprocessor):
         """
@@ -326,3 +329,160 @@ class TestAudioPreprocessor:
         s16 = list(struct.unpack(f"<{len(result)//2}h", result))
         # Right channel data should survive
         assert any(s != 0 for s in s16)
+
+
+# ---------------------------------------------------------------------------
+# Streaming continuity & chunk boundary regression tests
+# ---------------------------------------------------------------------------
+
+class TestStreamingEquivalence:
+    @pytest.fixture
+    def config(self):
+        return AudioConfig(
+            capture_channels=2,
+            capture_format_bits=32,
+            mic_channel=0,
+            resample_input_rate=48000,
+            resample_output_rate=16000,
+        )
+
+    def _generate_synthetic_speech_signal(self, num_frames: int) -> bytes:
+        """Generate stereo S32_LE test signal with multiple frequency components."""
+        left = []
+        right = [0] * num_frames
+        for n in range(num_frames):
+            # Mix 400 Hz and 1200 Hz tones (scaled to 24-bit range in 32-bit container)
+            s = (
+                0.5 * math.sin(2.0 * math.pi * 400.0 * n / 48000.0)
+                + 0.3 * math.sin(2.0 * math.pi * 1200.0 * n / 48000.0)
+            )
+            # Scale to S32 range (24-bit audio in top bits)
+            val_s32 = int(s * 8000000) << 8
+            left.append(val_s32)
+        return make_s32le_stereo(left, right)
+
+    def test_continuous_vs_4096_alsa_chunks_exact_equivalence(self, config):
+        """
+        REGRESSION TEST FOR STREAMING BOUNDARY BUG:
+        Proves that feeding audio in 4096-frame ALSA chunks produces the EXACT
+        same signal as processing the full stream continuously.
+        """
+        chunk_frames = 4096
+        num_chunks = 4
+        total_frames = chunk_frames * num_chunks
+        raw_full = self._generate_synthetic_speech_signal(total_frames)
+
+        # Slice into 4096-frame ALSA chunks (32768 bytes per chunk: 4096 frames * 8 bytes/frame)
+        bytes_per_frame = 8
+        chunk_bytes = chunk_frames * bytes_per_frame
+        chunks = [
+            raw_full[i * chunk_bytes : (i + 1) * chunk_bytes]
+            for i in range(num_chunks)
+        ]
+
+        # 1. Process continuously in one single pass
+        prep_continuous = AudioPreprocessor(config)
+        out_continuous = prep_continuous.process(raw_full) + prep_continuous.flush()
+
+        # 2. Process chunk by chunk (streaming mode)
+        prep_stream = AudioPreprocessor(config)
+        stream_parts = [prep_stream.process(c) for c in chunks]
+        out_stream = b"".join(stream_parts) + prep_stream.flush()
+
+        # Check total byte lengths match
+        assert len(out_stream) == len(out_continuous)
+
+        # Numerical signal comparison: bit-for-bit identical across all samples
+        samples_continuous = list(struct.unpack(f"<{len(out_continuous)//2}h", out_continuous))
+        samples_stream = list(struct.unpack(f"<{len(out_stream)//2}h", out_stream))
+
+        assert samples_stream == samples_continuous, (
+            "Streaming chunk processing must be mathematically identical to continuous processing"
+        )
+
+    def test_no_discontinuity_across_4096_frame_seams(self, config):
+        """
+        Verify that sample values directly at chunk seams (e.g. 4096 / 3 ≈ frame 1365)
+        match continuous filtering exactly, with zero seam error.
+        """
+        num_frames = 4096 * 2
+        raw = self._generate_synthetic_speech_signal(num_frames)
+        chunk_bytes = 4096 * 8
+
+        # Continuous reference
+        prep_ref = AudioPreprocessor(config)
+        ref_bytes = prep_ref.process(raw) + prep_ref.flush()
+        samples_ref = list(struct.unpack(f"<{len(ref_bytes)//2}h", ref_bytes))
+
+        # Streamed chunks
+        prep_stream = AudioPreprocessor(config)
+        part1 = prep_stream.process(raw[:chunk_bytes])
+        part2 = prep_stream.process(raw[chunk_bytes:]) + prep_stream.flush()
+        stream_bytes = part1 + part2
+        samples_stream = list(struct.unpack(f"<{len(stream_bytes)//2}h", stream_bytes))
+
+        split_idx = len(part1) // 2
+
+        # Check the seam region [-10 to +10 around the boundary]
+        seam_ref = samples_ref[split_idx - 10 : split_idx + 10]
+        seam_stream = samples_stream[split_idx - 10 : split_idx + 10]
+
+        assert seam_stream == seam_ref, "Chunk seam samples must be identical to continuous filtering"
+
+    def test_arbitrary_chunk_sizes_equivalence(self, config):
+        """
+        Verify that splitting the stream into irregular/arbitrary chunk sizes
+        (512, 1024, 2048, 4096) produces identical audio output.
+        """
+        total_frames = 4096 * 3
+        raw = self._generate_synthetic_speech_signal(total_frames)
+
+        prep_ref = AudioPreprocessor(config)
+        out_ref = prep_ref.process(raw) + prep_ref.flush()
+
+        # Process with varying chunk sizes
+        prep_var = AudioPreprocessor(config)
+        var_chunks = []
+        offset = 0
+        sizes = [512, 1024, 768, 4096, 2048, 1000, total_frames - 9448]
+        for sz in sizes:
+            b_sz = sz * 8
+            var_chunks.append(raw[offset : offset + b_sz])
+            offset += b_sz
+
+        out_var = b"".join(prep_var.process(c) for c in var_chunks) + prep_var.flush()
+        assert out_var == out_ref
+
+    def test_reset_clears_streaming_history(self, config):
+        """
+        Verify that reset() clears buffer state so that a second session
+        starts cleanly without cross-contamination from the prior session.
+        """
+        raw = self._generate_synthetic_speech_signal(4096)
+
+        prep = AudioPreprocessor(config)
+        out1 = prep.process(raw)
+
+        # Reset for session 2
+        prep.reset()
+        out2 = prep.process(raw)
+
+        assert out1 == out2, "After reset(), processing identical input must produce identical output"
+
+    def test_flush_emits_buffered_lookahead_and_resets(self, config):
+        """
+        Verify that flush() produces remaining trailing samples and leaves
+        the preprocessor in a clean reset state.
+        """
+        raw = self._generate_synthetic_speech_signal(300)
+        prep = AudioPreprocessor(config)
+
+        part1 = prep.process(raw)
+        assert len(part1) == 98 * 2  # 98 samples (196 bytes)
+
+        flushed = prep.flush()
+        assert len(flushed) == 2 * 2  # remaining 2 samples (4 bytes)
+
+        # A subsequent flush on empty buffer returns empty bytes
+        second_flush = prep.flush()
+        assert second_flush == b""

@@ -14,36 +14,27 @@ This module implements the conversion as a clean, testable pipeline:
       ▼ convert_s32_to_s16()
   left-channel S16 samples (48 kHz)
       │
-      ▼ resample()
+      ▼ _resample_stream() (stateful) / resample() (stateless batch)
   mono S16 samples (16 kHz)
       │
-      ▼
+      ▼ samples_to_bytes()
   bytes → Vosk KaldiRecognizer
 
-Each step is exposed as a standalone function so it can be tested
-independently without constructing the full pipeline.
+Streaming Decimation & Statefulness
+-----------------------------------
+ALSA captures audio in discrete chunks (typically 4096 frames at 48 kHz).
+Because 4096 is not a multiple of the 3:1 decimation factor (4096 % 3 == 1)
+and the 15-tap anti-aliasing FIR filter requires boundary history and lookahead,
+stateless per-chunk processing introduces:
+  1. Decimation phase slips across chunk boundaries.
+  2. Boundary impulse transients (clicks/dips) from zero-padding filter edges.
 
-The combined convenience method process() runs all three steps.
+The AudioPreprocessor class maintains stateful streaming filter history and phase
+alignment across successive process() calls. This ensures mathematical equivalence
+between streaming chunked processing and continuous single-pass processing.
 
-Resampling
-----------
-The MSM261S4030H0R experiment used simple decimation (every 3rd sample)
-for rapid diagnosis.  That approach works acceptably for speech because
-human speech energy is concentrated well below the Nyquist of 16 kHz
-(8 kHz), and the ratio 48000→16000 is an exact integer 3:1.
-
-This implementation uses a short Hamming-windowed sinc (FIR) low-pass
-filter before decimation to provide proper anti-aliasing.  The filter is
-pre-computed at module load time from stdlib math — no NumPy required.
-
-The filter preserves the following:
-  - Audio frequencies below 6.4 kHz (pass-band) with minimal distortion
-  - Frequencies above 8 kHz (stop-band) are attenuated before decimation
-  - Speech intelligibility is fully preserved (voice: 300 Hz – 3.4 kHz)
-
-To replace the resampler with a different implementation (e.g. NumPy
-polyphase, SoxR, or libresample), subclass AudioPreprocessor and
-override the resample() method.
+Call reset() between distinct audio sessions to reinitialize streaming state.
+Call flush() at the end of a stream to retrieve any remaining buffered samples.
 
 Hardware status: NO HARDWARE ACCESS
 All operations are pure Python arithmetic on in-memory bytes/arrays.
@@ -105,7 +96,7 @@ _FIR_DECIMATION: int = 3  # 48000 / 16000 = 3
 
 
 # ---------------------------------------------------------------------------
-# Public functions (stateless, testable independently)
+# Public functions (stateless batch helpers, testable independently)
 # ---------------------------------------------------------------------------
 
 def extract_channel(raw_bytes: bytes, channel: int, num_channels: int) -> list[int]:
@@ -171,21 +162,16 @@ def resample_3to1(samples: list[int]) -> list[int]:
     """
     Resample a 48 kHz mono sample list to 16 kHz using FIR + decimation.
 
+    Stateless batch helper for single complete arrays.
+
     Applies the pre-computed 15-tap Hamming-windowed anti-aliasing FIR
     filter (_FIR_48K_TO_16K) and then decimates by factor 3.
-
-    The FIR pass-band (< 6.4 kHz) fully covers speech frequencies
-    (300 Hz – 3.4 kHz for telephone-quality, up to ~8 kHz for wideband).
 
     Args:
         samples: Mono signed integer samples at 48 kHz.
 
     Returns:
         list[int]: Resampled samples at 16 kHz.
-
-    Note:
-        Only valid for exact 3:1 decimation (48000 → 16000 Hz).
-        Use resample() for a configurable-ratio version.
     """
     if not samples:
         return []
@@ -198,10 +184,10 @@ def resample(
     output_rate: int,
 ) -> list[int]:
     """
-    Resample mono samples from input_rate to output_rate.
+    Resample mono samples from input_rate to output_rate (batch / stateless).
 
-    Currently supports only integer decimation (input_rate / output_rate
-    must be a positive integer).  This covers the primary AutoChair use
+    Currently supports integer decimation (input_rate / output_rate
+    must be a positive integer). Covers the primary AutoChair use
     case: 48000 / 16000 = 3.
 
     Args:
@@ -214,9 +200,6 @@ def resample(
 
     Raises:
         ValueError: If the ratio is not a positive integer.
-
-    To add support for fractional resampling (e.g. 44100 → 16000),
-    override this function or replace it with a SoxR/libresample binding.
     """
     if input_rate == output_rate:
         return list(samples)
@@ -255,7 +238,7 @@ def samples_to_bytes(samples: list[int]) -> bytes:
 
 
 # ---------------------------------------------------------------------------
-# Internal helper
+# Internal helper (batch convolution)
 # ---------------------------------------------------------------------------
 
 def _apply_fir_decimate(
@@ -264,11 +247,7 @@ def _apply_fir_decimate(
     factor: int,
 ) -> list[int]:
     """
-    Apply a FIR filter to samples and decimate by factor.
-
-    Uses direct-form FIR convolution evaluated only at output sample
-    positions (every factor-th input sample) to avoid computing discarded
-    intermediate samples.
+    Apply a FIR filter to samples and decimate by factor (batch mode).
 
     Args:
         samples: Input integer samples.
@@ -294,19 +273,25 @@ def _apply_fir_decimate(
 
 
 # ---------------------------------------------------------------------------
-# Preprocessor class — combines all steps
+# Preprocessor class — stateful streaming pipeline
 # ---------------------------------------------------------------------------
 
 class AudioPreprocessor:
     """
-    Converts raw MSM261S4030H0R capture bytes to Vosk-ready PCM.
+    Converts raw MSM261S4030H0R capture bytes to Vosk-ready PCM with
+    stateful streaming FIR filtering and decimation.
 
-    Combines extract_channel → convert_s32_to_s16 → resample into a
-    single process() call.  All steps are configurable via AudioConfig.
+    Combines extract_channel → convert_s32_to_s16 → _resample_stream into a
+    single process() call. All steps are configurable via AudioConfig.
 
-    Thread safety: instances are stateless across calls; process() does
-    not mutate any instance state.  Multiple threads can safely share
-    one AudioPreprocessor instance.
+    Stateful Streaming
+    ------------------
+    Maintains filter history buffer and decimation phase alignment across
+    successive process() calls so that streaming ALSA chunks (e.g. 4096 frames)
+    produce mathematically continuous audio without boundary clicks or phase slips.
+
+    Call reset() to clear state between separate speech sessions.
+    Call flush() to retrieve any remaining trailing samples at stream end.
 
     Hardware status: NO HARDWARE ACCESS.
     Fully testable on Mac without any audio devices.
@@ -318,22 +303,52 @@ class AudioPreprocessor:
             config: AudioConfig supplying channel index, format, and rates.
         """
         self._config = config
+        ratio = config.resample_input_rate / config.resample_output_rate
+        if not ratio.is_integer() or int(ratio) < 1:
+            raise ValueError(
+                f"AudioPreprocessor currently supports only integer decimation ratios. "
+                f"Got {config.resample_input_rate}/{config.resample_output_rate} = {ratio:.4f}."
+            )
+        self._factor = int(ratio)
+
+        if (
+            self._factor == 3
+            and config.resample_input_rate == 48000
+            and config.resample_output_rate == 16000
+        ):
+            self._fir = _FIR_48K_TO_16K
+        else:
+            self._fir = _design_hamming_sinc_fir(
+                taps=15, cutoff_normalized=0.5 / self._factor
+            )
+        self._taps = len(self._fir)
+        self._half = self._taps // 2
+        self._buffer: list[int] = [0] * self._half
+
         logger.info(
             f"AudioPreprocessor initialised "
             f"(channel={config.mic_channel}, "
             f"{config.resample_input_rate} Hz → "
             f"{config.resample_output_rate} Hz, "
-            f"S{config.capture_format_bits}_LE → S16_LE)"
+            f"S{config.capture_format_bits}_LE → S16_LE, "
+            f"streaming FIR taps={self._taps})"
         )
+
+    def reset(self) -> None:
+        """Reset the streaming filter history buffer."""
+        self._buffer = [0] * self._half
+        logger.debug("AudioPreprocessor reset: buffer reinitialised to start-of-stream state")
 
     def process(self, raw_bytes: bytes) -> bytes:
         """
         Convert raw S32_LE stereo capture bytes to mono S16_LE at target rate.
 
+        Maintains FIR filter state across calls for seamless streaming.
+
         Steps:
           1. extract_channel — select mic_channel from interleaved stereo
           2. convert_s32_to_s16 — right-shift 32-bit → 16-bit
-          3. resample — anti-aliased FIR + decimation to vosk_sample_rate
+          3. _resample_stream — stateful anti-aliased FIR + decimation to vosk_sample_rate
           4. samples_to_bytes — pack as little-endian S16_LE bytes
 
         Args:
@@ -358,12 +373,8 @@ class AudioPreprocessor:
         # Step 2: S32 → S16
         s16_samples = convert_s32_to_s16(s32_samples)
 
-        # Step 3: Resample
-        resampled = resample(
-            s16_samples,
-            input_rate=self._config.resample_input_rate,
-            output_rate=self._config.resample_output_rate,
-        )
+        # Step 3: Stateful resample
+        resampled = self._resample_stream(s16_samples)
 
         # Step 4: Pack to bytes
         result = samples_to_bytes(resampled)
@@ -372,3 +383,72 @@ class AudioPreprocessor:
             f"{len(result)} B S16_LE@{self._config.resample_output_rate} Hz"
         )
         return result
+
+    def flush(self) -> bytes:
+        """
+        Flush remaining buffered samples at the end of an audio stream.
+
+        Zero-pads the trailing filter window to emit final samples,
+        then resets the buffer state.
+
+        Returns:
+            bytes: S16_LE PCM bytes for any final buffered samples.
+        """
+        if len(self._buffer) <= self._half:
+            self.reset()
+            return b""
+
+        trailing_zeros = [0] * self._half
+        self._buffer.extend(trailing_zeros)
+
+        half = self._half
+        fir = self._fir
+        factor = self._factor
+        buf = self._buffer
+        n = len(buf)
+
+        out: list[int] = []
+        idx = half
+        while idx + half < n:
+            acc = 0.0
+            for j, h in enumerate(fir):
+                acc += h * buf[idx - half + j]
+            out.append(int(acc))
+            idx += factor
+
+        self.reset()
+        return samples_to_bytes(out)
+
+    def _resample_stream(self, samples: list[int]) -> list[int]:
+        """
+        Stateful streaming FIR decimation.
+
+        Evaluates FIR convolution only when a complete filter window
+        (centered at idx, spanning idx-half to idx+half) is available.
+        Retains trailing samples in self._buffer for the next chunk call.
+        """
+        if not samples:
+            return []
+
+        if self._config.resample_input_rate == self._config.resample_output_rate:
+            return list(samples)
+
+        self._buffer.extend(samples)
+        half = self._half
+        fir = self._fir
+        factor = self._factor
+        buf = self._buffer
+        n = len(buf)
+
+        out: list[int] = []
+        idx = half
+        while idx + half < n:
+            acc = 0.0
+            for j, h in enumerate(fir):
+                acc += h * buf[idx - half + j]
+            out.append(int(acc))
+            idx += factor
+
+        discard = idx - half
+        self._buffer = buf[discard:]
+        return out
