@@ -126,20 +126,21 @@ class TestVoskSpeechRecognizerConstruction:
         vosk_mock.SetLogLevel.assert_called_with(-1)
 
     def test_missing_vosk_raises_import_error(self, config):
-        """Temporarily remove vosk from sys.modules to simulate missing install."""
-        real_vosk = sys.modules.pop("vosk", None)
-        # Also clear the module-level cache
+        """Deterministically simulate missing vosk dependency."""
         import autochair.audio.speech.vosk_recognizer as mod
-        original = mod._vosk_module
+        original_module = mod._vosk_module
+        original_sys_vosk = sys.modules.get("vosk")
         mod._vosk_module = None
+        sys.modules["vosk"] = None
         try:
             with pytest.raises(ImportError, match="vosk is required"):
                 VoskSpeechRecognizer(config)
         finally:
-            # Restore everything
-            mod._vosk_module = original
-            if real_vosk is not None:
-                sys.modules["vosk"] = real_vosk
+            mod._vosk_module = original_module
+            if original_sys_vosk is not None:
+                sys.modules["vosk"] = original_sys_vosk
+            else:
+                sys.modules.pop("vosk", None)
 
 
 # ---------------------------------------------------------------------------
