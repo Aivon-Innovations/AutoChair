@@ -73,10 +73,13 @@ class TestAudioConfigDefaults:
         assert "रुको" in grammar
         assert "aage chalo" in grammar
         assert "aage jao" in grammar
+        assert "आगे चलो" in grammar
+        assert "आगे चल" in grammar
         assert "piche chalo" in grammar
         assert "peeche chalo" in grammar
         assert "piche jao" in grammar
         assert "peeche jao" in grammar
+        assert "पीछे चलो" in grammar
         assert "left chlo" in grammar
         assert "left chalo" in grammar
         assert "baaye chalo" in grammar

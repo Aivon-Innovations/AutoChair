@@ -42,6 +42,8 @@ _DEFAULT_GRAMMAR: list[str] = [
     "move forward",
     "aage chalo",
     "aage jao",
+    "आगे चलो",
+    "आगे चल",
     # REVERSE
     "backward",
     "move backward",
@@ -50,6 +52,7 @@ _DEFAULT_GRAMMAR: list[str] = [
     "peeche chalo",
     "piche jao",
     "peeche jao",
+    "पीछे चलो",
     # LEFT
     "left",
     "turn left",
