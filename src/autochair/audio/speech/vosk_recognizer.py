@@ -46,6 +46,22 @@ Vosk's KaldiRecognizer accumulates context across calls.  A single
 instance is created at __init__() and reused across recognize() calls.
 This is correct for streaming audio from a single continuous source.
 
+recognize() contract — FINAL UTTERANCES ONLY
+--------------------------------------------
+recognize() returns a non-empty string ONLY when Vosk's AcceptWaveform()
+returns True (utterance complete) AND the finalized text is a known
+grammar phrase (not "[unk]", not empty).
+
+When AcceptWaveform() returns False (utterance still in progress),
+recognize() returns "" immediately.  Partial hypotheses such as
+"start stop move" are internal Vosk state and are NEVER exposed
+through recognize().  This prevents partial hypothesis text from
+reaching VoiceCommandParser and being misinterpreted as a command.
+
+The internal helper _parse_partial() is available for debugging or
+future UI purposes (e.g. displaying live transcription), but it is
+not called from the recognize() path.
+
 Call reset() to clear accumulated state between utterances if needed.
 """
 
@@ -185,11 +201,17 @@ class VoskSpeechRecognizer(SpeechRecognizer):
 
     def recognize(self, audio_data: bytes) -> str:
         """
-        Feed audio bytes to the Vosk recognizer and return any result.
+        Feed audio bytes to the Vosk recognizer and return a finalized utterance.
 
-        The recognizer accumulates context across calls.  A non-empty
-        string is returned only when Vosk considers an utterance complete
-        (AcceptWaveform returns True).
+        CONTRACT — FINAL UTTERANCES ONLY:
+          Returns a non-empty string ONLY when AcceptWaveform() signals that
+          an utterance is complete (returns True) AND the finalized text is a
+          recognized grammar phrase.
+
+          When AcceptWaveform() returns False (utterance still in progress),
+          this method returns "" immediately.  Partial Vosk hypotheses (e.g.
+          "start stop move") are internal engine state and are intentionally
+          suppressed here to prevent them from reaching VoiceCommandParser.
 
         Args:
             audio_data: Mono S16_LE PCM bytes at vosk_sample_rate.
@@ -197,15 +219,22 @@ class VoskSpeechRecognizer(SpeechRecognizer):
                         Empty bytes are accepted (returns "").
 
         Returns:
-            str: The recognized utterance, lowercased and stripped.
-                 Returns "" if the recognizer has not yet completed an
-                 utterance or if "[unk]" was received (unrecognized speech).
-                 Returns "" on empty audio_data (no error raised).
+            str: The finalized recognized utterance, lowercased and stripped,
+                 drawn from the restricted grammar.
+                 Returns "" when:
+                   - audio_data is empty
+                   - AcceptWaveform() returns False (utterance not yet complete)
+                   - The finalized text is "[unk]" (unrecognized speech)
+                   - The finalized text is empty
+                   - AcceptWaveform() or Result() raises an exception
 
         Note:
             "[unk]" from Vosk is treated as no-command: it is returned
             as "" from recognize() so that VoiceCommandParser receives
             empty input and produces VoiceIntent.UNKNOWN safely.
+
+            To inspect partial hypotheses (e.g. for a live transcription UI),
+            call _parse_partial() directly — it is NOT invoked by recognize().
         """
         if not audio_data:
             logger.debug("VoskSpeechRecognizer.recognize(): empty audio — returning \"\"")
@@ -218,8 +247,11 @@ class VoskSpeechRecognizer(SpeechRecognizer):
             return ""
 
         if not completed:
-            # Utterance not yet complete — return partial or empty
-            return self._parse_partial()
+            # Utterance still in progress — suppress partial hypothesis.
+            # Returning partial text here would send incomplete multi-word
+            # sequences to VoiceCommandParser as if they were commands.
+            logger.debug("VoskSpeechRecognizer.recognize(): utterance incomplete — returning \"\"")
+            return ""
 
         return self._parse_result()
 

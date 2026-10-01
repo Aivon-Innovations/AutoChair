@@ -10,10 +10,15 @@ Verifies:
   - RuntimeError on empty model path
   - RuntimeError on model load failure
   - Grammar JSON construction
-  - recognize() → correct text extraction
-  - recognize() → [unk] returns empty string (safely ignored)
-  - recognize() → empty audio returns empty string (no error)
-  - recognize() → partial result handling
+  - recognize() — FINAL UTTERANCES ONLY:
+      AcceptWaveform=True  → returns finalized text from Result()
+      AcceptWaveform=False → returns "" (partial hypothesis suppressed)
+      empty audio           → returns ""
+      "[unk]"               → returns "" (unrecognized speech)
+      AcceptWaveform error  → returns ""
+      Result() error        → returns ""
+  - recognize() with AcceptWaveform=False does NOT call Result()
+  - Partial text never reaches VoiceCommandParser
   - finalize() → final result extraction
   - reset() → creates a fresh KaldiRecognizer
   - JSON parse errors handled gracefully
@@ -173,14 +178,29 @@ class TestVoskRecognizeResults:
         """Empty audio bytes must not cause an error."""
         assert recognizer.recognize(b"") == ""
 
-    def test_recognize_partial_result_when_waveform_not_complete(self, recognizer):
-        """When AcceptWaveform=False, returns partial text."""
+    def test_recognize_partial_suppressed_when_waveform_not_complete(self, recognizer):
+        """
+        CONTRACT: When AcceptWaveform=False, recognize() MUST return ""
+        regardless of what PartialResult() would return.
+        Partial hypotheses must never reach VoiceCommandParser.
+        """
         rec = _get_mock_rec()
         rec.AcceptWaveform.return_value = False
         rec.PartialResult.return_value = json.dumps({"partial": "stop"})
         result = recognizer.recognize(b"\x00\x01")
-        # Partial "stop" should be returned
-        assert result == "stop"
+        # Partial hypothesis "stop" must be suppressed — not returned
+        assert result == ""
+
+    def test_recognize_does_not_call_result_when_waveform_incomplete(self, recognizer):
+        """
+        When AcceptWaveform=False, recognize() must NOT call Result().
+        Result() is only meaningful after a completed utterance.
+        """
+        rec = _get_mock_rec()
+        rec.AcceptWaveform.return_value = False
+        rec.Result.reset_mock()
+        recognizer.recognize(b"\x00\x01")
+        rec.Result.assert_not_called()
 
     def test_recognize_empty_partial_returns_empty(self, recognizer):
         rec = _get_mock_rec()
@@ -351,3 +371,26 @@ class TestVoskToParserPipeline:
         assert result.intent == VoiceIntent.START
         # No InputCommand → no route to SafetyManager → no MotionCommand
         assert result.input_command is None
+
+    def test_partial_hypothesis_never_reaches_parser(self, recognizer, parser):
+        """
+        CONTRACT: A partial Vosk hypothesis must never produce an InputCommand.
+
+        Simulates the real-Pi failure mode where Vosk returned sequences
+        such as "start stop move forward" as a partial hypothesis while
+        the utterance was still accumulating.  recognize() must return ""
+        in this case, so VoiceCommandParser produces UNKNOWN / None.
+        """
+        rec = _get_mock_rec()
+        # AcceptWaveform=False means utterance is not yet complete
+        rec.AcceptWaveform.return_value = False
+        rec.PartialResult.return_value = json.dumps({"partial": "move forward"})
+
+        text = recognizer.recognize(b"\x00\x01")
+        assert text == "", "recognize() must not expose partial hypotheses"
+
+        result = parser.parse(text)
+        assert result.intent == VoiceIntent.UNKNOWN
+        assert result.input_command is None, (
+            "Partial hypothesis must never produce an InputCommand"
+        )
