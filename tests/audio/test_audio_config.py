@@ -54,9 +54,30 @@ class TestAudioConfigDefaults:
 
     def test_default_grammar_contains_required_commands(self):
         grammar = AudioConfig().vosk_grammar
+        # English
         assert "start" in grammar
         assert "stop" in grammar
+        assert "forward" in grammar
         assert "move forward" in grammar
+        assert "backward" in grammar
+        assert "move backward" in grammar
+        assert "reverse" in grammar
+        assert "left" in grammar
+        assert "turn left" in grammar
+        assert "right" in grammar
+        assert "turn right" in grammar
+        # Hindi / Hinglish
+        assert "chalo" in grammar
+        assert "ruko" in grammar
+        assert "rukko" in grammar
+        assert "aage chalo" in grammar
+        assert "aage jao" in grammar
+        assert "piche chalo" in grammar
+        assert "peeche chalo" in grammar
+        assert "piche jao" in grammar
+        assert "peeche jao" in grammar
+        assert "left chalo" in grammar
+        assert "right chalo" in grammar
 
     def test_default_grammar_contains_unk(self):
         """[unk] must always be present so unknown speech is labelled."""

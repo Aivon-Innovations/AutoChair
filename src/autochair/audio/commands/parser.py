@@ -50,18 +50,26 @@ class VoiceIntent(str, Enum):
     """
     Typed representation of a user's voice intent.
 
-    MOVE_FORWARD    — user wants the chair to move forward
-                      maps to InputCommand(command="FORWARD")
-    STOP            — user wants the chair to stop
-                      maps to InputCommand(command="STOP")
-    START           — user wants to activate/start the system
-                      DESIGN GAP: no corresponding motion command exists yet.
-                      Produces no InputCommand. Logged as a system intent.
-    UNKNOWN         — utterance was not recognized as any valid intent
-                      Produces no InputCommand. Triggers a COMMAND_REJECTED alert.
+    MOVE_FORWARD — user wants the chair to move forward
+                  maps to InputCommand(command="FORWARD")
+    REVERSE      — user wants the chair to move backward / reverse
+                  maps to InputCommand(command="REVERSE")
+    LEFT         — user wants the chair to turn left
+                  maps to InputCommand(command="LEFT")
+    RIGHT        — user wants the chair to turn right
+                  maps to InputCommand(command="RIGHT")
+    STOP         — user wants the chair to stop
+                  maps to InputCommand(command="STOP")
+    START        — user wants to activate/start the system
+                  system intent with no motion command.
+    UNKNOWN      — utterance was not recognized as any valid intent
+                  produces no InputCommand. Triggers a COMMAND_REJECTED alert.
     """
 
     MOVE_FORWARD = "MOVE_FORWARD"
+    REVERSE = "REVERSE"
+    LEFT = "LEFT"
+    RIGHT = "RIGHT"
     STOP = "STOP"
     START = "START"
     UNKNOWN = "UNKNOWN"
@@ -91,34 +99,76 @@ class ParseResult:
 
 
 # ---------------------------------------------------------------------------
-# Phrase → intent mapping tables
+# Maintainable command-alias mapping structure (English + Hindi / Hinglish)
+# Maps normalized phrase → (VoiceIntent, normalized_command_string or None)
 # ---------------------------------------------------------------------------
 
-_FORWARD_PHRASES: frozenset[str] = frozenset({
-    "forward",
-    "move forward",
-    "go forward",
-    "go ahead",
-    "move ahead",
-    "drive forward",
-})
+COMMAND_ALIASES: dict[str, tuple[VoiceIntent, str | None]] = {
+    # ------------------------------------------------------------------ #
+    # START (system intent — no motion InputCommand)                     #
+    # ------------------------------------------------------------------ #
+    "start": (VoiceIntent.START, None),
+    "chalo": (VoiceIntent.START, None),
+    "begin": (VoiceIntent.START, None),
+    "activate": (VoiceIntent.START, None),
+    "start the chair": (VoiceIntent.START, None),
+    "please start": (VoiceIntent.START, None),
 
-_STOP_PHRASES: frozenset[str] = frozenset({
-    "stop",
-    "halt",
-    "brake",
-    "please stop",
-    "stop the chair",
-    "please stop the chair",
-})
+    # ------------------------------------------------------------------ #
+    # STOP (maps to InputCommand(command="STOP"))                         #
+    # ------------------------------------------------------------------ #
+    "stop": (VoiceIntent.STOP, "STOP"),
+    "ruko": (VoiceIntent.STOP, "STOP"),
+    "rukko": (VoiceIntent.STOP, "STOP"),
+    "halt": (VoiceIntent.STOP, "STOP"),
+    "brake": (VoiceIntent.STOP, "STOP"),
+    "please stop": (VoiceIntent.STOP, "STOP"),
+    "stop the chair": (VoiceIntent.STOP, "STOP"),
+    "please stop the chair": (VoiceIntent.STOP, "STOP"),
 
-_START_PHRASES: frozenset[str] = frozenset({
-    "start",
-    "begin",
-    "activate",
-    "start the chair",
-    "please start",
-})
+    # ------------------------------------------------------------------ #
+    # FORWARD (maps to InputCommand(command="FORWARD"))                   #
+    # ------------------------------------------------------------------ #
+    "forward": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
+    "move forward": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
+    "aage chalo": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
+    "aage jao": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
+    "go forward": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
+    "go ahead": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
+    "move ahead": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
+    "drive forward": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
+
+    # ------------------------------------------------------------------ #
+    # REVERSE (maps to InputCommand(command="REVERSE"))                   #
+    # ------------------------------------------------------------------ #
+    "backward": (VoiceIntent.REVERSE, "REVERSE"),
+    "move backward": (VoiceIntent.REVERSE, "REVERSE"),
+    "reverse": (VoiceIntent.REVERSE, "REVERSE"),
+    "piche chalo": (VoiceIntent.REVERSE, "REVERSE"),
+    "peeche chalo": (VoiceIntent.REVERSE, "REVERSE"),
+    "piche jao": (VoiceIntent.REVERSE, "REVERSE"),
+    "peeche jao": (VoiceIntent.REVERSE, "REVERSE"),
+    "go backward": (VoiceIntent.REVERSE, "REVERSE"),
+    "move reverse": (VoiceIntent.REVERSE, "REVERSE"),
+
+    # ------------------------------------------------------------------ #
+    # LEFT (maps to InputCommand(command="LEFT"))                         #
+    # ------------------------------------------------------------------ #
+    "left": (VoiceIntent.LEFT, "LEFT"),
+    "turn left": (VoiceIntent.LEFT, "LEFT"),
+    "left chalo": (VoiceIntent.LEFT, "LEFT"),
+    "go left": (VoiceIntent.LEFT, "LEFT"),
+    "move left": (VoiceIntent.LEFT, "LEFT"),
+
+    # ------------------------------------------------------------------ #
+    # RIGHT (maps to InputCommand(command="RIGHT"))                       #
+    # ------------------------------------------------------------------ #
+    "right": (VoiceIntent.RIGHT, "RIGHT"),
+    "turn right": (VoiceIntent.RIGHT, "RIGHT"),
+    "right chalo": (VoiceIntent.RIGHT, "RIGHT"),
+    "go right": (VoiceIntent.RIGHT, "RIGHT"),
+    "move right": (VoiceIntent.RIGHT, "RIGHT"),
+}
 
 
 def _normalize(text: str) -> str:
@@ -153,46 +203,27 @@ class VoiceCommandParser:
         """
         normalized = _normalize(recognized_text)
 
-        if not normalized:
-            logger.warning("VoiceCommandParser: received empty text — UNKNOWN")
+        if not normalized or normalized == "[unk]":
+            logger.warning("VoiceCommandParser: received empty or unk text — UNKNOWN")
             return ParseResult(
                 intent=VoiceIntent.UNKNOWN,
                 input_command=None,
                 raw_text=normalized,
             )
 
-        if normalized in _FORWARD_PHRASES:
-            logger.info(f"VoiceCommandParser: '{normalized}' → MOVE_FORWARD → FORWARD")
-            return ParseResult(
-                intent=VoiceIntent.MOVE_FORWARD,
-                input_command=InputCommand(
+        match = COMMAND_ALIASES.get(normalized)
+        if match is not None:
+            intent, cmd_str = match
+            input_cmd = None
+            if cmd_str is not None:
+                input_cmd = InputCommand(
                     source=InputSource.VOICE,
-                    command="FORWARD",
-                ),
-                raw_text=normalized,
-            )
-
-        if normalized in _STOP_PHRASES:
-            logger.info(f"VoiceCommandParser: '{normalized}' → STOP")
+                    command=cmd_str,
+                )
+            logger.info(f"VoiceCommandParser: '{normalized}' → {intent.value} (command={cmd_str})")
             return ParseResult(
-                intent=VoiceIntent.STOP,
-                input_command=InputCommand(
-                    source=InputSource.VOICE,
-                    command="STOP",
-                ),
-                raw_text=normalized,
-            )
-
-        if normalized in _START_PHRASES:
-            # START is a recognized intent but has no motion command mapping.
-            # See module docstring for the design rationale.
-            logger.info(
-                f"VoiceCommandParser: '{normalized}' → START "
-                f"(system intent — no InputCommand produced)"
-            )
-            return ParseResult(
-                intent=VoiceIntent.START,
-                input_command=None,
+                intent=intent,
+                input_command=input_cmd,
                 raw_text=normalized,
             )
 

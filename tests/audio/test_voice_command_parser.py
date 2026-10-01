@@ -1,16 +1,17 @@
 """
-Tests for VoiceCommandParser.
+Tests for VoiceCommandParser — English and Hindi/Hinglish voice commands.
 
 Verifies:
 - Text normalization (case, whitespace)
-- All recognized FORWARD phrase variants
-- All recognized STOP phrase variants
-- START intent recognized and produces NO InputCommand
-- Unknown phrases safely rejected
+- All recognized START phrases (start, chalo, etc.)
+- All recognized STOP phrases (stop, ruko, rukko, etc.)
+- All recognized FORWARD phrases (forward, move forward, aage chalo, aage jao, etc.)
+- All recognized REVERSE phrases (backward, move backward, reverse, piche chalo, peeche chalo, piche jao, peeche jao, etc.)
+- All recognized LEFT phrases (left, turn left, left chalo, etc.)
+- All recognized RIGHT phrases (right, turn right, right chalo, etc.)
+- Unknown phrases and [unk] safely rejected
 - InputCommand source is always InputSource.VOICE for motion intents
-- InputCommand command values match existing VALID_COMMANDS
-
-No hardware required. No audio devices accessed.
+- InputCommand command values match existing VALID_COMMANDS (FORWARD, REVERSE, LEFT, RIGHT, STOP)
 """
 
 import pytest
@@ -30,57 +31,42 @@ def parser() -> VoiceCommandParser:
 
 
 # ---------------------------------------------------------------------------
-# FORWARD intent
+# START intent (English + Hindi/Hinglish)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
-    "forward",
-    "move forward",
-    "go forward",
-    "go ahead",
-    "move ahead",
-    "drive forward",
+    "start",
+    "chalo",
+    "begin",
+    "activate",
+    "start the chair",
+    "please start",
 ])
-def test_forward_phrases_recognized(parser: VoiceCommandParser, phrase: str):
+def test_start_phrases_recognized(parser: VoiceCommandParser, phrase: str):
     result = parser.parse(phrase)
-    assert result.intent == VoiceIntent.MOVE_FORWARD
+    assert result.intent == VoiceIntent.START
+    assert result.input_command is None  # System intent, no motion command
 
 
-def test_forward_produces_input_command(parser: VoiceCommandParser):
-    result = parser.parse("move forward")
-    assert result.input_command is not None
-    assert result.input_command.command == "FORWARD"
+def test_start_hindi_alias_chalo(parser: VoiceCommandParser):
+    result = parser.parse("chalo")
+    assert result.intent == VoiceIntent.START
+    assert result.input_command is None
 
 
-def test_forward_source_is_voice(parser: VoiceCommandParser):
-    result = parser.parse("forward")
-    assert result.input_command is not None
-    assert result.input_command.source == InputSource.VOICE
-
-
-def test_forward_command_is_in_valid_commands(parser: VoiceCommandParser):
-    """FORWARD must pass the existing InputCommandValidator unchanged."""
-    result = parser.parse("move forward")
-    assert result.input_command is not None
-    assert result.input_command.command in VALID_COMMANDS
-
-
-def test_forward_case_insensitive(parser: VoiceCommandParser):
-    result = parser.parse("MOVE FORWARD")
-    assert result.intent == VoiceIntent.MOVE_FORWARD
-
-
-def test_forward_trims_whitespace(parser: VoiceCommandParser):
-    result = parser.parse("  move forward  ")
-    assert result.intent == VoiceIntent.MOVE_FORWARD
+def test_start_case_and_whitespace(parser: VoiceCommandParser):
+    assert parser.parse("  CHALO  ").intent == VoiceIntent.START
+    assert parser.parse("  START  ").intent == VoiceIntent.START
 
 
 # ---------------------------------------------------------------------------
-# STOP intent
+# STOP intent (English + Hindi/Hinglish)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
     "stop",
+    "ruko",
+    "rukko",
     "halt",
     "brake",
     "please stop",
@@ -90,73 +76,157 @@ def test_forward_trims_whitespace(parser: VoiceCommandParser):
 def test_stop_phrases_recognized(parser: VoiceCommandParser, phrase: str):
     result = parser.parse(phrase)
     assert result.intent == VoiceIntent.STOP
-
-
-def test_stop_produces_input_command(parser: VoiceCommandParser):
-    result = parser.parse("stop")
     assert result.input_command is not None
     assert result.input_command.command == "STOP"
-
-
-def test_stop_source_is_voice(parser: VoiceCommandParser):
-    result = parser.parse("halt")
-    assert result.input_command is not None
     assert result.input_command.source == InputSource.VOICE
 
 
-def test_stop_command_is_in_valid_commands(parser: VoiceCommandParser):
-    """STOP must pass the existing InputCommandValidator unchanged."""
-    result = parser.parse("stop")
-    assert result.input_command is not None
-    assert result.input_command.command in VALID_COMMANDS
+def test_stop_hindi_aliases(parser: VoiceCommandParser):
+    for phrase in ["ruko", "rukko"]:
+        result = parser.parse(phrase)
+        assert result.intent == VoiceIntent.STOP
+        assert result.input_command is not None
+        assert result.input_command.command == "STOP"
 
 
-def test_stop_case_insensitive(parser: VoiceCommandParser):
-    result = parser.parse("STOP")
-    assert result.intent == VoiceIntent.STOP
+def test_stop_case_and_whitespace(parser: VoiceCommandParser):
+    assert parser.parse("  RUKO  ").intent == VoiceIntent.STOP
+    assert parser.parse("  Rukko  ").intent == VoiceIntent.STOP
 
 
 # ---------------------------------------------------------------------------
-# START intent — design gap verification
+# FORWARD intent (English + Hindi/Hinglish)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
-    "start",
-    "begin",
-    "activate",
-    "start the chair",
-    "please start",
+    "forward",
+    "move forward",
+    "aage chalo",
+    "aage jao",
+    "go forward",
+    "go ahead",
+    "move ahead",
+    "drive forward",
 ])
-def test_start_phrases_recognized(parser: VoiceCommandParser, phrase: str):
+def test_forward_phrases_recognized(parser: VoiceCommandParser, phrase: str):
     result = parser.parse(phrase)
-    assert result.intent == VoiceIntent.START
+    assert result.intent == VoiceIntent.MOVE_FORWARD
+    assert result.input_command is not None
+    assert result.input_command.command == "FORWARD"
+    assert result.input_command.source == InputSource.VOICE
 
 
-def test_start_produces_no_input_command(parser: VoiceCommandParser):
-    """
-    START must NOT produce an InputCommand.
-
-    This is the documented design gap: START has no motion mapping in the
-    existing architecture. Producing an InputCommand would inject an invalid
-    command into the pipeline.
-    """
-    result = parser.parse("start")
-    assert result.input_command is None
+def test_forward_hindi_aliases(parser: VoiceCommandParser):
+    for phrase in ["aage chalo", "aage jao"]:
+        result = parser.parse(phrase)
+        assert result.intent == VoiceIntent.MOVE_FORWARD
+        assert result.input_command is not None
+        assert result.input_command.command == "FORWARD"
 
 
-def test_start_command_not_silently_aliased_to_forward(parser: VoiceCommandParser):
-    """START must not silently become FORWARD."""
-    result = parser.parse("start")
-    assert result.intent != VoiceIntent.MOVE_FORWARD
-
-
-def test_start_parse_result_raw_text(parser: VoiceCommandParser):
-    result = parser.parse("start")
-    assert result.raw_text == "start"
+def test_forward_case_and_whitespace(parser: VoiceCommandParser):
+    assert parser.parse("  AAGE CHALO  ").intent == VoiceIntent.MOVE_FORWARD
+    assert parser.parse("  Aage Jao  ").intent == VoiceIntent.MOVE_FORWARD
 
 
 # ---------------------------------------------------------------------------
-# UNKNOWN intent
+# REVERSE intent (English + Hindi/Hinglish)
+# ---------------------------------------------------------------------------
+
+@pytest.mark.parametrize("phrase", [
+    "backward",
+    "move backward",
+    "reverse",
+    "piche chalo",
+    "peeche chalo",
+    "piche jao",
+    "peeche jao",
+    "go backward",
+    "move reverse",
+])
+def test_reverse_phrases_recognized(parser: VoiceCommandParser, phrase: str):
+    result = parser.parse(phrase)
+    assert result.intent == VoiceIntent.REVERSE
+    assert result.input_command is not None
+    assert result.input_command.command == "REVERSE"
+    assert result.input_command.source == InputSource.VOICE
+
+
+def test_reverse_hindi_aliases(parser: VoiceCommandParser):
+    for phrase in ["piche chalo", "peeche chalo", "piche jao", "peeche jao"]:
+        result = parser.parse(phrase)
+        assert result.intent == VoiceIntent.REVERSE
+        assert result.input_command is not None
+        assert result.input_command.command == "REVERSE"
+
+
+def test_reverse_case_and_whitespace(parser: VoiceCommandParser):
+    assert parser.parse("  PEECHE CHALO  ").intent == VoiceIntent.REVERSE
+    assert parser.parse("  Piche Jao  ").intent == VoiceIntent.REVERSE
+
+
+# ---------------------------------------------------------------------------
+# LEFT intent (English + Hindi/Hinglish)
+# ---------------------------------------------------------------------------
+
+@pytest.mark.parametrize("phrase", [
+    "left",
+    "turn left",
+    "left chalo",
+    "go left",
+    "move left",
+])
+def test_left_phrases_recognized(parser: VoiceCommandParser, phrase: str):
+    result = parser.parse(phrase)
+    assert result.intent == VoiceIntent.LEFT
+    assert result.input_command is not None
+    assert result.input_command.command == "LEFT"
+    assert result.input_command.source == InputSource.VOICE
+
+
+def test_left_hindi_alias(parser: VoiceCommandParser):
+    result = parser.parse("left chalo")
+    assert result.intent == VoiceIntent.LEFT
+    assert result.input_command is not None
+    assert result.input_command.command == "LEFT"
+
+
+def test_left_case_and_whitespace(parser: VoiceCommandParser):
+    assert parser.parse("  LEFT CHALO  ").intent == VoiceIntent.LEFT
+
+
+# ---------------------------------------------------------------------------
+# RIGHT intent (English + Hindi/Hinglish)
+# ---------------------------------------------------------------------------
+
+@pytest.mark.parametrize("phrase", [
+    "right",
+    "turn right",
+    "right chalo",
+    "go right",
+    "move right",
+])
+def test_right_phrases_recognized(parser: VoiceCommandParser, phrase: str):
+    result = parser.parse(phrase)
+    assert result.intent == VoiceIntent.RIGHT
+    assert result.input_command is not None
+    assert result.input_command.command == "RIGHT"
+    assert result.input_command.source == InputSource.VOICE
+
+
+def test_right_hindi_alias(parser: VoiceCommandParser):
+    result = parser.parse("right chalo")
+    assert result.intent == VoiceIntent.RIGHT
+    assert result.input_command is not None
+    assert result.input_command.command == "RIGHT"
+
+
+def test_right_case_and_whitespace(parser: VoiceCommandParser):
+    assert parser.parse("  RIGHT CHALO  ").intent == VoiceIntent.RIGHT
+
+
+# ---------------------------------------------------------------------------
+# UNKNOWN intent & [unk] handling
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
@@ -165,59 +235,51 @@ def test_start_parse_result_raw_text(parser: VoiceCommandParser):
     "",
     "   ",
     "blah blah",
-    "move backward",   # not in Phase 1 — must be rejected, not invented
+    "[unk]",
+    "jump",
+    "dance",
 ])
 def test_unknown_phrases_rejected(parser: VoiceCommandParser, phrase: str):
     result = parser.parse(phrase)
     assert result.intent == VoiceIntent.UNKNOWN
-
-
-def test_unknown_produces_no_input_command(parser: VoiceCommandParser):
-    result = parser.parse("fly to the moon")
     assert result.input_command is None
 
 
 def test_unknown_does_not_raise(parser: VoiceCommandParser):
-    """Unknown commands must fail gracefully, never raise."""
     result = parser.parse("xyzzy nonsense phrase")
     assert result.intent == VoiceIntent.UNKNOWN
 
 
 # ---------------------------------------------------------------------------
-# ParseResult structure
+# Validator Integration
 # ---------------------------------------------------------------------------
 
-def test_parse_result_raw_text_is_normalized(parser: VoiceCommandParser):
-    result = parser.parse("  MOVE FORWARD  ")
-    assert result.raw_text == "move forward"
-
-
-def test_parse_result_has_all_fields(parser: VoiceCommandParser):
-    result = parser.parse("stop")
-    assert hasattr(result, "intent")
-    assert hasattr(result, "input_command")
-    assert hasattr(result, "raw_text")
-
-
-# ---------------------------------------------------------------------------
-# Integration: voice command enters existing validation chain
-# ---------------------------------------------------------------------------
-
-def test_forward_command_passes_existing_validator(parser: VoiceCommandParser):
-    """
-    An InputCommand produced by the parser must pass InputCommandValidator
-    without modification. This verifies the voice pipeline integrates
-    correctly with the existing architecture.
-    """
+@pytest.mark.parametrize("phrase", [
+    "forward",
+    "move forward",
+    "aage chalo",
+    "aage jao",
+    "backward",
+    "move backward",
+    "reverse",
+    "piche chalo",
+    "peeche chalo",
+    "piche jao",
+    "peeche jao",
+    "left",
+    "turn left",
+    "left chalo",
+    "right",
+    "turn right",
+    "right chalo",
+    "stop",
+    "ruko",
+    "rukko",
+])
+def test_all_motion_commands_pass_validator(parser: VoiceCommandParser, phrase: str):
     validator = InputCommandValidator()
-    result = parser.parse("move forward")
+    result = parser.parse(phrase)
     assert result.input_command is not None
+    assert result.input_command.command in VALID_COMMANDS
     # Must not raise
-    validator.validate(result.input_command)
-
-
-def test_stop_command_passes_existing_validator(parser: VoiceCommandParser):
-    validator = InputCommandValidator()
-    result = parser.parse("stop")
-    assert result.input_command is not None
     validator.validate(result.input_command)

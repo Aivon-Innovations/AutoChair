@@ -221,7 +221,7 @@ class AudioManager:
         self._last_parse_result = result
 
         # --- Route result ---
-        if result.intent == VoiceIntent.MOVE_FORWARD or result.intent == VoiceIntent.STOP:
+        if result.input_command is not None:
             self._handle_motion_intent(result, sensor_snapshot)
 
         elif result.intent == VoiceIntent.START:

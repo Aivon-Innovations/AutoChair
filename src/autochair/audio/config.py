@@ -24,15 +24,40 @@ from dataclasses import dataclass, field
 
 
 # ---------------------------------------------------------------------------
-# Default grammar — restricted to Phase 3 initial command set.
-# Verified by Raspberry Pi experimental recognition (Phase 2/3 transition).
-# Extend this list in future phases; the VoskSpeechRecognizer will pick up
+# Default grammar — restricted command vocabulary (English + Hindi/Hinglish).
+# Extend this list in future phases; VoskSpeechRecognizer will pick up
 # changes automatically from the AudioConfig it receives.
 # ---------------------------------------------------------------------------
 _DEFAULT_GRAMMAR: list[str] = [
+    # START
     "start",
+    "chalo",
+    # STOP
     "stop",
+    "ruko",
+    "rukko",
+    # FORWARD
+    "forward",
     "move forward",
+    "aage chalo",
+    "aage jao",
+    # REVERSE
+    "backward",
+    "move backward",
+    "reverse",
+    "piche chalo",
+    "peeche chalo",
+    "piche jao",
+    "peeche jao",
+    # LEFT
+    "left",
+    "turn left",
+    "left chalo",
+    # RIGHT
+    "right",
+    "turn right",
+    "right chalo",
+    # UNKNOWN sentinel
     "[unk]",
 ]
 

@@ -560,3 +560,77 @@ class TestRealVoiceSessionIntegration:
 
         # 4. TTS announces rejection feedback
         assert "not recognized" in tts.last_spoken().lower()
+
+    def test_real_voice_reverse_command_passes_validation_and_safety(self):
+        """
+        Verify REVERSE voice command: 'move backward' → REVERSE InputCommand → Safety pipeline.
+        """
+        manager, mock_session, tts, alerts = make_real_voice_manager(recognized_text="move backward")
+        manager.start_listening()
+        result = manager.process(clear_snapshot())
+
+        assert result.intent == VoiceIntent.REVERSE
+        assert result.input_command is not None
+        assert result.input_command.command == "REVERSE"
+        assert result.input_command.source == InputSource.VOICE
+        assert manager.state == AudioState.IDLE
+        assert "reverse" in tts.last_spoken().lower()
+
+    def test_real_voice_left_command_passes_validation_and_safety(self):
+        """
+        Verify LEFT voice command: 'turn left' → LEFT InputCommand → Safety pipeline.
+        """
+        manager, mock_session, tts, alerts = make_real_voice_manager(recognized_text="turn left")
+        manager.start_listening()
+        result = manager.process(clear_snapshot())
+
+        assert result.intent == VoiceIntent.LEFT
+        assert result.input_command is not None
+        assert result.input_command.command == "LEFT"
+        assert result.input_command.source == InputSource.VOICE
+        assert manager.state == AudioState.IDLE
+        assert "left" in tts.last_spoken().lower()
+
+    def test_real_voice_right_command_passes_validation_and_safety(self):
+        """
+        Verify RIGHT voice command: 'turn right' → RIGHT InputCommand → Safety pipeline.
+        """
+        manager, mock_session, tts, alerts = make_real_voice_manager(recognized_text="turn right")
+        manager.start_listening()
+        result = manager.process(clear_snapshot())
+
+        assert result.intent == VoiceIntent.RIGHT
+        assert result.input_command is not None
+        assert result.input_command.command == "RIGHT"
+        assert result.input_command.source == InputSource.VOICE
+        assert manager.state == AudioState.IDLE
+        assert "right" in tts.last_spoken().lower()
+
+    @pytest.mark.parametrize("hindi_phrase,expected_intent,expected_cmd", [
+        ("chalo", VoiceIntent.START, None),
+        ("ruko", VoiceIntent.STOP, "STOP"),
+        ("rukko", VoiceIntent.STOP, "STOP"),
+        ("aage chalo", VoiceIntent.MOVE_FORWARD, "FORWARD"),
+        ("aage jao", VoiceIntent.MOVE_FORWARD, "FORWARD"),
+        ("piche chalo", VoiceIntent.REVERSE, "REVERSE"),
+        ("peeche chalo", VoiceIntent.REVERSE, "REVERSE"),
+        ("piche jao", VoiceIntent.REVERSE, "REVERSE"),
+        ("peeche jao", VoiceIntent.REVERSE, "REVERSE"),
+        ("left chalo", VoiceIntent.LEFT, "LEFT"),
+        ("right chalo", VoiceIntent.RIGHT, "RIGHT"),
+    ])
+    def test_real_voice_hindi_commands_integration(
+        self, hindi_phrase: str, expected_intent: VoiceIntent, expected_cmd: str | None
+    ):
+        manager, mock_session, tts, alerts = make_real_voice_manager(recognized_text=hindi_phrase)
+        manager.start_listening()
+        result = manager.process(clear_snapshot())
+
+        assert result.intent == expected_intent
+        if expected_cmd is not None:
+            assert result.input_command is not None
+            assert result.input_command.command == expected_cmd
+            assert result.input_command.source == InputSource.VOICE
+        else:
+            assert result.input_command is None
+        assert manager.state == AudioState.IDLE
