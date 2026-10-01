@@ -52,11 +52,15 @@ _DEFAULT_GRAMMAR: list[str] = [
     # LEFT
     "left",
     "turn left",
+    "left chlo",
+    "left chalo",
     "baaye chalo",
     "baaya chalo",
     # RIGHT
     "right",
     "turn right",
+    "right chlo",
+    "right chalo",
     "daaye chalo",
     "daaya chalo",
     # UNKNOWN sentinel

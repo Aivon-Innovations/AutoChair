@@ -186,6 +186,8 @@ def test_reverse_case_and_whitespace(parser: VoiceCommandParser):
     "turn left",
     "go left",
     "move left",
+    "left chlo",
+    "left chalo",
     "baaye chalo",
     "baaya chalo",
     "बायें चलो",
@@ -200,7 +202,7 @@ def test_left_phrases_recognized(parser: VoiceCommandParser, phrase: str):
 
 
 def test_left_hindi_aliases(parser: VoiceCommandParser):
-    for phrase in ["baaye chalo", "baaya chalo", "बायें चलो", "बायाँ चलो"]:
+    for phrase in ["left chlo", "left chalo", "baaye chalo", "baaya chalo", "बायें चलो", "बायाँ चलो"]:
         result = parser.parse(phrase)
         assert result.intent == VoiceIntent.LEFT
         assert result.input_command is not None
@@ -208,6 +210,8 @@ def test_left_hindi_aliases(parser: VoiceCommandParser):
 
 
 def test_left_case_and_whitespace(parser: VoiceCommandParser):
+    assert parser.parse("  LEFT CHLO  ").intent == VoiceIntent.LEFT
+    assert parser.parse("  LEFT CHALO  ").intent == VoiceIntent.LEFT
     assert parser.parse("  BAAYE CHALO  ").intent == VoiceIntent.LEFT
     assert parser.parse("  Baaya Chalo  ").intent == VoiceIntent.LEFT
     assert parser.parse("  बायें चलो  ").intent == VoiceIntent.LEFT
@@ -222,10 +226,13 @@ def test_left_case_and_whitespace(parser: VoiceCommandParser):
     "turn right",
     "go right",
     "move right",
+    "right chlo",
+    "right chalo",
     "daaye chalo",
     "daaya chalo",
     "दायें चलो",
     "दायाँ चलो",
+    "दाएं चलो",
 ])
 def test_right_phrases_recognized(parser: VoiceCommandParser, phrase: str):
     result = parser.parse(phrase)
@@ -236,7 +243,7 @@ def test_right_phrases_recognized(parser: VoiceCommandParser, phrase: str):
 
 
 def test_right_hindi_aliases(parser: VoiceCommandParser):
-    for phrase in ["daaye chalo", "daaya chalo", "दायें चलो", "दायाँ चलो"]:
+    for phrase in ["right chlo", "right chalo", "daaye chalo", "daaya chalo", "दायें चलो", "दायाँ चलो", "दाएं चलो"]:
         result = parser.parse(phrase)
         assert result.intent == VoiceIntent.RIGHT
         assert result.input_command is not None
@@ -244,13 +251,16 @@ def test_right_hindi_aliases(parser: VoiceCommandParser):
 
 
 def test_right_case_and_whitespace(parser: VoiceCommandParser):
+    assert parser.parse("  RIGHT CHLO  ").intent == VoiceIntent.RIGHT
+    assert parser.parse("  RIGHT CHALO  ").intent == VoiceIntent.RIGHT
     assert parser.parse("  DAAYE CHALO  ").intent == VoiceIntent.RIGHT
     assert parser.parse("  Daaya Chalo  ").intent == VoiceIntent.RIGHT
     assert parser.parse("  दायें चलो  ").intent == VoiceIntent.RIGHT
+    assert parser.parse("  दाएं चलो  ").intent == VoiceIntent.RIGHT
 
 
 # ---------------------------------------------------------------------------
-# UNKNOWN intent & [unk] handling (and removed old aliases)
+# UNKNOWN intent & [unk] handling (and misrecognition safety rejection)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
@@ -262,11 +272,20 @@ def test_right_case_and_whitespace(parser: VoiceCommandParser):
     "[unk]",
     "jump",
     "dance",
-    "left chalo",   # replaced with baaye chalo / baaya chalo
-    "right chalo",  # replaced with daaye chalo / daaya chalo
+    "बाईस चलो",     # Vosk misrecognition for "baaye chalo" — must NOT map to LEFT
 ])
 def test_unknown_phrases_rejected(parser: VoiceCommandParser, phrase: str):
     result = parser.parse(phrase)
+    assert result.intent == VoiceIntent.UNKNOWN
+    assert result.input_command is None
+
+
+def test_bais_chalo_misrecognition_is_safely_rejected(parser: VoiceCommandParser):
+    """
+    Vosk misrecognized 'baaye chalo' as 'बाईस चलो'.
+    Safety rule: this must remain UNKNOWN and never trigger movement.
+    """
+    result = parser.parse("बाईस चलो")
     assert result.intent == VoiceIntent.UNKNOWN
     assert result.input_command is None
 
@@ -297,14 +316,19 @@ def test_unknown_does_not_raise(parser: VoiceCommandParser):
     "पीछे चलो",
     "left",
     "turn left",
+    "left chlo",
+    "left chalo",
     "baaye chalo",
     "baaya chalo",
     "बायें चलो",
     "right",
     "turn right",
+    "right chlo",
+    "right chalo",
     "daaye chalo",
     "daaya chalo",
     "दायें चलो",
+    "दाएं चलो",
     "stop",
     "ruko",
     "rukko",

@@ -623,12 +623,17 @@ class TestRealVoiceSessionIntegration:
         ("पीछे चलो", VoiceIntent.REVERSE, "REVERSE"),
         ("baaye chalo", VoiceIntent.LEFT, "LEFT"),
         ("baaya chalo", VoiceIntent.LEFT, "LEFT"),
+        ("left chlo", VoiceIntent.LEFT, "LEFT"),
+        ("left chalo", VoiceIntent.LEFT, "LEFT"),
         ("बायें चलो", VoiceIntent.LEFT, "LEFT"),
         ("बायाँ चलो", VoiceIntent.LEFT, "LEFT"),
         ("daaye chalo", VoiceIntent.RIGHT, "RIGHT"),
         ("daaya chalo", VoiceIntent.RIGHT, "RIGHT"),
+        ("right chlo", VoiceIntent.RIGHT, "RIGHT"),
+        ("right chalo", VoiceIntent.RIGHT, "RIGHT"),
         ("दायें चलो", VoiceIntent.RIGHT, "RIGHT"),
         ("दायाँ चलो", VoiceIntent.RIGHT, "RIGHT"),
+        ("दाएं चलो", VoiceIntent.RIGHT, "RIGHT"),
     ])
     def test_real_voice_hindi_commands_integration(
         self, hindi_phrase: str, expected_intent: VoiceIntent, expected_cmd: str | None

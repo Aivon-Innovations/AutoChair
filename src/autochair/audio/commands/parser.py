@@ -165,6 +165,8 @@ COMMAND_ALIASES: dict[str, tuple[VoiceIntent, str | None]] = {
     "turn left": (VoiceIntent.LEFT, "LEFT"),
     "go left": (VoiceIntent.LEFT, "LEFT"),
     "move left": (VoiceIntent.LEFT, "LEFT"),
+    "left chlo": (VoiceIntent.LEFT, "LEFT"),
+    "left chalo": (VoiceIntent.LEFT, "LEFT"),
     "baaye chalo": (VoiceIntent.LEFT, "LEFT"),
     "baaya chalo": (VoiceIntent.LEFT, "LEFT"),
     "बायें चलो": (VoiceIntent.LEFT, "LEFT"),
@@ -177,10 +179,13 @@ COMMAND_ALIASES: dict[str, tuple[VoiceIntent, str | None]] = {
     "turn right": (VoiceIntent.RIGHT, "RIGHT"),
     "go right": (VoiceIntent.RIGHT, "RIGHT"),
     "move right": (VoiceIntent.RIGHT, "RIGHT"),
+    "right chlo": (VoiceIntent.RIGHT, "RIGHT"),
+    "right chalo": (VoiceIntent.RIGHT, "RIGHT"),
     "daaye chalo": (VoiceIntent.RIGHT, "RIGHT"),
     "daaya chalo": (VoiceIntent.RIGHT, "RIGHT"),
     "दायें चलो": (VoiceIntent.RIGHT, "RIGHT"),
     "दायाँ चलो": (VoiceIntent.RIGHT, "RIGHT"),
+    "दाएं चलो": (VoiceIntent.RIGHT, "RIGHT"),
 }
 
 
