@@ -338,3 +338,225 @@ def test_last_parse_result_updated_after_process():
     manager.process(clear_snapshot())
     assert manager.last_parse_result is not None
     assert manager.last_parse_result.intent == VoiceIntent.STOP
+
+
+# ---------------------------------------------------------------------------
+# RealVoiceSession integration tests
+# ---------------------------------------------------------------------------
+
+from unittest.mock import MagicMock
+from autochair.audio.voice_session import RealVoiceSession
+
+
+def make_real_voice_manager(
+    recognized_text: str = "",
+) -> tuple[AudioManager, MagicMock, SimulatedTTSEngine, SimulatedAlertManager]:
+    """Build an AudioManager configured with a mocked RealVoiceSession."""
+    mock_session = MagicMock(spec=RealVoiceSession)
+    mock_session.start.return_value = recognized_text
+
+    tts = SimulatedTTSEngine()
+    alerts = SimulatedAlertManager()
+    manager = AudioManager(
+        voice_session=mock_session,
+        tts=tts,
+        alerts=alerts,
+    )
+    return manager, mock_session, tts, alerts
+
+
+class TestRealVoiceSessionIntegration:
+    def test_real_voice_mode_flag_set(self):
+        manager, mock_session, _, _ = make_real_voice_manager()
+        assert manager.is_real_voice_mode is True
+        assert manager.voice_session is mock_session
+
+    def test_simulated_mode_flag_false(self):
+        manager, _, _, _ = make_manager()
+        assert manager.is_real_voice_mode is False
+        assert manager.voice_session is None
+
+    def test_real_voice_start_intent_no_motion_command(self):
+        """
+        Scenario A: Real voice session returns 'start'.
+        START intent is recognized, confirmation alert raised, but NO MotionCommand produced.
+        """
+        manager, mock_session, tts, alerts = make_real_voice_manager(recognized_text="start")
+        manager.start_listening()
+        result = manager.process(clear_snapshot())
+
+        mock_session.start.assert_called_once()
+        assert result.intent == VoiceIntent.START
+        assert result.input_command is None
+        assert manager.state == AudioState.IDLE
+        assert "starting" in tts.last_spoken().lower()
+
+        confirmed = [a for a in alerts.alert_history() if a.alert_type == AlertType.COMMAND_CONFIRMED]
+        assert len(confirmed) >= 1
+
+    def test_real_voice_stop_command_passes_safety_pipeline(self):
+        """
+        Scenario B: Real voice session returns 'stop'.
+        STOP InputCommand is produced, validated, mapped, and safety evaluated.
+        """
+        manager, mock_session, tts, alerts = make_real_voice_manager(recognized_text="stop")
+        manager.start_listening()
+        result = manager.process(clear_snapshot())
+
+        mock_session.start.assert_called_once()
+        assert result.intent == VoiceIntent.STOP
+        assert result.input_command is not None
+        assert result.input_command.command == "STOP"
+        assert result.input_command.source == InputSource.VOICE
+        assert manager.state == AudioState.IDLE
+        assert "stop" in tts.last_spoken().lower()
+
+        confirmed = [a for a in alerts.alert_history() if a.alert_type == AlertType.COMMAND_CONFIRMED]
+        assert len(confirmed) >= 1
+
+    def test_real_voice_move_forward_command_passes_validation_and_safety(self):
+        """
+        Scenario C: Real voice session returns 'move forward'.
+        FORWARD InputCommand is produced, passes InputCommandValidator, CommandMapper, and SafetyManager.
+        """
+        manager, mock_session, tts, alerts = make_real_voice_manager(recognized_text="move forward")
+        manager.start_listening()
+        result = manager.process(clear_snapshot())
+
+        mock_session.start.assert_called_once()
+        assert result.intent == VoiceIntent.MOVE_FORWARD
+        assert result.input_command is not None
+        assert result.input_command.command == "FORWARD"
+        assert result.input_command.source == InputSource.VOICE
+        assert manager.state == AudioState.IDLE
+        assert "forward" in tts.last_spoken().lower()
+
+        confirmed = [a for a in alerts.alert_history() if a.alert_type == AlertType.COMMAND_CONFIRMED]
+        assert len(confirmed) >= 1
+
+    def test_real_voice_empty_recognition_produces_no_motion(self):
+        """
+        Scenario D: Real voice session returns '' (silence/timeout).
+        Produces UNKNOWN intent, raises COMMAND_REJECTED alert, no motion.
+        """
+        manager, mock_session, tts, alerts = make_real_voice_manager(recognized_text="")
+        manager.start_listening()
+        result = manager.process(clear_snapshot())
+
+        mock_session.start.assert_called_once()
+        assert result.intent == VoiceIntent.UNKNOWN
+        assert result.input_command is None
+        assert manager.state == AudioState.IDLE
+        assert "not recognized" in tts.last_spoken().lower()
+
+        rejected = [a for a in alerts.alert_history() if a.alert_type == AlertType.COMMAND_REJECTED]
+        assert len(rejected) >= 1
+
+    def test_real_voice_unknown_text_produces_no_motion(self):
+        """
+        Scenario E: Real voice session returns unknown text (e.g. '[unk]' or unmapped phrase).
+        Produces UNKNOWN intent, no InputCommand, no motion.
+        """
+        manager, mock_session, tts, alerts = make_real_voice_manager(recognized_text="banana split")
+        manager.start_listening()
+        result = manager.process(clear_snapshot())
+
+        mock_session.start.assert_called_once()
+        assert result.intent == VoiceIntent.UNKNOWN
+        assert result.input_command is None
+        assert manager.state == AudioState.IDLE
+
+        rejected = [a for a in alerts.alert_history() if a.alert_type == AlertType.COMMAND_REJECTED]
+        assert len(rejected) >= 1
+
+    def test_real_voice_obstacle_in_front_suppressed_by_safety(self):
+        """
+        Verify safety layer suppresses motion when an obstacle requires stop:
+        'move forward' recognized → InputCommand FORWARD → SafetyManager requires stop → motion suppressed.
+        """
+        from autochair.safety.state import SafetyState, SafetyStatus
+
+        mock_session = MagicMock(spec=RealVoiceSession)
+        mock_session.start.return_value = "move forward"
+
+        safety_manager = MagicMock(spec=SafetyManager)
+        stop_status = SafetyStatus()
+        stop_status.set_state(SafetyState.STOP_REQUIRED)
+        safety_manager.evaluate.return_value = stop_status
+
+        tts = SimulatedTTSEngine()
+        alerts = SimulatedAlertManager()
+
+        manager = AudioManager(
+            voice_session=mock_session,
+            tts=tts,
+            alerts=alerts,
+            safety=safety_manager,
+        )
+
+        manager.start_listening()
+        result = manager.process(obstacle_snapshot())
+
+        # 1. Voice input parsed to FORWARD InputCommand
+        assert result.intent == VoiceIntent.MOVE_FORWARD
+        assert result.input_command is not None
+        assert result.input_command.command == "FORWARD"
+
+        # 2. Safety layer was evaluated
+        safety_manager.evaluate.assert_called_once()
+
+        # 3. Motion was suppressed: OBSTACLE alert raised, COMMAND_CONFIRMED was NOT raised
+        confirmed_alerts = [
+            a for a in alerts.alert_history() if a.alert_type == AlertType.COMMAND_CONFIRMED
+        ]
+        assert len(confirmed_alerts) == 0
+
+        obstacle_alerts = [
+            a for a in alerts.alert_history() if a.alert_type == AlertType.OBSTACLE
+        ]
+        assert len(obstacle_alerts) == 1
+        assert "Safety layer requires stop" in obstacle_alerts[0].message
+
+        # 4. TTS announces obstacle stopping, state returns to IDLE
+        assert "obstacle" in tts.last_spoken().lower()
+        assert manager.state == AudioState.IDLE
+
+    def test_real_voice_session_exception_returns_to_idle_safely(self):
+        """
+        Verify exception safety: when RealVoiceSession.start() raises,
+        AudioManager does not remain stuck in PROCESSING, returns to IDLE,
+        raises a COMMAND_REJECTED alert, and delivers error TTS feedback.
+        """
+        mock_session = MagicMock(spec=RealVoiceSession)
+        mock_session.start.side_effect = RuntimeError("ALSA device overrun / hardware disconnect")
+
+        tts = SimulatedTTSEngine()
+        alerts = SimulatedAlertManager()
+
+        manager = AudioManager(
+            voice_session=mock_session,
+            tts=tts,
+            alerts=alerts,
+        )
+
+        manager.start_listening()
+        assert manager.state == AudioState.LISTENING
+
+        result = manager.process(clear_snapshot())
+
+        # 1. AudioManager must not remain in PROCESSING; must be back in IDLE
+        assert manager.state == AudioState.IDLE
+
+        # 2. Result is safe fallback UNKNOWN intent with no InputCommand
+        assert result.intent == VoiceIntent.UNKNOWN
+        assert result.input_command is None
+
+        # 3. Rejection alert is logged and raised
+        rejected_alerts = [
+            a for a in alerts.alert_history() if a.alert_type == AlertType.COMMAND_REJECTED
+        ]
+        assert len(rejected_alerts) >= 1
+        assert "Audio processing error" in rejected_alerts[-1].message
+
+        # 4. TTS announces rejection feedback
+        assert "not recognized" in tts.last_spoken().lower()

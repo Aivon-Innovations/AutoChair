@@ -31,12 +31,24 @@ All sub-modules use simulated implementations. No real microphone,
 speaker, TTS engine, or buzzer hardware is accessed.
 """
 
-from autochair.audio.alerts.manager import AlertEvent, AlertManager, AlertType
+from autochair.audio.alerts.manager import (
+    AlertEvent,
+    AlertManager,
+    AlertType,
+    SimulatedAlertManager,
+)
 from autochair.audio.commands.parser import ParseResult, VoiceCommandParser, VoiceIntent
-from autochair.audio.devices.microphone import MicrophoneManager
-from autochair.audio.speech.recognizer import SpeechRecognizer
+from autochair.audio.devices.microphone import (
+    MicrophoneManager,
+    SimulatedMicrophoneManager,
+)
+from autochair.audio.speech.recognizer import (
+    SimulatedSpeechRecognizer,
+    SpeechRecognizer,
+)
 from autochair.audio.state import AudioState
-from autochair.audio.tts.engine import TTSEngine
+from autochair.audio.tts.engine import SimulatedTTSEngine, TTSEngine
+from autochair.audio.voice_session import RealVoiceSession
 from autochair.core.command_mapper import CommandMapper
 from autochair.input.validator import InputCommandValidator
 from autochair.safety.manager import SafetyManager
@@ -52,8 +64,9 @@ class AudioManager:
     Central coordinator for the AutoChair audio/voice subsystem.
 
     Accepts concrete implementations of all sub-module interfaces so
-    that the simulated versions can be used in tests and real hardware
-    drivers can be injected later without changing this class.
+    that simulated versions can be used in tests and real hardware
+    drivers / RealVoiceSession can be injected when operating with real
+    I2S microphone hardware on Raspberry Pi.
 
     The AudioManager always passes voice-generated InputCommands through
     the existing input validation, command mapping, and safety layers.
@@ -62,39 +75,43 @@ class AudioManager:
 
     def __init__(
         self,
-        microphone: MicrophoneManager,
-        recognizer: SpeechRecognizer,
-        tts: TTSEngine,
-        alerts: AlertManager,
+        microphone: MicrophoneManager | None = None,
+        recognizer: SpeechRecognizer | None = None,
+        tts: TTSEngine | None = None,
+        alerts: AlertManager | None = None,
         parser: VoiceCommandParser | None = None,
         validator: InputCommandValidator | None = None,
         mapper: CommandMapper | None = None,
         safety: SafetyManager | None = None,
+        voice_session: RealVoiceSession | None = None,
     ) -> None:
         """
         Args:
-            microphone: Microphone capture implementation.
-            recognizer: Speech recognition implementation.
-            tts:        Text-to-speech output implementation.
-            alerts:     Alert routing implementation.
-            parser:     VoiceCommandParser instance (created if not provided).
-            validator:  InputCommandValidator (created if not provided).
-            mapper:     CommandMapper (created if not provided).
-            safety:     SafetyManager (created if not provided).
+            microphone:    Microphone capture implementation (used in simulated mode).
+            recognizer:    Speech recognition implementation (used in simulated mode).
+            tts:           Text-to-speech output implementation.
+            alerts:        Alert routing implementation.
+            parser:        VoiceCommandParser instance (created if not provided).
+            validator:     InputCommandValidator (created if not provided).
+            mapper:        CommandMapper (created if not provided).
+            safety:        SafetyManager (created if not provided).
+            voice_session: Optional RealVoiceSession instance for real microphone streaming.
         """
-        self._microphone = microphone
-        self._recognizer = recognizer
-        self._tts = tts
-        self._alerts = alerts
+        self._microphone = microphone or SimulatedMicrophoneManager()
+        self._recognizer = recognizer or SimulatedSpeechRecognizer()
+        self._tts = tts or SimulatedTTSEngine()
+        self._alerts = alerts or SimulatedAlertManager()
         self._parser = parser or VoiceCommandParser()
         self._validator = validator or InputCommandValidator()
         self._mapper = mapper or CommandMapper()
         self._safety = safety or SafetyManager()
+        self._voice_session = voice_session
 
         self._state: AudioState = AudioState.IDLE
         self._last_parse_result: ParseResult | None = None
 
-        logger.info("AUDIO_READY — AudioManager initialised (SIMULATED)")
+        mode_str = "REAL_HARDWARE" if voice_session is not None else "SIMULATED"
+        logger.info(f"AUDIO_READY — AudioManager initialised ({mode_str})")
 
     # ------------------------------------------------------------------
     # State access
@@ -104,6 +121,16 @@ class AudioManager:
     def state(self) -> AudioState:
         """Current lifecycle state of the audio subsystem."""
         return self._state
+
+    @property
+    def is_real_voice_mode(self) -> bool:
+        """Return True if configured with a RealVoiceSession."""
+        return self._voice_session is not None
+
+    @property
+    def voice_session(self) -> RealVoiceSession | None:
+        """Return the configured RealVoiceSession instance, if any."""
+        return self._voice_session
 
     def _set_state(self, new_state: AudioState) -> None:
         logger.info(f"[STATE] {self._state.value} → {new_state.value}")
@@ -115,7 +142,7 @@ class AudioManager:
 
     def start_listening(self) -> None:
         """
-        Transition from IDLE to LISTENING and activate the microphone.
+        Transition from IDLE to LISTENING and activate the microphone (if simulated).
 
         Raises:
             RuntimeError: If called when not in IDLE state.
@@ -125,7 +152,8 @@ class AudioManager:
                 f"start_listening() called in unexpected state: {self._state.value}. "
                 f"Expected IDLE."
             )
-        self._microphone.start_listening()
+        if self._voice_session is None:
+            self._microphone.start_listening()
         self._set_state(AudioState.LISTENING)
 
     def process(self, sensor_snapshot: SensorSnapshot | None = None) -> ParseResult:
@@ -134,6 +162,10 @@ class AudioManager:
 
         This method drives the full single-utterance cycle:
           LISTENING → PROCESSING → COMMAND_RECOGNIZED / ERROR → SPEAKING → IDLE
+
+        In real voice mode (voice_session configured), audio capture,
+        preprocessing, and streaming recognition are handled by RealVoiceSession.
+        In simulated mode, MicrophoneManager and SpeechRecognizer are used.
 
         Args:
             sensor_snapshot: Current sensor state for safety evaluation.
@@ -150,12 +182,38 @@ class AudioManager:
                 f"Expected LISTENING."
             )
 
-        # --- Capture ---
-        audio_data = self._microphone.capture_audio()
         self._set_state(AudioState.PROCESSING)
 
-        # --- Recognize ---
-        recognized_text = self._recognizer.recognize(audio_data)
+        # --- Capture & Recognize ---
+        try:
+            if self._voice_session is not None:
+                recognized_text = self._voice_session.start()
+            else:
+                audio_data = self._microphone.capture_audio()
+                recognized_text = self._recognizer.recognize(audio_data)
+        except Exception as exc:
+            logger.error(f"AUDIO_PROCESSING_ERROR: {exc}")
+            self._alerts.raise_alert(AlertEvent(
+                alert_type=AlertType.COMMAND_REJECTED,
+                message=f"Audio processing error: {exc}",
+            ))
+            self._set_state(AudioState.ERROR)
+            self._speak_and_return_idle("Command not recognized.")
+            if self._microphone.is_listening():
+                try:
+                    self._microphone.stop_listening()
+                except Exception as mic_exc:
+                    logger.warning(f"Failed to stop microphone during error cleanup: {mic_exc}")
+            result = self._parser.parse("")
+            self._last_parse_result = result
+            return result
+        finally:
+            if self._microphone.is_listening():
+                try:
+                    self._microphone.stop_listening()
+                except Exception as mic_exc:
+                    logger.warning(f"Failed to stop microphone: {mic_exc}")
+
         logger.info(f"SPEECH_RECEIVED: '{recognized_text}'")
 
         # --- Parse ---
@@ -172,8 +230,6 @@ class AudioManager:
         else:
             self._handle_unknown_intent(result)
 
-        # --- Stop microphone ---
-        self._microphone.stop_listening()
         return result
 
     def _handle_motion_intent(
