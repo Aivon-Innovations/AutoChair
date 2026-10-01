@@ -76,8 +76,10 @@ class TestAudioConfigDefaults:
         assert "peeche chalo" in grammar
         assert "piche jao" in grammar
         assert "peeche jao" in grammar
-        assert "left chalo" in grammar
-        assert "right chalo" in grammar
+        assert "baaye chalo" in grammar
+        assert "baaya chalo" in grammar
+        assert "daaye chalo" in grammar
+        assert "daaya chalo" in grammar
 
     def test_default_grammar_contains_unk(self):
         """[unk] must always be present so unknown speech is labelled."""

@@ -31,12 +31,13 @@ def parser() -> VoiceCommandParser:
 
 
 # ---------------------------------------------------------------------------
-# START intent (English + Hindi/Hinglish)
+# START intent (English + Hindi/Hinglish + Devanagari)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
     "start",
     "chalo",
+    "चलो",
     "begin",
     "activate",
     "start the chair",
@@ -48,25 +49,28 @@ def test_start_phrases_recognized(parser: VoiceCommandParser, phrase: str):
     assert result.input_command is None  # System intent, no motion command
 
 
-def test_start_hindi_alias_chalo(parser: VoiceCommandParser):
-    result = parser.parse("chalo")
-    assert result.intent == VoiceIntent.START
-    assert result.input_command is None
+def test_start_hindi_aliases(parser: VoiceCommandParser):
+    for phrase in ["chalo", "चलो"]:
+        result = parser.parse(phrase)
+        assert result.intent == VoiceIntent.START
+        assert result.input_command is None
 
 
 def test_start_case_and_whitespace(parser: VoiceCommandParser):
     assert parser.parse("  CHALO  ").intent == VoiceIntent.START
     assert parser.parse("  START  ").intent == VoiceIntent.START
+    assert parser.parse("  चलो  ").intent == VoiceIntent.START
 
 
 # ---------------------------------------------------------------------------
-# STOP intent (English + Hindi/Hinglish)
+# STOP intent (English + Hindi/Hinglish + Devanagari)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
     "stop",
     "ruko",
     "rukko",
+    "रुको",
     "halt",
     "brake",
     "please stop",
@@ -82,7 +86,7 @@ def test_stop_phrases_recognized(parser: VoiceCommandParser, phrase: str):
 
 
 def test_stop_hindi_aliases(parser: VoiceCommandParser):
-    for phrase in ["ruko", "rukko"]:
+    for phrase in ["ruko", "rukko", "रुको"]:
         result = parser.parse(phrase)
         assert result.intent == VoiceIntent.STOP
         assert result.input_command is not None
@@ -92,10 +96,11 @@ def test_stop_hindi_aliases(parser: VoiceCommandParser):
 def test_stop_case_and_whitespace(parser: VoiceCommandParser):
     assert parser.parse("  RUKO  ").intent == VoiceIntent.STOP
     assert parser.parse("  Rukko  ").intent == VoiceIntent.STOP
+    assert parser.parse("  रुको  ").intent == VoiceIntent.STOP
 
 
 # ---------------------------------------------------------------------------
-# FORWARD intent (English + Hindi/Hinglish)
+# FORWARD intent (English + Hindi/Hinglish + Devanagari)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
@@ -103,6 +108,9 @@ def test_stop_case_and_whitespace(parser: VoiceCommandParser):
     "move forward",
     "aage chalo",
     "aage jao",
+    "आगे चल",
+    "आगे चलो",
+    "आगे जाओ",
     "go forward",
     "go ahead",
     "move ahead",
@@ -117,7 +125,7 @@ def test_forward_phrases_recognized(parser: VoiceCommandParser, phrase: str):
 
 
 def test_forward_hindi_aliases(parser: VoiceCommandParser):
-    for phrase in ["aage chalo", "aage jao"]:
+    for phrase in ["aage chalo", "aage jao", "आगे चल", "आगे चलो", "आगे जाओ"]:
         result = parser.parse(phrase)
         assert result.intent == VoiceIntent.MOVE_FORWARD
         assert result.input_command is not None
@@ -127,10 +135,11 @@ def test_forward_hindi_aliases(parser: VoiceCommandParser):
 def test_forward_case_and_whitespace(parser: VoiceCommandParser):
     assert parser.parse("  AAGE CHALO  ").intent == VoiceIntent.MOVE_FORWARD
     assert parser.parse("  Aage Jao  ").intent == VoiceIntent.MOVE_FORWARD
+    assert parser.parse("  आगे चल  ").intent == VoiceIntent.MOVE_FORWARD
 
 
 # ---------------------------------------------------------------------------
-# REVERSE intent (English + Hindi/Hinglish)
+# REVERSE intent (English + Hindi/Hinglish + Devanagari)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
@@ -141,6 +150,8 @@ def test_forward_case_and_whitespace(parser: VoiceCommandParser):
     "peeche chalo",
     "piche jao",
     "peeche jao",
+    "पीछे चलो",
+    "पीछे जाओ",
     "go backward",
     "move reverse",
 ])
@@ -153,7 +164,7 @@ def test_reverse_phrases_recognized(parser: VoiceCommandParser, phrase: str):
 
 
 def test_reverse_hindi_aliases(parser: VoiceCommandParser):
-    for phrase in ["piche chalo", "peeche chalo", "piche jao", "peeche jao"]:
+    for phrase in ["piche chalo", "peeche chalo", "piche jao", "peeche jao", "पीछे चलो", "पीछे जाओ"]:
         result = parser.parse(phrase)
         assert result.intent == VoiceIntent.REVERSE
         assert result.input_command is not None
@@ -163,18 +174,22 @@ def test_reverse_hindi_aliases(parser: VoiceCommandParser):
 def test_reverse_case_and_whitespace(parser: VoiceCommandParser):
     assert parser.parse("  PEECHE CHALO  ").intent == VoiceIntent.REVERSE
     assert parser.parse("  Piche Jao  ").intent == VoiceIntent.REVERSE
+    assert parser.parse("  पीछे चलो  ").intent == VoiceIntent.REVERSE
 
 
 # ---------------------------------------------------------------------------
-# LEFT intent (English + Hindi/Hinglish)
+# LEFT intent (English + Hindi/Hinglish + Devanagari)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
     "left",
     "turn left",
-    "left chalo",
     "go left",
     "move left",
+    "baaye chalo",
+    "baaya chalo",
+    "बायें चलो",
+    "बायाँ चलो",
 ])
 def test_left_phrases_recognized(parser: VoiceCommandParser, phrase: str):
     result = parser.parse(phrase)
@@ -184,27 +199,33 @@ def test_left_phrases_recognized(parser: VoiceCommandParser, phrase: str):
     assert result.input_command.source == InputSource.VOICE
 
 
-def test_left_hindi_alias(parser: VoiceCommandParser):
-    result = parser.parse("left chalo")
-    assert result.intent == VoiceIntent.LEFT
-    assert result.input_command is not None
-    assert result.input_command.command == "LEFT"
+def test_left_hindi_aliases(parser: VoiceCommandParser):
+    for phrase in ["baaye chalo", "baaya chalo", "बायें चलो", "बायाँ चलो"]:
+        result = parser.parse(phrase)
+        assert result.intent == VoiceIntent.LEFT
+        assert result.input_command is not None
+        assert result.input_command.command == "LEFT"
 
 
 def test_left_case_and_whitespace(parser: VoiceCommandParser):
-    assert parser.parse("  LEFT CHALO  ").intent == VoiceIntent.LEFT
+    assert parser.parse("  BAAYE CHALO  ").intent == VoiceIntent.LEFT
+    assert parser.parse("  Baaya Chalo  ").intent == VoiceIntent.LEFT
+    assert parser.parse("  बायें चलो  ").intent == VoiceIntent.LEFT
 
 
 # ---------------------------------------------------------------------------
-# RIGHT intent (English + Hindi/Hinglish)
+# RIGHT intent (English + Hindi/Hinglish + Devanagari)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
     "right",
     "turn right",
-    "right chalo",
     "go right",
     "move right",
+    "daaye chalo",
+    "daaya chalo",
+    "दायें चलो",
+    "दायाँ चलो",
 ])
 def test_right_phrases_recognized(parser: VoiceCommandParser, phrase: str):
     result = parser.parse(phrase)
@@ -214,19 +235,22 @@ def test_right_phrases_recognized(parser: VoiceCommandParser, phrase: str):
     assert result.input_command.source == InputSource.VOICE
 
 
-def test_right_hindi_alias(parser: VoiceCommandParser):
-    result = parser.parse("right chalo")
-    assert result.intent == VoiceIntent.RIGHT
-    assert result.input_command is not None
-    assert result.input_command.command == "RIGHT"
+def test_right_hindi_aliases(parser: VoiceCommandParser):
+    for phrase in ["daaye chalo", "daaya chalo", "दायें चलो", "दायाँ चलो"]:
+        result = parser.parse(phrase)
+        assert result.intent == VoiceIntent.RIGHT
+        assert result.input_command is not None
+        assert result.input_command.command == "RIGHT"
 
 
 def test_right_case_and_whitespace(parser: VoiceCommandParser):
-    assert parser.parse("  RIGHT CHALO  ").intent == VoiceIntent.RIGHT
+    assert parser.parse("  DAAYE CHALO  ").intent == VoiceIntent.RIGHT
+    assert parser.parse("  Daaya Chalo  ").intent == VoiceIntent.RIGHT
+    assert parser.parse("  दायें चलो  ").intent == VoiceIntent.RIGHT
 
 
 # ---------------------------------------------------------------------------
-# UNKNOWN intent & [unk] handling
+# UNKNOWN intent & [unk] handling (and removed old aliases)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
@@ -238,6 +262,8 @@ def test_right_case_and_whitespace(parser: VoiceCommandParser):
     "[unk]",
     "jump",
     "dance",
+    "left chalo",   # replaced with baaye chalo / baaya chalo
+    "right chalo",  # replaced with daaye chalo / daaya chalo
 ])
 def test_unknown_phrases_rejected(parser: VoiceCommandParser, phrase: str):
     result = parser.parse(phrase)
@@ -259,6 +285,8 @@ def test_unknown_does_not_raise(parser: VoiceCommandParser):
     "move forward",
     "aage chalo",
     "aage jao",
+    "आगे चल",
+    "आगे चलो",
     "backward",
     "move backward",
     "reverse",
@@ -266,15 +294,21 @@ def test_unknown_does_not_raise(parser: VoiceCommandParser):
     "peeche chalo",
     "piche jao",
     "peeche jao",
+    "पीछे चलो",
     "left",
     "turn left",
-    "left chalo",
+    "baaye chalo",
+    "baaya chalo",
+    "बायें चलो",
     "right",
     "turn right",
-    "right chalo",
+    "daaye chalo",
+    "daaya chalo",
+    "दायें चलो",
     "stop",
     "ruko",
     "rukko",
+    "रुको",
 ])
 def test_all_motion_commands_pass_validator(parser: VoiceCommandParser, phrase: str):
     validator = InputCommandValidator()

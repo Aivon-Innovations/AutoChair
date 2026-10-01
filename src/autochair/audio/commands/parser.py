@@ -109,6 +109,7 @@ COMMAND_ALIASES: dict[str, tuple[VoiceIntent, str | None]] = {
     # ------------------------------------------------------------------ #
     "start": (VoiceIntent.START, None),
     "chalo": (VoiceIntent.START, None),
+    "चलो": (VoiceIntent.START, None),
     "begin": (VoiceIntent.START, None),
     "activate": (VoiceIntent.START, None),
     "start the chair": (VoiceIntent.START, None),
@@ -120,6 +121,7 @@ COMMAND_ALIASES: dict[str, tuple[VoiceIntent, str | None]] = {
     "stop": (VoiceIntent.STOP, "STOP"),
     "ruko": (VoiceIntent.STOP, "STOP"),
     "rukko": (VoiceIntent.STOP, "STOP"),
+    "रुको": (VoiceIntent.STOP, "STOP"),
     "halt": (VoiceIntent.STOP, "STOP"),
     "brake": (VoiceIntent.STOP, "STOP"),
     "please stop": (VoiceIntent.STOP, "STOP"),
@@ -133,6 +135,9 @@ COMMAND_ALIASES: dict[str, tuple[VoiceIntent, str | None]] = {
     "move forward": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
     "aage chalo": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
     "aage jao": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
+    "आगे चल": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
+    "आगे चलो": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
+    "आगे जाओ": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
     "go forward": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
     "go ahead": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
     "move ahead": (VoiceIntent.MOVE_FORWARD, "FORWARD"),
@@ -148,6 +153,8 @@ COMMAND_ALIASES: dict[str, tuple[VoiceIntent, str | None]] = {
     "peeche chalo": (VoiceIntent.REVERSE, "REVERSE"),
     "piche jao": (VoiceIntent.REVERSE, "REVERSE"),
     "peeche jao": (VoiceIntent.REVERSE, "REVERSE"),
+    "पीछे चलो": (VoiceIntent.REVERSE, "REVERSE"),
+    "पीछे जाओ": (VoiceIntent.REVERSE, "REVERSE"),
     "go backward": (VoiceIntent.REVERSE, "REVERSE"),
     "move reverse": (VoiceIntent.REVERSE, "REVERSE"),
 
@@ -156,18 +163,24 @@ COMMAND_ALIASES: dict[str, tuple[VoiceIntent, str | None]] = {
     # ------------------------------------------------------------------ #
     "left": (VoiceIntent.LEFT, "LEFT"),
     "turn left": (VoiceIntent.LEFT, "LEFT"),
-    "left chalo": (VoiceIntent.LEFT, "LEFT"),
     "go left": (VoiceIntent.LEFT, "LEFT"),
     "move left": (VoiceIntent.LEFT, "LEFT"),
+    "baaye chalo": (VoiceIntent.LEFT, "LEFT"),
+    "baaya chalo": (VoiceIntent.LEFT, "LEFT"),
+    "बायें चलो": (VoiceIntent.LEFT, "LEFT"),
+    "बायाँ चलो": (VoiceIntent.LEFT, "LEFT"),
 
     # ------------------------------------------------------------------ #
     # RIGHT (maps to InputCommand(command="RIGHT"))                       #
     # ------------------------------------------------------------------ #
     "right": (VoiceIntent.RIGHT, "RIGHT"),
     "turn right": (VoiceIntent.RIGHT, "RIGHT"),
-    "right chalo": (VoiceIntent.RIGHT, "RIGHT"),
     "go right": (VoiceIntent.RIGHT, "RIGHT"),
     "move right": (VoiceIntent.RIGHT, "RIGHT"),
+    "daaye chalo": (VoiceIntent.RIGHT, "RIGHT"),
+    "daaya chalo": (VoiceIntent.RIGHT, "RIGHT"),
+    "दायें चलो": (VoiceIntent.RIGHT, "RIGHT"),
+    "दायाँ चलो": (VoiceIntent.RIGHT, "RIGHT"),
 }
 
 

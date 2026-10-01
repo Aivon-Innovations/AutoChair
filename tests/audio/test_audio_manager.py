@@ -608,16 +608,27 @@ class TestRealVoiceSessionIntegration:
 
     @pytest.mark.parametrize("hindi_phrase,expected_intent,expected_cmd", [
         ("chalo", VoiceIntent.START, None),
+        ("चलो", VoiceIntent.START, None),
         ("ruko", VoiceIntent.STOP, "STOP"),
         ("rukko", VoiceIntent.STOP, "STOP"),
+        ("रुको", VoiceIntent.STOP, "STOP"),
         ("aage chalo", VoiceIntent.MOVE_FORWARD, "FORWARD"),
         ("aage jao", VoiceIntent.MOVE_FORWARD, "FORWARD"),
+        ("आगे चल", VoiceIntent.MOVE_FORWARD, "FORWARD"),
+        ("आगे चलो", VoiceIntent.MOVE_FORWARD, "FORWARD"),
         ("piche chalo", VoiceIntent.REVERSE, "REVERSE"),
         ("peeche chalo", VoiceIntent.REVERSE, "REVERSE"),
         ("piche jao", VoiceIntent.REVERSE, "REVERSE"),
         ("peeche jao", VoiceIntent.REVERSE, "REVERSE"),
-        ("left chalo", VoiceIntent.LEFT, "LEFT"),
-        ("right chalo", VoiceIntent.RIGHT, "RIGHT"),
+        ("पीछे चलो", VoiceIntent.REVERSE, "REVERSE"),
+        ("baaye chalo", VoiceIntent.LEFT, "LEFT"),
+        ("baaya chalo", VoiceIntent.LEFT, "LEFT"),
+        ("बायें चलो", VoiceIntent.LEFT, "LEFT"),
+        ("बायाँ चलो", VoiceIntent.LEFT, "LEFT"),
+        ("daaye chalo", VoiceIntent.RIGHT, "RIGHT"),
+        ("daaya chalo", VoiceIntent.RIGHT, "RIGHT"),
+        ("दायें चलो", VoiceIntent.RIGHT, "RIGHT"),
+        ("दायाँ चलो", VoiceIntent.RIGHT, "RIGHT"),
     ])
     def test_real_voice_hindi_commands_integration(
         self, hindi_phrase: str, expected_intent: VoiceIntent, expected_cmd: str | None
