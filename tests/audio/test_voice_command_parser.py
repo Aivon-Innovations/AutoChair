@@ -192,6 +192,7 @@ def test_reverse_case_and_whitespace(parser: VoiceCommandParser):
     "baaya chalo",
     "बायें चलो",
     "बायाँ चलो",
+    "लेफ्ट चलो",
 ])
 def test_left_phrases_recognized(parser: VoiceCommandParser, phrase: str):
     result = parser.parse(phrase)
@@ -202,7 +203,7 @@ def test_left_phrases_recognized(parser: VoiceCommandParser, phrase: str):
 
 
 def test_left_hindi_aliases(parser: VoiceCommandParser):
-    for phrase in ["left chlo", "left chalo", "baaye chalo", "baaya chalo", "बायें चलो", "बायाँ चलो"]:
+    for phrase in ["left chlo", "left chalo", "baaye chalo", "baaya chalo", "बायें चलो", "बायाँ चलो", "लेफ्ट चलो"]:
         result = parser.parse(phrase)
         assert result.intent == VoiceIntent.LEFT
         assert result.input_command is not None
@@ -215,6 +216,7 @@ def test_left_case_and_whitespace(parser: VoiceCommandParser):
     assert parser.parse("  BAAYE CHALO  ").intent == VoiceIntent.LEFT
     assert parser.parse("  Baaya Chalo  ").intent == VoiceIntent.LEFT
     assert parser.parse("  बायें चलो  ").intent == VoiceIntent.LEFT
+    assert parser.parse("  लेफ्ट चलो  ").intent == VoiceIntent.LEFT
 
 
 # ---------------------------------------------------------------------------
@@ -233,6 +235,7 @@ def test_left_case_and_whitespace(parser: VoiceCommandParser):
     "दायें चलो",
     "दायाँ चलो",
     "दाएं चलो",
+    "राइट चलो",
 ])
 def test_right_phrases_recognized(parser: VoiceCommandParser, phrase: str):
     result = parser.parse(phrase)
@@ -243,7 +246,7 @@ def test_right_phrases_recognized(parser: VoiceCommandParser, phrase: str):
 
 
 def test_right_hindi_aliases(parser: VoiceCommandParser):
-    for phrase in ["right chlo", "right chalo", "daaye chalo", "daaya chalo", "दायें चलो", "दायाँ चलो", "दाएं चलो"]:
+    for phrase in ["right chlo", "right chalo", "daaye chalo", "daaya chalo", "दायें चलो", "दायाँ चलो", "दाएं चलो", "राइट चलो"]:
         result = parser.parse(phrase)
         assert result.intent == VoiceIntent.RIGHT
         assert result.input_command is not None
@@ -257,6 +260,7 @@ def test_right_case_and_whitespace(parser: VoiceCommandParser):
     assert parser.parse("  Daaya Chalo  ").intent == VoiceIntent.RIGHT
     assert parser.parse("  दायें चलो  ").intent == VoiceIntent.RIGHT
     assert parser.parse("  दाएं चलो  ").intent == VoiceIntent.RIGHT
+    assert parser.parse("  राइट चलो  ").intent == VoiceIntent.RIGHT
 
 
 # ---------------------------------------------------------------------------
@@ -321,6 +325,7 @@ def test_unknown_does_not_raise(parser: VoiceCommandParser):
     "baaye chalo",
     "baaya chalo",
     "बायें चलो",
+    "लेफ्ट चलो",
     "right",
     "turn right",
     "right chlo",
@@ -329,6 +334,7 @@ def test_unknown_does_not_raise(parser: VoiceCommandParser):
     "daaya chalo",
     "दायें चलो",
     "दाएं चलो",
+    "राइट चलो",
     "stop",
     "ruko",
     "rukko",

@@ -56,6 +56,7 @@ _DEFAULT_GRAMMAR: list[str] = [
     "left chalo",
     "baaye chalo",
     "baaya chalo",
+    "लेफ्ट चलो",
     # RIGHT
     "right",
     "turn right",
@@ -63,6 +64,7 @@ _DEFAULT_GRAMMAR: list[str] = [
     "right chalo",
     "daaye chalo",
     "daaya chalo",
+    "राइट चलो",
     # UNKNOWN sentinel
     "[unk]",
 ]
