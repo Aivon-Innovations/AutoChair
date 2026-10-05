@@ -109,6 +109,9 @@ NackReason SafetyManager::requestRecovery() {
         Logger::info("SafetyManager", "E-stop latch cleared");
     }
 
+    // Explicit recovery transitions safety back to CLEAR
+    setSafetyState(SafetyState::CLEAR, FaultCode::NONE);
+
     // Re-evaluate after clearing latched conditions.
     evaluate();
 

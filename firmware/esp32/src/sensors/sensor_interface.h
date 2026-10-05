@@ -67,6 +67,7 @@ struct EncoderReading : public SensorReading {
     int64_t          count                 = 0;
     EncoderDirection direction             = EncoderDirection::UNKNOWN;
     uint32_t         pulses_since_last_update = 0;
+    float            rpm                   = 0.0f;
     // NOTE: count is raw pulse count. Do NOT convert to distance without
     // verified encoder mounting, PPR, quadrature mode, and wheel geometry.
 };

@@ -204,7 +204,7 @@ class AudioManager:
                     self._microphone.stop_listening()
                 except Exception as mic_exc:
                     logger.warning(f"Failed to stop microphone during error cleanup: {mic_exc}")
-            result = self._parser.parse("")
+            result = ParseResult(intent=VoiceIntent.UNKNOWN, input_command=None, raw_text="")
             self._last_parse_result = result
             return result
         finally:
@@ -226,6 +226,9 @@ class AudioManager:
 
         elif result.intent == VoiceIntent.START:
             self._handle_start_intent(result)
+
+        elif result.intent == VoiceIntent.NO_SPEECH:
+            self._handle_no_speech_intent(result)
 
         else:
             self._handle_unknown_intent(result)
@@ -310,6 +313,16 @@ class AudioManager:
             message="START intent recognized (system command — not yet implemented).",
         ))
         self._speak_and_return_idle("Starting.")
+
+    def _handle_no_speech_intent(self, result: ParseResult) -> None:
+        """Handle silence or no recognized speech safely."""
+        logger.warning("COMMAND_REJECTED: no usable speech detected")
+        self._alerts.raise_alert(AlertEvent(
+            alert_type=AlertType.COMMAND_REJECTED,
+            message="No speech detected.",
+        ))
+        self._set_state(AudioState.ERROR)
+        self._speak_and_return_idle("Command not recognized.")
 
     def _handle_unknown_intent(self, result: ParseResult) -> None:
         """Handle an unrecognized utterance safely."""

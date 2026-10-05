@@ -207,13 +207,26 @@ def test_start_intent_returns_to_idle():
 
 
 # ---------------------------------------------------------------------------
-# UNKNOWN command lifecycle
+# NO_SPEECH & UNKNOWN command lifecycle
 # ---------------------------------------------------------------------------
+
+def test_no_speech_command_triggers_error_then_idle():
+    manager, _, _, alerts = make_manager(response="")
+    manager.start_listening()
+    result = manager.process(clear_snapshot())
+    assert result.intent == VoiceIntent.NO_SPEECH
+    assert result.input_command is None
+    assert manager.state == AudioState.IDLE
+    rejected = [a for a in alerts.alert_history() if a.alert_type == AlertType.COMMAND_REJECTED]
+    assert len(rejected) >= 1
+
 
 def test_unknown_command_triggers_error_then_idle():
     manager, _, _, _ = make_manager(response="fly to the moon")
     manager.start_listening()
-    manager.process(clear_snapshot())
+    result = manager.process(clear_snapshot())
+    assert result.intent == VoiceIntent.UNKNOWN
+    assert result.input_command is None
     # After error + TTS, returns to IDLE
     assert manager.state == AudioState.IDLE
 
@@ -238,6 +251,7 @@ def test_unknown_command_produces_no_input_command():
     manager, _, _, _ = make_manager(response="blah blah nonsense")
     manager.start_listening()
     result = manager.process(clear_snapshot())
+    assert result.intent == VoiceIntent.UNKNOWN
     assert result.input_command is None
 
 
@@ -434,17 +448,17 @@ class TestRealVoiceSessionIntegration:
         confirmed = [a for a in alerts.alert_history() if a.alert_type == AlertType.COMMAND_CONFIRMED]
         assert len(confirmed) >= 1
 
-    def test_real_voice_empty_recognition_produces_no_motion(self):
+    def test_real_voice_empty_recognition_produces_no_speech_intent(self):
         """
         Scenario D: Real voice session returns '' (silence/timeout).
-        Produces UNKNOWN intent, raises COMMAND_REJECTED alert, no motion.
+        Produces NO_SPEECH intent, raises COMMAND_REJECTED alert, no motion.
         """
         manager, mock_session, tts, alerts = make_real_voice_manager(recognized_text="")
         manager.start_listening()
         result = manager.process(clear_snapshot())
 
         mock_session.start.assert_called_once()
-        assert result.intent == VoiceIntent.UNKNOWN
+        assert result.intent == VoiceIntent.NO_SPEECH
         assert result.input_command is None
         assert manager.state == AudioState.IDLE
         assert "not recognized" in tts.last_spoken().lower()
@@ -454,7 +468,7 @@ class TestRealVoiceSessionIntegration:
 
     def test_real_voice_unknown_text_produces_no_motion(self):
         """
-        Scenario E: Real voice session returns unknown text (e.g. '[unk]' or unmapped phrase).
+        Scenario E: Real voice session returns unknown text (e.g. unmapped phrase).
         Produces UNKNOWN intent, no InputCommand, no motion.
         """
         manager, mock_session, tts, alerts = make_real_voice_manager(recognized_text="banana split")
@@ -464,6 +478,24 @@ class TestRealVoiceSessionIntegration:
         mock_session.start.assert_called_once()
         assert result.intent == VoiceIntent.UNKNOWN
         assert result.input_command is None
+        assert manager.state == AudioState.IDLE
+
+        rejected = [a for a in alerts.alert_history() if a.alert_type == AlertType.COMMAND_REJECTED]
+        assert len(rejected) >= 1
+
+    def test_real_voice_unk_text_produces_unknown_intent(self):
+        """
+        Scenario E2: Real voice session returns '[unk]'.
+        Produces UNKNOWN intent, no InputCommand, raw_text does not contain '[unk]'.
+        """
+        manager, mock_session, tts, alerts = make_real_voice_manager(recognized_text="[unk]")
+        manager.start_listening()
+        result = manager.process(clear_snapshot())
+
+        mock_session.start.assert_called_once()
+        assert result.intent == VoiceIntent.UNKNOWN
+        assert result.input_command is None
+        assert "[unk]" not in result.raw_text
         assert manager.state == AudioState.IDLE
 
         rejected = [a for a in alerts.alert_history() if a.alert_type == AlertType.COMMAND_REJECTED]

@@ -264,16 +264,32 @@ def test_right_case_and_whitespace(parser: VoiceCommandParser):
 
 
 # ---------------------------------------------------------------------------
+# NO_SPEECH intent (silence, empty string, whitespace)
+# ---------------------------------------------------------------------------
+
+@pytest.mark.parametrize("phrase", [
+    "",
+    "   ",
+    "\t",
+    "\n",
+])
+def test_no_speech_recognized(parser: VoiceCommandParser, phrase: str):
+    result = parser.parse(phrase)
+    assert result.intent == VoiceIntent.NO_SPEECH
+    assert result.input_command is None
+    assert result.raw_text == ""
+
+
+# ---------------------------------------------------------------------------
 # UNKNOWN intent & [unk] handling (and misrecognition safety rejection)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("phrase", [
     "fly to the moon",
     "open the pod bay doors",
-    "",
-    "   ",
     "blah blah",
     "[unk]",
+    "  [unk]  ",
     "jump",
     "dance",
     "बाईस चलो",     # Vosk misrecognition for "baaye chalo" — must NOT map to LEFT
@@ -282,6 +298,7 @@ def test_unknown_phrases_rejected(parser: VoiceCommandParser, phrase: str):
     result = parser.parse(phrase)
     assert result.intent == VoiceIntent.UNKNOWN
     assert result.input_command is None
+    assert "[unk]" not in result.raw_text
 
 
 def test_bais_chalo_misrecognition_is_safely_rejected(parser: VoiceCommandParser):

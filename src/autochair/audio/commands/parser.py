@@ -73,6 +73,7 @@ class VoiceIntent(str, Enum):
     STOP = "STOP"
     START = "START"
     UNKNOWN = "UNKNOWN"
+    NO_SPEECH = "NO_SPEECH"
 
 
 @dataclass
@@ -223,12 +224,20 @@ class VoiceCommandParser:
         """
         normalized = _normalize(recognized_text)
 
-        if not normalized or normalized == "[unk]":
-            logger.warning("VoiceCommandParser: received empty or unk text — UNKNOWN")
+        if not normalized:
+            logger.debug("VoiceCommandParser: received empty text — NO_SPEECH")
+            return ParseResult(
+                intent=VoiceIntent.NO_SPEECH,
+                input_command=None,
+                raw_text="",
+            )
+
+        if normalized == "[unk]":
+            logger.warning("VoiceCommandParser: received [unk] — UNKNOWN")
             return ParseResult(
                 intent=VoiceIntent.UNKNOWN,
                 input_command=None,
-                raw_text=normalized,
+                raw_text="",
             )
 
         match = COMMAND_ALIASES.get(normalized)
@@ -256,3 +265,4 @@ class VoiceCommandParser:
             input_command=None,
             raw_text=normalized,
         )
+

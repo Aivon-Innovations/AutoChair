@@ -220,18 +220,17 @@ class VoskSpeechRecognizer(SpeechRecognizer):
 
         Returns:
             str: The finalized recognized utterance, lowercased and stripped,
-                 drawn from the restricted grammar.
+                 drawn from the restricted grammar (or "[unk]" for unrecognized speech).
                  Returns "" when:
                    - audio_data is empty
                    - AcceptWaveform() returns False (utterance not yet complete)
-                   - The finalized text is "[unk]" (unrecognized speech)
                    - The finalized text is empty
                    - AcceptWaveform() or Result() raises an exception
 
         Note:
-            "[unk]" from Vosk is treated as no-command: it is returned
-            as "" from recognize() so that VoiceCommandParser receives
-            empty input and produces VoiceIntent.UNKNOWN safely.
+            "[unk]" from Vosk is returned to VoiceCommandParser which maps
+            it to VoiceIntent.UNKNOWN with no InputCommand and without exposing
+            [unk] to the application layer.
 
             To inspect partial hypotheses (e.g. for a live transcription UI),
             call _parse_partial() directly — it is NOT invoked by recognize().
@@ -325,7 +324,7 @@ class VoskSpeechRecognizer(SpeechRecognizer):
 
         Returns:
             str: The recognized text, lowercased and stripped.
-                 Returns "" if the text is missing, empty, or "[unk]".
+                 Returns "" if the text is missing or empty.
         """
         try:
             data = json.loads(raw_json)
@@ -336,10 +335,12 @@ class VoskSpeechRecognizer(SpeechRecognizer):
         # Prefer 'text' (completed result) over 'partial'
         text = data.get("text", data.get("partial", "")).strip().lower()
 
-        if not text or text == "[unk]":
-            if text == "[unk]":
-                logger.info("Vosk: [unk] — speech not in grammar, returning \"\"")
+        if not text:
             return ""
+
+        if text == "[unk]":
+            logger.info("Vosk: [unk] — speech not in grammar")
+            return "[unk]"
 
         logger.info(f"Vosk recognized: '{text}'")
         return text

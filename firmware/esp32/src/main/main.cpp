@@ -41,15 +41,18 @@
 #include "diagnostics/logger.h"
 #include "core/state_machine.h"
 #include "safety/safety_manager.h"
-#include "sensors/ultrasonic/ultrasonic_stub.h"
-#include "sensors/imu/imu_stub.h"
-#include "sensors/encoder/encoder_stub.h"
+#include "sensors/ultrasonic/hcsr04_driver.h"
+#include "sensors/ultrasonic/ultrasonic_manager.h"
+#include "sensors/imu/mpu_driver.h"
+#include "sensors/encoder/encoder_manager.h"
 #include "hardware/wheelchair_interface/wheelchair_interface.h"
 #include "communication/protocol_types.h"
 #include "communication/command_handler.h"
 
 #ifndef ENV_NATIVE
 #  include <Arduino.h>
+#else
+#  include <chrono>
 #endif
 
 using namespace autochair;
@@ -59,13 +62,14 @@ using namespace autochair::config;
 // Module instances  (heap-free; static allocation)
 // =============================================================================
 
-static StateMachine  stateMachine;
-static SafetyManager safetyManager(stateMachine);
+static StateMachine       stateMachine;
+static SafetyManager      safetyManager(stateMachine);
+static UltrasonicManager  ultrasonicManager;
 
-// Sensor stubs — replaced by real drivers in Phases 4–6
-static UltrasonicStub us0(0), us1(1), us2(2), us3(3), us4(4), us5(5);
-static IMUStub        imu;
-static EncoderStub    encoderLeft(0, "LEFT"), encoderRight(1, "RIGHT");
+static MPUConfig          imuConfig{0, IMUDeviceType::UNKNOWN, config::IMU_DEFAULT_I2C_ADDRESS, AccelScale::SCALE_4G, GyroScale::SCALE_500DPS, 5};
+static MPUDriver          imu(imuConfig);
+
+static EncoderManager     encoderManager;
 
 // Wheelchair interface — simulation only in V1
 static WheelchairInterfaceSimulation wheelchairInterface;
@@ -132,12 +136,10 @@ void setup() {
     // --- Initialize subsystems ---
     safetyManager.begin();
 
-    // Initialize sensor stubs (stubs always succeed).
-    us0.begin(); us1.begin(); us2.begin();
-    us3.begin(); us4.begin(); us5.begin();
+    // Initialize sensors
+    ultrasonicManager.begin();
     imu.begin();
-    encoderLeft.begin();
-    encoderRight.begin();
+    encoderManager.begin();
 
     // Wheelchair interface — simulation only.
     if (!wheelchairInterface.initialize()) {
@@ -193,8 +195,7 @@ void loop() {
     // ---- Encoder acquisition (high frequency) ----
     if ((now - lastEncoderMs) >= ENCODER_ACQUIRE_INTERVAL_MS) {
         lastEncoderMs = now;
-        encoderLeft.update();
-        encoderRight.update();
+        encoderManager.update();
     }
 
     // ---- IMU acquisition ----
@@ -206,9 +207,7 @@ void loop() {
     // ---- Ultrasonic sensors (sequential to reduce interference) ----
     if ((now - lastUltrasonicMs) >= ULTRASONIC_CYCLE_INTERVAL_MS) {
         lastUltrasonicMs = now;
-        // Sequential trigger — each call is a no-op on the stubs.
-        us0.update(); us1.update(); us2.update();
-        us3.update(); us4.update(); us5.update();
+        ultrasonicManager.update();
     }
 
     // ---- Telemetry (lower frequency) ----
@@ -225,5 +224,37 @@ void loop() {
                      static_cast<int>(stateMachine.getState()),
                      static_cast<int>(stateMachine.getSafety()),
                      static_cast<int>(stateMachine.getMode()));
+
+        const auto& enc = encoderManager.getWheelData().left;
+        const auto& health = encoderManager.getLeftDriver().getHealth();
+        Logger::logf(LogLevel::DEBUG, "Encoder", "L: cnt=%lld dir=%d rpm=%.2f pulses=%u idx=%u inv=%u st=%d",
+                     static_cast<long long>(enc.count),
+                     static_cast<int>(enc.direction),
+                     static_cast<double>(enc.rpm),
+                     static_cast<unsigned int>(enc.pulses_since_last_update),
+                     static_cast<unsigned int>(health.index_events),
+                     static_cast<unsigned int>(health.invalid_transitions),
+                     static_cast<int>(enc.status));
+
+        // 6-Channel Ultrasonic Telemetry
+        const auto& us0 = ultrasonicManager.getReading(0);
+        const auto& us1 = ultrasonicManager.getReading(1);
+        const auto& us2 = ultrasonicManager.getReading(2);
+        const auto& us3 = ultrasonicManager.getReading(3);
+        const auto& us4 = ultrasonicManager.getReading(4);
+        const auto& us5 = ultrasonicManager.getReading(5);
+        Logger::logf(LogLevel::INFO, "Ultrasonic",
+                     "US0=%.1f(st=%d) US1=%.1f(st=%d) US2=%.1f(st=%d) US3=%.1f(st=%d) US4=%.1f(st=%d) US5=%.1f(st=%d) min=%.1f",
+                     static_cast<double>(us0.distance_mm), static_cast<int>(us0.status),
+                     static_cast<double>(us1.distance_mm), static_cast<int>(us1.status),
+                     static_cast<double>(us2.distance_mm), static_cast<int>(us2.status),
+                     static_cast<double>(us3.distance_mm), static_cast<int>(us3.status),
+                     static_cast<double>(us4.distance_mm), static_cast<int>(us4.status),
+                     static_cast<double>(us5.distance_mm), static_cast<int>(us5.status),
+                     static_cast<double>(ultrasonicManager.getMinValidDistanceMm()));
     }
+
+#ifndef ENV_NATIVE
+    delay(1);
+#endif
 }

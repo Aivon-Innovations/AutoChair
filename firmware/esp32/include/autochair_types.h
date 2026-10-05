@@ -25,6 +25,10 @@
 
 #include <cstdint>
 
+#ifdef DISABLED
+#  undef DISABLED
+#endif
+
 namespace autochair {
 
 // =============================================================================

@@ -183,10 +183,10 @@ class TestVoskRecognizeResults:
         self._set_result("move forward")
         assert recognizer.recognize(b"\x00\x01") == "move forward"
 
-    def test_recognize_unk_returns_empty_string(self, recognizer):
-        """[unk] must become "" so VoiceCommandParser treats it as UNKNOWN."""
+    def test_recognize_unk_returns_unk(self, recognizer):
+        """[unk] is returned so VoiceCommandParser can map it to UNKNOWN."""
         self._set_result("[unk]")
-        assert recognizer.recognize(b"\x00\x01") == ""
+        assert recognizer.recognize(b"\x00\x01") == "[unk]"
 
     def test_recognize_empty_text_returns_empty_string(self, recognizer):
         self._set_result("")
@@ -250,10 +250,10 @@ class TestVoskFinalize:
         rec.FinalResult.return_value = json.dumps({"text": "stop"})
         assert recognizer.finalize() == "stop"
 
-    def test_finalize_returns_empty_for_unk(self, recognizer):
+    def test_finalize_returns_unk_for_unk(self, recognizer):
         rec = _get_mock_rec()
         rec.FinalResult.return_value = json.dumps({"text": "[unk]"})
-        assert recognizer.finalize() == ""
+        assert recognizer.finalize() == "[unk]"
 
     def test_finalize_returns_empty_on_exception(self, recognizer):
         rec = _get_mock_rec()
@@ -333,12 +333,13 @@ class TestVoskToParserPipeline:
     def test_unk_produces_unknown_intent_no_input_command(
         self, recognizer, parser
     ):
-        """[unk] → empty string → UNKNOWN → no InputCommand."""
+        """[unk] → UNKNOWN → no InputCommand and raw_text does not expose [unk]."""
         self._configure_result("[unk]")
-        text = recognizer.recognize(b"\x00\x01")  # returns ""
+        text = recognizer.recognize(b"\x00\x01")  # returns "[unk]"
         result = parser.parse(text)
         assert result.intent == VoiceIntent.UNKNOWN
         assert result.input_command is None
+        assert "[unk]" not in result.raw_text
 
     def test_voice_source_is_always_voice(self, recognizer, parser):
         self._configure_result("stop")
@@ -408,7 +409,7 @@ class TestVoskToParserPipeline:
         assert text == "", "recognize() must not expose partial hypotheses"
 
         result = parser.parse(text)
-        assert result.intent == VoiceIntent.UNKNOWN
+        assert result.intent == VoiceIntent.NO_SPEECH
         assert result.input_command is None, (
             "Partial hypothesis must never produce an InputCommand"
         )

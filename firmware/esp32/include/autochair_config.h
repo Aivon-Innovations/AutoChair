@@ -19,6 +19,7 @@
 #pragma once
 
 #include <cstdint>
+#include <cstddef>
 
 namespace autochair {
 namespace config {
@@ -71,9 +72,15 @@ constexpr float    ULTRASONIC_MIN_MM       = 20.0f;
 constexpr float    ULTRASONIC_MAX_MM       = 4000.0f;
 constexpr uint32_t ULTRASONIC_INTERVAL_MS  = 50;  ///< Per-sensor cycle; validate on bench.
 
-// GPIO placeholders — replace after wiring verification
-constexpr uint8_t US_TRIG_PIN[6]  = { 0, 0, 0, 0, 0, 0 };  // PLACEHOLDER
-constexpr uint8_t US_ECHO_PIN[6]  = { 0, 0, 0, 0, 0, 0 };  // PLACEHOLDER
+// Proposed 6-Channel Mapping (TARGET / Integration Configuration - Physical wiring validation pending):
+// Sensor 0 (Physical Sensor #1): TRIG = GPIO4,  ECHO = GPIO34 (CONFIRMED)
+// Sensor 1 (Physical Sensor #2): TRIG = GPIO5,  ECHO = GPIO35 (TARGET)
+// Sensor 2 (Physical Sensor #3): TRIG = GPIO18, ECHO = GPIO36 (TARGET)
+// Sensor 3 (Physical Sensor #4): TRIG = GPIO19, ECHO = GPIO39 (TARGET)
+// Sensor 4 (Physical Sensor #5): TRIG = GPIO23, ECHO = GPIO32 (TARGET)
+// Sensor 5 (Physical Sensor #6): TRIG = GPIO13, ECHO = GPIO33 (TARGET)
+constexpr uint8_t US_TRIG_PIN[6]  = { 4,  5, 18, 19, 23, 13 };
+constexpr uint8_t US_ECHO_PIN[6]  = { 34, 35, 36, 39, 32, 33 };
 
 // =============================================================================
 // IMU  (IMU_INTERFACE.md)
@@ -99,13 +106,15 @@ constexpr uint32_t IMU_SAMPLE_INTERVAL_MS  = 20;   ///< 50 Hz initial; validate.
 constexpr uint16_t ENCODER_PPR = 600;  ///< Pulses per revolution (manufacturer spec).
 // counts/revolution may be different depending on decoding mode — verify.
 
-// GPIO placeholders — replace after wiring verification
-constexpr uint8_t ENCODER_LEFT_A_PIN  = 0;  // PLACEHOLDER
-constexpr uint8_t ENCODER_LEFT_B_PIN  = 0;  // PLACEHOLDER
-constexpr uint8_t ENCODER_LEFT_Z_PIN  = 0;  // PLACEHOLDER
-constexpr uint8_t ENCODER_RIGHT_A_PIN = 0;  // PLACEHOLDER
-constexpr uint8_t ENCODER_RIGHT_B_PIN = 0;  // PLACEHOLDER
-constexpr uint8_t ENCODER_RIGHT_Z_PIN = 0;  // PLACEHOLDER
+// Temporary GPIO assignment for Physical Bench Test (Phase 6):
+// Left Encoder: A = GPIO25, B = GPIO26, Z = GPIO27
+// Right Encoder: Disabled (0)
+constexpr uint8_t ENCODER_LEFT_A_PIN  = 25;
+constexpr uint8_t ENCODER_LEFT_B_PIN  = 26;
+constexpr uint8_t ENCODER_LEFT_Z_PIN  = 27;
+constexpr uint8_t ENCODER_RIGHT_A_PIN = 0;  // DISABLED / UNCONFIGURED
+constexpr uint8_t ENCODER_RIGHT_B_PIN = 0;  // DISABLED / UNCONFIGURED
+constexpr uint8_t ENCODER_RIGHT_Z_PIN = 0;  // DISABLED / UNCONFIGURED
 
 // =============================================================================
 // Emergency stop  (ESP32_CONTROLLER_PRD.md §12)
