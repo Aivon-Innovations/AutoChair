@@ -1,0 +1,855 @@
+{
+  "metadata": {
+    "tester": "Antigravity Automated Test Harness",
+    "operator": "Minaam",
+    "board": "ESP32 WROOM-32",
+    "gpio": 32,
+    "pin_mode": "INPUT_PULLUP",
+    "switch": "22 mm ProMax mushroom emergency-stop switch (NC terminals 11-12)",
+    "date": "2026-10-06 12:46:44"
+  },
+  "basic_gpio_test": {
+    "pressed": {
+      "raw_output": [
+        "[STATUS] SAFETY=SAFE | RAW_PIN=1 | STABLE_PIN=1 | LATCHED=YES | UPTIME_MS=68850"
+      ],
+      "safety": "SAFE",
+      "raw_pin": "1",
+      "stable_pin": "1",
+      "latched": "YES",
+      "uptime_ms": "68850"
+    }
+  },
+  "command_rejection_tests": [
+    {
+      "test_num": 1,
+      "pre_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=1 | STABLE_PIN=1 | LATCHED=YES | UPTIME_MS=69260"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "1",
+        "stable_pin": "1",
+        "latched": "YES",
+        "uptime_ms": "69260"
+      },
+      "command_issued": "CMD:MOVE_FORWARD",
+      "motion_response": {
+        "raw": [
+          "COMMAND = MOVE_FORWARD | SAFETY = SAFE | RESULT = REJECTED"
+        ],
+        "command": "MOVE_FORWARD",
+        "safety": "SAFE",
+        "result": "REJECTED",
+        "line": "COMMAND = MOVE_FORWARD | SAFETY = SAFE | RESULT = REJECTED"
+      },
+      "passed": true,
+      "timestamp": 1791271007.2344437
+    },
+    {
+      "test_num": 2,
+      "pre_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=1 | STABLE_PIN=1 | LATCHED=YES | UPTIME_MS=69770"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "1",
+        "stable_pin": "1",
+        "latched": "YES",
+        "uptime_ms": "69770"
+      },
+      "command_issued": "CMD:MOVE_FORWARD",
+      "motion_response": {
+        "raw": [
+          "COMMAND = MOVE_FORWARD | SAFETY = SAFE | RESULT = REJECTED"
+        ],
+        "command": "MOVE_FORWARD",
+        "safety": "SAFE",
+        "result": "REJECTED",
+        "line": "COMMAND = MOVE_FORWARD | SAFETY = SAFE | RESULT = REJECTED"
+      },
+      "passed": true,
+      "timestamp": 1791271007.743488
+    },
+    {
+      "test_num": 3,
+      "pre_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=1 | STABLE_PIN=1 | LATCHED=YES | UPTIME_MS=70278"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "1",
+        "stable_pin": "1",
+        "latched": "YES",
+        "uptime_ms": "70278"
+      },
+      "command_issued": "CMD:MOVE_FORWARD",
+      "motion_response": {
+        "raw": [
+          "COMMAND = MOVE_FORWARD | SAFETY = SAFE | RESULT = REJECTED"
+        ],
+        "command": "MOVE_FORWARD",
+        "safety": "SAFE",
+        "result": "REJECTED",
+        "line": "COMMAND = MOVE_FORWARD | SAFETY = SAFE | RESULT = REJECTED"
+      },
+      "passed": true,
+      "timestamp": 1791271008.2569165
+    },
+    {
+      "test_num": 4,
+      "pre_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=1 | STABLE_PIN=1 | LATCHED=YES | UPTIME_MS=70792"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "1",
+        "stable_pin": "1",
+        "latched": "YES",
+        "uptime_ms": "70792"
+      },
+      "command_issued": "CMD:MOVE_FORWARD",
+      "motion_response": {
+        "raw": [
+          "COMMAND = MOVE_FORWARD | SAFETY = SAFE | RESULT = REJECTED"
+        ],
+        "command": "MOVE_FORWARD",
+        "safety": "SAFE",
+        "result": "REJECTED",
+        "line": "COMMAND = MOVE_FORWARD | SAFETY = SAFE | RESULT = REJECTED"
+      },
+      "passed": true,
+      "timestamp": 1791271008.7657797
+    },
+    {
+      "test_num": 5,
+      "pre_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=1 | STABLE_PIN=1 | LATCHED=YES | UPTIME_MS=71300"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "1",
+        "stable_pin": "1",
+        "latched": "YES",
+        "uptime_ms": "71300"
+      },
+      "command_issued": "CMD:MOVE_FORWARD",
+      "motion_response": {
+        "raw": [
+          "COMMAND = MOVE_FORWARD | SAFETY = SAFE | RESULT = REJECTED"
+        ],
+        "command": "MOVE_FORWARD",
+        "safety": "SAFE",
+        "result": "REJECTED",
+        "line": "COMMAND = MOVE_FORWARD | SAFETY = SAFE | RESULT = REJECTED"
+      },
+      "passed": true,
+      "timestamp": 1791271009.2747834
+    }
+  ],
+  "safe_latch_tests": [
+    {
+      "test_num": 1,
+      "pre_release_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "post_release_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=114558"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "114558"
+      },
+      "reset_while_pressed": null,
+      "reset_after_release": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "final_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=114966"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "114966"
+      },
+      "passed": true,
+      "timestamp": 1791271052.9379134
+    },
+    {
+      "test_num": 2,
+      "pre_release_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "post_release_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=184675"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "184675"
+      },
+      "reset_while_pressed": null,
+      "reset_after_release": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "final_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=185087"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "185087"
+      },
+      "passed": true,
+      "timestamp": 1791271122.8510177
+    },
+    {
+      "test_num": 3,
+      "pre_release_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "post_release_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=247605"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "247605"
+      },
+      "reset_while_pressed": null,
+      "reset_after_release": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "final_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=248015"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "248015"
+      },
+      "passed": true,
+      "timestamp": 1791271185.7761335
+    },
+    {
+      "test_num": 4,
+      "pre_release_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "post_release_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=294345"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "294345"
+      },
+      "reset_while_pressed": null,
+      "reset_after_release": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "final_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=294753"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "294753"
+      },
+      "passed": true,
+      "timestamp": 1791271232.5130928
+    },
+    {
+      "test_num": 5,
+      "pre_release_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "post_release_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=338401"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "338401"
+      },
+      "reset_while_pressed": null,
+      "reset_after_release": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "final_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=338811"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "338811"
+      },
+      "passed": true,
+      "timestamp": 1791271276.5679638
+    }
+  ],
+  "repetition_cycles": [
+    {
+      "cycle_num": 1,
+      "pressed_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "released_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=114558"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "114558"
+      },
+      "reset_result": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "post_reset_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=114966"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "114966"
+      },
+      "passed": true,
+      "timestamp": 1791271052.9379134
+    },
+    {
+      "cycle_num": 2,
+      "pressed_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "released_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=184675"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "184675"
+      },
+      "reset_result": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "post_reset_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=185087"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "185087"
+      },
+      "passed": true,
+      "timestamp": 1791271122.8543146
+    },
+    {
+      "cycle_num": 3,
+      "pressed_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "released_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=247605"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "247605"
+      },
+      "reset_result": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "post_reset_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=248015"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "248015"
+      },
+      "passed": true,
+      "timestamp": 1791271185.780946
+    },
+    {
+      "cycle_num": 4,
+      "pressed_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "released_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=294345"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "294345"
+      },
+      "reset_result": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "post_reset_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=294753"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "294753"
+      },
+      "passed": true,
+      "timestamp": 1791271232.517472
+    },
+    {
+      "cycle_num": 5,
+      "pressed_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "released_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=338401"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "338401"
+      },
+      "reset_result": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "post_reset_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=338811"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "338811"
+      },
+      "passed": true,
+      "timestamp": 1791271276.57319
+    },
+    {
+      "cycle_num": 6,
+      "pressed_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "released_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=388715"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "388715"
+      },
+      "reset_result": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "post_reset_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=389125"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "389125"
+      },
+      "passed": true,
+      "timestamp": 1791271326.8782625
+    },
+    {
+      "cycle_num": 7,
+      "pressed_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "released_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=435679"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "435679"
+      },
+      "reset_result": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "post_reset_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=436087"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "436087"
+      },
+      "passed": true,
+      "timestamp": 1791271373.8397677
+    },
+    {
+      "cycle_num": 8,
+      "pressed_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "released_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=480801"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "480801"
+      },
+      "reset_result": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "post_reset_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=481209"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "481209"
+      },
+      "passed": true,
+      "timestamp": 1791271418.960862
+    },
+    {
+      "cycle_num": 9,
+      "pressed_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "released_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=527013"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "527013"
+      },
+      "reset_result": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "post_reset_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=527421"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "527421"
+      },
+      "passed": true,
+      "timestamp": 1791271465.1687827
+    },
+    {
+      "cycle_num": 10,
+      "pressed_status": {
+        "raw_pin": "1",
+        "safety": "SAFE"
+      },
+      "released_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=567065"
+        ],
+        "safety": "SAFE",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "YES",
+        "uptime_ms": "567065"
+      },
+      "reset_result": {
+        "raw": [
+          "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+        ],
+        "status": "SUCCESS",
+        "safety": "READY",
+        "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      },
+      "post_reset_status": {
+        "raw_output": [
+          "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=567473"
+        ],
+        "safety": "READY",
+        "raw_pin": "0",
+        "stable_pin": "0",
+        "latched": "NO",
+        "uptime_ms": "567473"
+      },
+      "passed": true,
+      "timestamp": 1791271505.217349
+    }
+  ],
+  "nc_fault_test": {
+    "disconnected_status": {
+      "raw_output": [
+        "[STATUS] SAFETY=SAFE | RAW_PIN=1 | STABLE_PIN=1 | LATCHED=YES | UPTIME_MS=70785"
+      ],
+      "safety": "SAFE",
+      "raw_pin": "1",
+      "stable_pin": "1",
+      "latched": "YES",
+      "uptime_ms": "70785"
+    },
+    "motion_during_fault": {
+      "raw": [
+        "COMMAND = MOVE_FORWARD | SAFETY = SAFE | RESULT = REJECTED"
+      ],
+      "command": "MOVE_FORWARD",
+      "safety": "SAFE",
+      "result": "REJECTED",
+      "line": "COMMAND = MOVE_FORWARD | SAFETY = SAFE | RESULT = REJECTED"
+    },
+    "reset_during_fault": {
+      "raw": [
+        "[RESPONSE] RESET: REJECTED (ESTOP_ACTIVE_OR_OPEN) | GPIO32=1 | SAFETY = SAFE"
+      ],
+      "status": "REJECTED",
+      "safety": "SAFE",
+      "line": "[RESPONSE] RESET: REJECTED (ESTOP_ACTIVE_OR_OPEN) | GPIO32=1 | SAFETY = SAFE"
+    },
+    "open_circuit_detected": true,
+    "motion_rejected": true,
+    "reset_rejected": true,
+    "reconnected_status": {
+      "raw_output": [
+        "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=112732"
+      ],
+      "safety": "SAFE",
+      "raw_pin": "0",
+      "stable_pin": "0",
+      "latched": "YES",
+      "uptime_ms": "112732"
+    },
+    "post_reconnect_reset": {
+      "raw": [
+        "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      ],
+      "status": "SUCCESS",
+      "safety": "READY",
+      "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+    },
+    "final_status": {
+      "raw_output": [
+        "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=113140"
+      ],
+      "safety": "READY",
+      "raw_pin": "0",
+      "stable_pin": "0",
+      "latched": "NO",
+      "uptime_ms": "113140"
+    },
+    "final_motion": {
+      "raw": [
+        "COMMAND = MOVE_FORWARD | SAFETY = READY | RESULT = ACCEPTED"
+      ],
+      "command": "MOVE_FORWARD",
+      "safety": "READY",
+      "result": "ACCEPTED",
+      "line": "COMMAND = MOVE_FORWARD | SAFETY = READY | RESULT = ACCEPTED"
+    },
+    "latch_held": true,
+    "recovered_to_ready": true,
+    "passed": true
+  },
+  "summary": {},
+  "reset_while_pressed_test": {
+    "test_name": "Explicit RESET-While-Pressed Rejection & Recovery Test",
+    "step_1_initial_state": {
+      "gpio32": "0",
+      "safety": "READY",
+      "latched": "NO"
+    },
+    "step_2_pressed_state": {
+      "raw_pin": "1",
+      "stable_pin": "1",
+      "safety": "SAFE",
+      "latched": "YES"
+    },
+    "step_3_reset_while_pressed_attempt": {
+      "command": "CMD:RESET",
+      "raw_response": "[RESPONSE] RESET: REJECTED (ESTOP_ACTIVE_OR_OPEN) | GPIO32=1 | SAFETY = SAFE",
+      "result": "REJECTED",
+      "blocked_reason": "ESTOP_ACTIVE_OR_OPEN"
+    },
+    "step_4_post_release_before_reset": {
+      "raw_output": [
+        "[STATUS] SAFETY=SAFE | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=YES | UPTIME_MS=595262"
+      ],
+      "safety": "SAFE",
+      "raw_pin": "0",
+      "stable_pin": "0",
+      "latched": "YES",
+      "uptime_ms": "595262"
+    },
+    "step_5_reset_after_release": {
+      "raw": [
+        "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+      ],
+      "status": "SUCCESS",
+      "safety": "READY",
+      "line": "[RESPONSE] RESET: SUCCESS | GPIO32=LOW | SAFETY = READY"
+    },
+    "step_6_final_status": {
+      "raw_output": [
+        "[STATUS] SAFETY=READY | RAW_PIN=0 | STABLE_PIN=0 | LATCHED=NO | UPTIME_MS=595668"
+      ],
+      "safety": "READY",
+      "raw_pin": "0",
+      "stable_pin": "0",
+      "latched": "NO",
+      "uptime_ms": "595668"
+    },
+    "step_7_motion_after_recovery": {
+      "raw": [
+        "COMMAND = MOVE_FORWARD | SAFETY = READY | RESULT = ACCEPTED"
+      ],
+      "command": "MOVE_FORWARD",
+      "safety": "READY",
+      "result": "ACCEPTED",
+      "line": "COMMAND = MOVE_FORWARD | SAFETY = READY | RESULT = ACCEPTED"
+    },
+    "verifications": {
+      "initial_is_ready": true,
+      "pressed_trips_to_safe": true,
+      "reset_rejected_while_pressed": true,
+      "latch_maintained_after_physical_release": true,
+      "reset_succeeds_after_release": true,
+      "final_state_is_ready": true,
+      "motion_accepted_only_when_ready": true
+    },
+    "passed": true,
+    "timestamp": 1791272215.7402148
+  }
+}
