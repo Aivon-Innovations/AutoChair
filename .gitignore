@@ -1,0 +1,36 @@
+# AutoChair — Git Ignore
+# Generated for alvira-dev / tanisha-dev push
+
+# PlatformIO build artifacts
+.pio/
+.pioenv*
+.piolibdeps/
+
+# Arduino IDE cache
+*.elf
+*.bin
+*.hex
+*.map
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.code-workspace
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Gemini / AI agent files
+.gemini/
+.antigravity/
+.antigravity-ide/
