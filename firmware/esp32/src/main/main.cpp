@@ -225,16 +225,27 @@ void loop() {
                      static_cast<int>(stateMachine.getSafety()),
                      static_cast<int>(stateMachine.getMode()));
 
-        const auto& enc = encoderManager.getWheelData().left;
-        const auto& health = encoderManager.getLeftDriver().getHealth();
+        const auto& encL = encoderManager.getWheelData().left;
+        const auto& healthL = encoderManager.getLeftDriver().getHealth();
         Logger::logf(LogLevel::DEBUG, "Encoder", "L: cnt=%lld dir=%d rpm=%.2f pulses=%u idx=%u inv=%u st=%d",
-                     static_cast<long long>(enc.count),
-                     static_cast<int>(enc.direction),
-                     static_cast<double>(enc.rpm),
-                     static_cast<unsigned int>(enc.pulses_since_last_update),
-                     static_cast<unsigned int>(health.index_events),
-                     static_cast<unsigned int>(health.invalid_transitions),
-                     static_cast<int>(enc.status));
+                     static_cast<long long>(encL.count),
+                     static_cast<int>(encL.direction),
+                     static_cast<double>(encL.rpm),
+                     static_cast<unsigned int>(encL.pulses_since_last_update),
+                     static_cast<unsigned int>(healthL.index_events),
+                     static_cast<unsigned int>(healthL.invalid_transitions),
+                     static_cast<int>(encL.status));
+
+        const auto& encR = encoderManager.getWheelData().right;
+        const auto& healthR = encoderManager.getRightDriver().getHealth();
+        Logger::logf(LogLevel::DEBUG, "Encoder", "R: cnt=%lld dir=%d rpm=%.2f pulses=%u idx=%u inv=%u st=%d",
+                     static_cast<long long>(encR.count),
+                     static_cast<int>(encR.direction),
+                     static_cast<double>(encR.rpm),
+                     static_cast<unsigned int>(encR.pulses_since_last_update),
+                     static_cast<unsigned int>(healthR.index_events),
+                     static_cast<unsigned int>(healthR.invalid_transitions),
+                     static_cast<int>(encR.status));
 
         // 6-Channel Ultrasonic Telemetry
         const auto& us0 = ultrasonicManager.getReading(0);

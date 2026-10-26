@@ -1482,6 +1482,101 @@ void test_encoder_rpm_decoding_mode_scaling() {
     }
 }
 
+/**
+ * Test 17: Dual encoder simultaneous independent RPM, direction, and Z-index.
+ */
+void test_encoder_manager_simultaneous_dual_wheel_rpm_and_index() {
+    MockEncoderHAL mockLeft(EncoderDecodingMode::X4);
+    MockEncoderHAL mockRight(EncoderDecodingMode::X4);
+
+    EncoderConfig leftCfg{};
+    leftCfg.sensor_id = 0; leftCfg.label = "LEFT";
+    leftCfg.pin_a = 25; leftCfg.pin_b = 26; leftCfg.pin_z = 27;
+    leftCfg.ppr = 600; leftCfg.decoding_mode = EncoderDecodingMode::X4;
+
+    EncoderConfig rightCfg{};
+    rightCfg.sensor_id = 1; rightCfg.label = "RIGHT";
+    rightCfg.pin_a = 16; rightCfg.pin_b = 17; rightCfg.pin_z = 14;
+    rightCfg.ppr = 600; rightCfg.decoding_mode = EncoderDecodingMode::X4;
+
+    EncoderManager mgr(leftCfg, rightCfg);
+    mgr.getLeftDriver().setHAL(&mockLeft);
+    mgr.getRightDriver().setHAL(&mockRight);
+
+    TEST_ASSERT_TRUE(mgr.begin());
+
+    mgr.update(1000);
+
+    // Left spins forward 200 counts in 50 ms -> +100.0 RPM, triggers 1 Z index
+    mockLeft.stepQuad(+1, 200, 1050);
+    mockLeft.triggerIndex(1050);
+
+    // Right spins reverse 100 counts in 50 ms -> -50.0 RPM, triggers 2 Z index events
+    mockRight.stepQuad(-1, 100, 1050);
+    mockRight.triggerIndex(1030);
+    mockRight.triggerIndex(1050);
+
+    mgr.update(1050);
+
+    const auto& wheelData = mgr.getWheelData();
+
+    // Left checks
+    TEST_ASSERT_EQUAL(200, wheelData.left.count);
+    TEST_ASSERT_EQUAL(EncoderDirection::FORWARD, wheelData.left.direction);
+    TEST_ASSERT_FLOAT_WITHIN(0.01f, 100.0f, wheelData.left.rpm);
+    TEST_ASSERT_EQUAL(1, mgr.getLeftDriver().getIndexCount());
+
+    // Right checks
+    TEST_ASSERT_EQUAL(-100, wheelData.right.count);
+    TEST_ASSERT_EQUAL(EncoderDirection::REVERSE, wheelData.right.direction);
+    TEST_ASSERT_FLOAT_WITHIN(0.01f, -50.0f, wheelData.right.rpm);
+    TEST_ASSERT_EQUAL(2, mgr.getRightDriver().getIndexCount());
+
+    TEST_ASSERT_TRUE(mgr.areAllHealthy());
+}
+
+/**
+ * Test 18: Dual encoder reset and glitch isolation.
+ */
+void test_encoder_manager_dual_reset_and_glitch_isolation() {
+    MockEncoderHAL mockLeft(EncoderDecodingMode::X4);
+    MockEncoderHAL mockRight(EncoderDecodingMode::X4);
+
+    EncoderConfig leftCfg{};
+    leftCfg.sensor_id = 0; leftCfg.pin_a = 25; leftCfg.pin_b = 26;
+    EncoderConfig rightCfg{};
+    rightCfg.sensor_id = 1; rightCfg.pin_a = 16; rightCfg.pin_b = 17;
+
+    EncoderManager mgr(leftCfg, rightCfg);
+    mgr.getLeftDriver().setHAL(&mockLeft);
+    mgr.getRightDriver().setHAL(&mockRight);
+
+    TEST_ASSERT_TRUE(mgr.begin());
+
+    // Inject glitches into Right only
+    mockRight.injectInvalidTransition();
+    mockRight.injectInvalidTransition();
+
+    // Move Left cleanly
+    mockLeft.stepQuad(+1, 150, 100);
+
+    mgr.update();
+
+    TEST_ASSERT_EQUAL(0, mgr.getLeftDriver().getHealth().invalid_transitions);
+    TEST_ASSERT_EQUAL(2, mgr.getRightDriver().getHealth().invalid_transitions);
+    TEST_ASSERT_EQUAL(150, mgr.getWheelData().left.count);
+
+    // Global reset
+    mgr.resetCounts();
+
+    TEST_ASSERT_EQUAL(0, mgr.getWheelData().left.count);
+    TEST_ASSERT_EQUAL(0, mgr.getWheelData().right.count);
+    TEST_ASSERT_EQUAL_FLOAT(0.0f, mgr.getWheelData().left.rpm);
+    TEST_ASSERT_EQUAL_FLOAT(0.0f, mgr.getWheelData().right.rpm);
+    TEST_ASSERT_EQUAL(EncoderDirection::STATIONARY, mgr.getWheelData().left.direction);
+    TEST_ASSERT_EQUAL(EncoderDirection::STATIONARY, mgr.getWheelData().right.direction);
+}
+
 // =============================================================================
 // Entry point
 // =============================================================================
@@ -1556,6 +1651,8 @@ int main(int argc, char** argv) {
     RUN_TEST(test_encoder_rpm_negative_reverse);
     RUN_TEST(test_encoder_rpm_safety_edge_cases);
     RUN_TEST(test_encoder_rpm_decoding_mode_scaling);
+    RUN_TEST(test_encoder_manager_simultaneous_dual_wheel_rpm_and_index);
+    RUN_TEST(test_encoder_manager_dual_reset_and_glitch_isolation);
 
     return UNITY_END();
 }

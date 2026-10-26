@@ -1,16 +1,22 @@
 /**
  * @file main.cpp
- * @brief AutoChair — Standalone Wheel Encoder Bench Validation Firmware
+ * @brief AutoChair — Standalone Dual Wheel Encoder Bench Validation Firmware
  *
  * Platform: ESP32-WROOM-32D (CP2102, USB-C)
- * Target Hardware: Incremental Optical Rotary Encoder (600 PPR / 2400 CPR X4)
+ * Target Hardware: 2 × Incremental Optical Rotary Encoders (600 PPR / 2400 CPR X4)
  *
  * Pin Mapping:
- *   - Encoder Channel A (Green)  -> ESP32 GPIO25 (4.7kΩ pull-up to 3.3V)
- *   - Encoder Channel B (White)  -> ESP32 GPIO26 (4.7kΩ pull-up to 3.3V)
- *   - Encoder Channel Z (Yellow) -> ESP32 GPIO27 (4.7kΩ pull-up to 3.3V)
- *   - Encoder VCC (Red)          -> ESP32 5V
- *   - Encoder GND (Black)        -> ESP32 GND
+ *   - LEFT Encoder Channel A (Green)  -> ESP32 GPIO25 (4.7kΩ pull-up to 3.3V)
+ *   - LEFT Encoder Channel B (White)  -> ESP32 GPIO26 (4.7kΩ pull-up to 3.3V)
+ *   - LEFT Encoder Channel Z (Yellow) -> ESP32 GPIO27 (4.7kΩ pull-up to 3.3V)
+ *   - LEFT Encoder VCC (Red)          -> ESP32 5V
+ *   - LEFT Encoder GND (Black)        -> ESP32 GND
+ *
+ *   - RIGHT Encoder Channel A (Green)  -> ESP32 GPIO16 (4.7kΩ pull-up to 3.3V)
+ *   - RIGHT Encoder Channel B (White)  -> ESP32 GPIO17 (4.7kΩ pull-up to 3.3V)
+ *   - RIGHT Encoder Channel Z (Yellow) -> ESP32 GPIO14 (4.7kΩ pull-up to 3.3V)
+ *   - RIGHT Encoder VCC (Red)          -> ESP32 5V
+ *   - RIGHT Encoder GND (Black)        -> ESP32 GND
  */
 
 #include <Arduino.h>
@@ -20,9 +26,15 @@
 // Pin Configuration & Constants
 // =============================================================================
 
-constexpr uint8_t PIN_ENCODER_A = 25;
-constexpr uint8_t PIN_ENCODER_B = 26;
-constexpr uint8_t PIN_ENCODER_Z = 27;
+// LEFT Encoder (Instance 0)
+constexpr uint8_t PIN_LEFT_A = 25;
+constexpr uint8_t PIN_LEFT_B = 26;
+constexpr uint8_t PIN_LEFT_Z = 27;
+
+// RIGHT Encoder (Instance 1)
+constexpr uint8_t PIN_RIGHT_A = 16;
+constexpr uint8_t PIN_RIGHT_B = 17;
+constexpr uint8_t PIN_RIGHT_Z = 14;
 
 constexpr uint16_t ENCODER_PPR       = 600;   // 600 waveform cycles / revolution
 constexpr uint8_t  DECODING_MODE_X4  = 4;     // X4 quadrature decoding
@@ -31,20 +43,9 @@ constexpr uint32_t COUNTS_PER_REV    = ENCODER_PPR * DECODING_MODE_X4; // 2400 c
 constexpr uint32_t TELEMETRY_INTERVAL_MS = 100; // 10 Hz streaming rate
 
 // =============================================================================
-// Volatile Interrupt State
+// 4-bit Quadrature Transition Table
 // =============================================================================
 
-static volatile int64_t  g_rawCount           = 0;
-static volatile uint32_t g_indexCount         = 0;
-static volatile uint32_t g_invalidTransitions = 0;
-static volatile uint32_t g_lastInterruptMs    = 0;
-static volatile uint8_t  g_prevState          = 0;
-
-// =============================================================================
-// ISR Handlers (IRAM_ATTR)
-// =============================================================================
-
-// 4-bit Quadrature transition lookup table
 // Index: (prevState << 2) | currState
 // Values: +1 (CW: A leads B), -1 (CCW: B leads A), 0 (invalid or unchanged)
 static const int8_t QUAD_TABLE[16] = {
@@ -54,48 +55,96 @@ static const int8_t QUAD_TABLE[16] = {
      0,  1, -1,  0    // prev 11 -> curr 00, 01, 10, 11
 };
 
-void IRAM_ATTR isrPinChange() {
-    uint8_t a = digitalRead(PIN_ENCODER_A);
-    uint8_t b = digitalRead(PIN_ENCODER_B);
+// =============================================================================
+// Volatile Interrupt State
+// =============================================================================
+
+struct EncoderState {
+    volatile int64_t  rawCount           = 0;
+    volatile uint32_t indexCount         = 0;
+    volatile uint32_t invalidTransitions = 0;
+    volatile uint32_t lastInterruptMs    = 0;
+    volatile uint8_t  prevState          = 0;
+};
+
+static EncoderState g_leftState;
+static EncoderState g_rightState;
+
+// =============================================================================
+// ISR Handlers (IRAM_ATTR)
+// =============================================================================
+
+// LEFT Encoder ISRs
+void IRAM_ATTR isrLeftPinChange() {
+    uint8_t a = digitalRead(PIN_LEFT_A);
+    uint8_t b = digitalRead(PIN_LEFT_B);
     uint8_t currState = (a << 1) | b;
 
-    uint8_t tableIdx = (g_prevState << 2) | currState;
+    uint8_t tableIdx = (g_leftState.prevState << 2) | currState;
     int8_t step = QUAD_TABLE[tableIdx];
 
     if (step != 0) {
-        g_rawCount += step;
-        g_lastInterruptMs = millis();
-    } else if (g_prevState != currState) {
-        // Double transition / noise glitch
-        g_invalidTransitions++;
+        g_leftState.rawCount += step;
+        g_leftState.lastInterruptMs = millis();
+    } else if (g_leftState.prevState != currState) {
+        g_leftState.invalidTransitions++;
     }
 
-    g_prevState = currState;
+    g_leftState.prevState = currState;
 }
 
-void IRAM_ATTR isrIndexRising() {
-    g_indexCount++;
-    g_lastInterruptMs = millis();
+void IRAM_ATTR isrLeftIndex() {
+    g_leftState.indexCount++;
+    g_leftState.lastInterruptMs = millis();
+}
+
+// RIGHT Encoder ISRs
+void IRAM_ATTR isrRightPinChange() {
+    uint8_t a = digitalRead(PIN_RIGHT_A);
+    uint8_t b = digitalRead(PIN_RIGHT_B);
+    uint8_t currState = (a << 1) | b;
+
+    uint8_t tableIdx = (g_rightState.prevState << 2) | currState;
+    int8_t step = QUAD_TABLE[tableIdx];
+
+    if (step != 0) {
+        g_rightState.rawCount += step;
+        g_rightState.lastInterruptMs = millis();
+    } else if (g_rightState.prevState != currState) {
+        g_rightState.invalidTransitions++;
+    }
+
+    g_rightState.prevState = currState;
+}
+
+void IRAM_ATTR isrRightIndex() {
+    g_rightState.indexCount++;
+    g_rightState.lastInterruptMs = millis();
 }
 
 // =============================================================================
 // Telemetry & Diagnostic State
 // =============================================================================
 
-static int64_t  lastTelemetryCount = 0;
-static uint32_t lastTelemetryTime  = 0;
-static bool     streamActive       = true;
+static int64_t  lastTelemetryCountL = 0;
+static int64_t  lastTelemetryCountR = 0;
+static uint32_t lastTelemetryTime   = 0;
+static bool     streamActive        = true;
 
 void resetEncoderState() {
     noInterrupts();
-    g_rawCount           = 0;
-    g_indexCount         = 0;
-    g_invalidTransitions = 0;
-    lastTelemetryCount   = 0;
-    lastTelemetryTime    = millis();
+    g_leftState.rawCount             = 0;
+    g_leftState.indexCount           = 0;
+    g_leftState.invalidTransitions   = 0;
+    g_rightState.rawCount            = 0;
+    g_rightState.indexCount          = 0;
+    g_rightState.invalidTransitions  = 0;
+    lastTelemetryCountL              = 0;
+    lastTelemetryCountR              = 0;
+    lastTelemetryTime                = millis();
     interrupts();
 
-    Serial.println("[STATUS] ENCODER COUNTERS RESET TO ZERO");
+    Serial.println("[STATUS] DUAL ENCODER COUNTERS RESET TO ZERO");
 }
 
 void printSystemStatus() {
@@ -105,9 +154,12 @@ void printSystemStatus() {
     Serial.print("CPU0_Reset_Reason: "); Serial.println(rtc_get_reset_reason(0));
     Serial.print("CPU1_Reset_Reason: "); Serial.println(rtc_get_reset_reason(1));
     Serial.print("Configured_CPR: "); Serial.println(COUNTS_PER_REV);
-    Serial.print("Pin_A: GPIO"); Serial.println(PIN_ENCODER_A);
-    Serial.print("Pin_B: GPIO"); Serial.println(PIN_ENCODER_B);
-    Serial.print("Pin_Z: GPIO"); Serial.println(PIN_ENCODER_Z);
+    Serial.print("LEFT Pins: A=GPIO"); Serial.print(PIN_LEFT_A);
+    Serial.print(" B=GPIO"); Serial.print(PIN_LEFT_B);
+    Serial.print(" Z=GPIO"); Serial.println(PIN_LEFT_Z);
+    Serial.print("RIGHT Pins: A=GPIO"); Serial.print(PIN_RIGHT_A);
+    Serial.print(" B=GPIO"); Serial.print(PIN_RIGHT_B);
+    Serial.print(" Z=GPIO"); Serial.println(PIN_RIGHT_Z);
     Serial.println("------------------------\n");
 }
 
@@ -120,29 +172,40 @@ void setup() {
     delay(100);
 
     Serial.println("\n========================================================");
-    Serial.println("  AutoChair — Wheel Encoder Standalone Bench Test");
+    Serial.println("  AutoChair — Dual Wheel Encoder Bench Validation");
+    Serial.println("  LEFT (GPIO 25, 26, 27) | RIGHT (GPIO 16, 17, 14)");
     Serial.println("  Quadrature X4 Decoder (2400 CPR) + Dynamic RPM");
     Serial.println("========================================================");
 
-    // Configure GPIOs with pull-ups
-    pinMode(PIN_ENCODER_A, INPUT_PULLUP);
-    pinMode(PIN_ENCODER_B, INPUT_PULLUP);
-    pinMode(PIN_ENCODER_Z, INPUT_PULLUP);
+    // Configure LEFT GPIOs with pull-ups
+    pinMode(PIN_LEFT_A, INPUT_PULLUP);
+    pinMode(PIN_LEFT_B, INPUT_PULLUP);
+    pinMode(PIN_LEFT_Z, INPUT_PULLUP);
 
-    // Initial state
-    uint8_t a = digitalRead(PIN_ENCODER_A);
-    uint8_t b = digitalRead(PIN_ENCODER_B);
-    g_prevState = (a << 1) | b;
+    // Configure RIGHT GPIOs with pull-ups
+    pinMode(PIN_RIGHT_A, INPUT_PULLUP);
+    pinMode(PIN_RIGHT_B, INPUT_PULLUP);
+    pinMode(PIN_RIGHT_Z, INPUT_PULLUP);
 
-    // Attach interrupts
-    attachInterrupt(digitalPinToInterrupt(PIN_ENCODER_A), isrPinChange, CHANGE);
-    attachInterrupt(digitalPinToInterrupt(PIN_ENCODER_B), isrPinChange, CHANGE);
-    attachInterrupt(digitalPinToInterrupt(PIN_ENCODER_Z), isrIndexRising, RISING);
+    // Read initial states
+    g_leftState.prevState  = (digitalRead(PIN_LEFT_A) << 1) | digitalRead(PIN_LEFT_B);
+    g_rightState.prevState = (digitalRead(PIN_RIGHT_A) << 1) | digitalRead(PIN_RIGHT_B);
 
-    lastTelemetryTime  = millis();
-    lastTelemetryCount = 0;
+    // Attach LEFT interrupts
+    attachInterrupt(digitalPinToInterrupt(PIN_LEFT_A), isrLeftPinChange, CHANGE);
+    attachInterrupt(digitalPinToInterrupt(PIN_LEFT_B), isrLeftPinChange, CHANGE);
+    attachInterrupt(digitalPinToInterrupt(PIN_LEFT_Z), isrLeftIndex, RISING);
 
-    Serial.println("[INFO] Encoder driver initialized. Pins: A=25, B=26, Z=27");
+    // Attach RIGHT interrupts
+    attachInterrupt(digitalPinToInterrupt(PIN_RIGHT_A), isrRightPinChange, CHANGE);
+    attachInterrupt(digitalPinToInterrupt(PIN_RIGHT_B), isrRightPinChange, CHANGE);
+    attachInterrupt(digitalPinToInterrupt(PIN_RIGHT_Z), isrRightIndex, RISING);
+
+    lastTelemetryTime   = millis();
+    lastTelemetryCountL = 0;
+    lastTelemetryCountR = 0;
+
+    Serial.println("[INFO] Dual encoder drivers initialized successfully.");
     Serial.println("[INFO] Send 'CMD:RESET' to zero counts, 'CMD:STATUS' for system health.\n");
 }
 
@@ -176,47 +239,67 @@ void loop() {
         uint32_t elapsedMs = now - lastTelemetryTime;
         lastTelemetryTime = now;
 
-        // Atomically snapshot interrupt counters
+        // Atomically snapshot LEFT interrupt counters
         noInterrupts();
-        int64_t currentCount = g_rawCount;
-        uint32_t indexEvents = g_indexCount;
-        uint32_t invalidTrans = g_invalidTransitions;
+        int64_t countL       = g_leftState.rawCount;
+        uint32_t indexL      = g_leftState.indexCount;
+        uint32_t invalidL    = g_leftState.invalidTransitions;
+
+        int64_t countR       = g_rightState.rawCount;
+        uint32_t indexR      = g_rightState.indexCount;
+        uint32_t invalidR    = g_rightState.invalidTransitions;
         interrupts();
 
-        int64_t delta = currentCount - lastTelemetryCount;
-        lastTelemetryCount = currentCount;
+        // LEFT calculations
+        int64_t deltaL = countL - lastTelemetryCountL;
+        lastTelemetryCountL = countL;
+        uint32_t absDeltaL = static_cast<uint32_t>(deltaL >= 0 ? deltaL : -deltaL);
 
-        uint32_t absDelta = static_cast<uint32_t>(delta >= 0 ? delta : -delta);
+        int dirL = 0;
+        if (deltaL > 0) dirL = 1;
+        else if (deltaL < 0) dirL = -1;
 
-        // Direction derivation
-        int dir = 0;
-        if (delta > 0) {
-            dir = 1;   // FORWARD / CW
-        } else if (delta < 0) {
-            dir = -1;  // REVERSE / CCW
-        } else {
-            dir = 0;   // STATIONARY
+        float rpmL = 0.0f;
+        if (elapsedMs > 0 && COUNTS_PER_REV > 0 && deltaL != 0) {
+            rpmL = (static_cast<float>(deltaL) / static_cast<float>(COUNTS_PER_REV)) *
+                   (60000.0f / static_cast<float>(elapsedMs));
         }
 
-        // RPM calculation:
-        // RPM = (delta_count / CPR) * (60,000 / elapsed_ms)
-        float rpm = 0.0f;
-        if (elapsedMs > 0 && COUNTS_PER_REV > 0 && delta != 0) {
-            rpm = (static_cast<float>(delta) / static_cast<float>(COUNTS_PER_REV)) *
-                  (60000.0f / static_cast<float>(elapsedMs));
+        // RIGHT calculations
+        int64_t deltaR = countR - lastTelemetryCountR;
+        lastTelemetryCountR = countR;
+        uint32_t absDeltaR = static_cast<uint32_t>(deltaR >= 0 ? deltaR : -deltaR);
+
+        int dirR = 0;
+        if (deltaR > 0) dirR = 1;
+        else if (deltaR < 0) dirR = -1;
+
+        float rpmR = 0.0f;
+        if (elapsedMs > 0 && COUNTS_PER_REV > 0 && deltaR != 0) {
+            rpmR = (static_cast<float>(deltaR) / static_cast<float>(COUNTS_PER_REV)) *
+                   (60000.0f / static_cast<float>(elapsedMs));
         }
 
         // Sensor status: 2 = OK
         int st = 2;
 
-        // Standard AutoChair encoder diagnostic line format
+        // Standard AutoChair dual encoder diagnostic line format
         Serial.printf("[Encoder] L: cnt=%lld dir=%d rpm=%.2f pulses=%u idx=%u inv=%u st=%d\n",
-                      static_cast<long long>(currentCount),
-                      dir,
-                      static_cast<double>(rpm),
-                      static_cast<unsigned int>(absDelta),
-                      static_cast<unsigned int>(indexEvents),
-                      static_cast<unsigned int>(invalidTrans),
+                      static_cast<long long>(countL),
+                      dirL,
+                      static_cast<double>(rpmL),
+                      static_cast<unsigned int>(absDeltaL),
+                      static_cast<unsigned int>(indexL),
+                      static_cast<unsigned int>(invalidL),
+                      st);
+
+        Serial.printf("[Encoder] R: cnt=%lld dir=%d rpm=%.2f pulses=%u idx=%u inv=%u st=%d\n",
+                      static_cast<long long>(countR),
+                      dirR,
+                      static_cast<double>(rpmR),
+                      static_cast<unsigned int>(absDeltaR),
+                      static_cast<unsigned int>(indexR),
+                      static_cast<unsigned int>(invalidR),
                       st);
     }
 }

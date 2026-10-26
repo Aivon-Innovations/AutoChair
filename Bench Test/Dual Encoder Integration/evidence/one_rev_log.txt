@@ -1,0 +1,1147 @@
+# Logging started at 1792751839.188
+1792751839.654 [DEBUG][3858453][Main] State=3 Safety=0 Mode=0
+1792751839.668 [DEBUG][3858453][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751839.677 [DEBUG][3858464][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751839.684 [DEBUG][3858474][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751839.695 [INFO][3858485][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751840.179 [DEBUG][3858977][Main] State=3 Safety=0 Mode=0
+1792751840.192 [DEBUG][3858977][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751840.201 [DEBUG][3858988][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751840.208 [DEBUG][3858998][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751840.219 [INFO][3859009][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751840.702 [DEBUG][3859501][Main] State=3 Safety=0 Mode=0
+1792751840.716 [DEBUG][3859501][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751840.725 [DEBUG][3859512][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751840.732 [DEBUG][3859522][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751840.743 [INFO][3859533][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751841.226 [DEBUG][3860025][Main] State=3 Safety=0 Mode=0
+1792751841.239 [DEBUG][3860025][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751841.249 [DEBUG][3860036][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751841.256 [DEBUG][3860046][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751841.267 [INFO][3860057][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751841.750 [DEBUG][3860549][Main] State=3 Safety=0 Mode=0
+1792751841.763 [DEBUG][3860549][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751841.773 [DEBUG][3860560][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751841.780 [DEBUG][3860570][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751841.791 [INFO][3860581][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751842.274 [DEBUG][3861073][Main] State=3 Safety=0 Mode=0
+1792751842.288 [DEBUG][3861073][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751842.297 [DEBUG][3861084][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751842.304 [DEBUG][3861094][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751842.315 [INFO][3861105][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751842.798 [DEBUG][3861597][Main] State=3 Safety=0 Mode=0
+1792751842.811 [DEBUG][3861597][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751842.821 [DEBUG][3861608][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751842.828 [DEBUG][3861618][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751842.839 [INFO][3861629][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751843.322 [DEBUG][3862121][Main] State=3 Safety=0 Mode=0
+1792751843.336 [DEBUG][3862121][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751843.346 [DEBUG][3862132][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751843.352 [DEBUG][3862142][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751843.363 [INFO][3862153][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751843.847 [DEBUG][3862645][Main] State=3 Safety=0 Mode=0
+1792751843.860 [DEBUG][3862645][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751843.869 [DEBUG][3862656][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751843.875 [DEBUG][3862666][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751843.887 [INFO][3862677][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751844.370 [DEBUG][3863169][Main] State=3 Safety=0 Mode=0
+1792751844.384 [DEBUG][3863169][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751844.394 [DEBUG][3863180][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751844.400 [DEBUG][3863190][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751844.411 [INFO][3863201][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751844.894 [DEBUG][3863693][Main] State=3 Safety=0 Mode=0
+1792751844.907 [DEBUG][3863693][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751844.917 [DEBUG][3863704][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751844.924 [DEBUG][3863714][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751844.934 [INFO][3863725][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751845.419 [DEBUG][3864217][Main] State=3 Safety=0 Mode=0
+1792751845.467 [DEBUG][3864217][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751845.469 [DEBUG][3864228][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751845.470 [DEBUG][3864238][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751845.471 [INFO][3864249][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751845.942 [DEBUG][3864741][Main] State=3 Safety=0 Mode=0
+1792751845.955 [DEBUG][3864741][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751845.965 [DEBUG][3864752][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751845.972 [DEBUG][3864762][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751845.983 [INFO][3864773][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751846.466 [DEBUG][3865265][Main] State=3 Safety=0 Mode=0
+1792751846.480 [DEBUG][3865265][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751846.489 [DEBUG][3865276][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751846.496 [DEBUG][3865286][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751846.506 [INFO][3865297][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751846.990 [DEBUG][3865789][Main] State=3 Safety=0 Mode=0
+1792751847.004 [DEBUG][3865789][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751847.013 [DEBUG][3865800][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751847.020 [DEBUG][3865810][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751847.030 [INFO][3865821][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751847.515 [DEBUG][3866313][Main] State=3 Safety=0 Mode=0
+1792751847.527 [DEBUG][3866313][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751847.537 [DEBUG][3866324][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751847.543 [DEBUG][3866334][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751847.554 [INFO][3866345][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751848.038 [DEBUG][3866837][Main] State=3 Safety=0 Mode=0
+1792751848.052 [DEBUG][3866837][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751848.061 [DEBUG][3866848][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751848.068 [DEBUG][3866858][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751848.078 [INFO][3866869][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751848.563 [DEBUG][3867361][Main] State=3 Safety=0 Mode=0
+1792751848.575 [DEBUG][3867361][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751848.585 [DEBUG][3867372][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751848.591 [DEBUG][3867382][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751848.603 [INFO][3867393][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751849.086 [DEBUG][3867885][Main] State=3 Safety=0 Mode=0
+1792751849.099 [DEBUG][3867885][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751849.109 [DEBUG][3867896][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751849.115 [DEBUG][3867906][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751849.126 [INFO][3867917][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751849.610 [DEBUG][3868409][Main] State=3 Safety=0 Mode=0
+1792751849.623 [DEBUG][3868409][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751849.634 [DEBUG][3868420][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751849.640 [DEBUG][3868430][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751849.650 [INFO][3868441][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751850.134 [DEBUG][3868933][Main] State=3 Safety=0 Mode=0
+1792751850.147 [DEBUG][3868933][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751850.157 [DEBUG][3868944][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751850.163 [DEBUG][3868954][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751850.175 [INFO][3868965][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751850.658 [DEBUG][3869457][Main] State=3 Safety=0 Mode=0
+1792751850.671 [DEBUG][3869457][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751850.681 [DEBUG][3869468][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751850.687 [DEBUG][3869478][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751850.698 [INFO][3869489][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751851.182 [DEBUG][3869981][Main] State=3 Safety=0 Mode=0
+1792751851.195 [DEBUG][3869981][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751851.205 [DEBUG][3869992][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751851.211 [DEBUG][3870002][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751851.223 [INFO][3870013][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751851.706 [DEBUG][3870505][Main] State=3 Safety=0 Mode=0
+1792751851.719 [DEBUG][3870505][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751851.729 [DEBUG][3870516][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751851.736 [DEBUG][3870526][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751851.746 [INFO][3870537][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751852.230 [DEBUG][3871029][Main] State=3 Safety=0 Mode=0
+1792751852.243 [DEBUG][3871029][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751852.254 [DEBUG][3871040][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751852.260 [DEBUG][3871050][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751852.270 [INFO][3871061][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751852.754 [DEBUG][3871553][Main] State=3 Safety=0 Mode=0
+1792751852.767 [DEBUG][3871553][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751852.777 [DEBUG][3871564][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751852.784 [DEBUG][3871574][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751852.794 [INFO][3871585][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751853.278 [DEBUG][3872077][Main] State=3 Safety=0 Mode=0
+1792751853.291 [DEBUG][3872077][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751853.301 [DEBUG][3872088][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751853.308 [DEBUG][3872098][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751853.318 [INFO][3872109][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751853.802 [DEBUG][3872601][Main] State=3 Safety=0 Mode=0
+1792751853.815 [DEBUG][3872601][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751853.825 [DEBUG][3872612][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751853.831 [DEBUG][3872622][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751853.842 [INFO][3872633][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751854.326 [DEBUG][3873125][Main] State=3 Safety=0 Mode=0
+1792751854.339 [DEBUG][3873125][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751854.349 [DEBUG][3873136][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751854.355 [DEBUG][3873146][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751854.366 [INFO][3873157][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751854.850 [DEBUG][3873649][Main] State=3 Safety=0 Mode=0
+1792751854.863 [DEBUG][3873649][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751854.873 [DEBUG][3873660][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751854.880 [DEBUG][3873670][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751854.890 [INFO][3873681][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751855.374 [DEBUG][3874173][Main] State=3 Safety=0 Mode=0
+1792751855.387 [DEBUG][3874173][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751855.397 [DEBUG][3874184][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751855.403 [DEBUG][3874194][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751855.414 [INFO][3874205][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751855.898 [DEBUG][3874697][Main] State=3 Safety=0 Mode=0
+1792751855.911 [DEBUG][3874697][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751855.921 [DEBUG][3874708][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751855.927 [DEBUG][3874718][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751855.938 [INFO][3874729][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751856.422 [DEBUG][3875221][Main] State=3 Safety=0 Mode=0
+1792751856.435 [DEBUG][3875221][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751856.445 [DEBUG][3875232][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751856.451 [DEBUG][3875242][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751856.462 [INFO][3875253][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751856.946 [DEBUG][3875745][Main] State=3 Safety=0 Mode=0
+1792751856.959 [DEBUG][3875745][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751856.969 [DEBUG][3875756][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751856.976 [DEBUG][3875766][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751856.986 [INFO][3875777][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751857.470 [DEBUG][3876269][Main] State=3 Safety=0 Mode=0
+1792751857.483 [DEBUG][3876269][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751857.493 [DEBUG][3876280][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751857.499 [DEBUG][3876290][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751857.510 [INFO][3876301][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751857.994 [DEBUG][3876793][Main] State=3 Safety=0 Mode=0
+1792751858.007 [DEBUG][3876793][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751858.017 [DEBUG][3876804][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751858.023 [DEBUG][3876814][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751858.035 [INFO][3876825][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751858.518 [DEBUG][3877317][Main] State=3 Safety=0 Mode=0
+1792751858.531 [DEBUG][3877317][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751858.541 [DEBUG][3877328][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751858.547 [DEBUG][3877338][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751858.558 [INFO][3877349][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751859.042 [DEBUG][3877841][Main] State=3 Safety=0 Mode=0
+1792751859.055 [DEBUG][3877841][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751859.065 [DEBUG][3877852][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751859.071 [DEBUG][3877862][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751859.082 [INFO][3877873][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751859.566 [DEBUG][3878365][Main] State=3 Safety=0 Mode=0
+1792751859.579 [DEBUG][3878365][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751859.589 [DEBUG][3878376][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751859.595 [DEBUG][3878386][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751859.606 [INFO][3878397][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751860.090 [DEBUG][3878889][Main] State=3 Safety=0 Mode=0
+1792751860.103 [DEBUG][3878889][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751860.113 [DEBUG][3878900][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751860.119 [DEBUG][3878910][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751860.130 [INFO][3878921][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751860.614 [DEBUG][3879413][Main] State=3 Safety=0 Mode=0
+1792751860.627 [DEBUG][3879413][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751860.637 [DEBUG][3879424][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751860.643 [DEBUG][3879434][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751860.654 [INFO][3879445][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751861.138 [DEBUG][3879937][Main] State=3 Safety=0 Mode=0
+1792751861.151 [DEBUG][3879937][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751861.161 [DEBUG][3879948][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751861.167 [DEBUG][3879958][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751861.178 [INFO][3879969][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751861.662 [DEBUG][3880461][Main] State=3 Safety=0 Mode=0
+1792751861.675 [DEBUG][3880461][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751861.685 [DEBUG][3880472][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751861.691 [DEBUG][3880482][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751861.702 [INFO][3880493][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751862.186 [DEBUG][3880985][Main] State=3 Safety=0 Mode=0
+1792751862.199 [DEBUG][3880985][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751862.209 [DEBUG][3880996][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751862.215 [DEBUG][3881006][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751862.226 [INFO][3881017][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751862.710 [DEBUG][3881509][Main] State=3 Safety=0 Mode=0
+1792751862.723 [DEBUG][3881509][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751862.733 [DEBUG][3881520][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751862.739 [DEBUG][3881530][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751862.750 [INFO][3881541][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751863.234 [DEBUG][3882033][Main] State=3 Safety=0 Mode=0
+1792751863.247 [DEBUG][3882033][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751863.257 [DEBUG][3882044][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751863.264 [DEBUG][3882054][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751863.274 [INFO][3882065][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751863.758 [DEBUG][3882557][Main] State=3 Safety=0 Mode=0
+1792751863.771 [DEBUG][3882557][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751863.781 [DEBUG][3882568][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751863.787 [DEBUG][3882578][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751863.798 [INFO][3882589][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751864.282 [DEBUG][3883081][Main] State=3 Safety=0 Mode=0
+1792751864.295 [DEBUG][3883081][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751864.305 [DEBUG][3883092][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751864.311 [DEBUG][3883102][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751864.322 [INFO][3883113][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751864.806 [DEBUG][3883605][Main] State=3 Safety=0 Mode=0
+1792751864.819 [DEBUG][3883605][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751864.829 [DEBUG][3883616][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751864.835 [DEBUG][3883626][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751864.846 [INFO][3883637][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751865.330 [DEBUG][3884129][Main] State=3 Safety=0 Mode=0
+1792751865.343 [DEBUG][3884129][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751865.353 [DEBUG][3884140][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751865.359 [DEBUG][3884150][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751865.370 [INFO][3884161][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751865.854 [DEBUG][3884653][Main] State=3 Safety=0 Mode=0
+1792751865.867 [DEBUG][3884653][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751865.877 [DEBUG][3884664][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751865.883 [DEBUG][3884674][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751865.894 [INFO][3884685][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751866.378 [DEBUG][3885177][Main] State=3 Safety=0 Mode=0
+1792751866.391 [DEBUG][3885177][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751866.401 [DEBUG][3885188][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751866.407 [DEBUG][3885198][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751866.418 [INFO][3885209][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751866.902 [DEBUG][3885701][Main] State=3 Safety=0 Mode=0
+1792751866.915 [DEBUG][3885701][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751866.925 [DEBUG][3885712][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751866.931 [DEBUG][3885722][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751866.943 [INFO][3885733][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751867.426 [DEBUG][3886225][Main] State=3 Safety=0 Mode=0
+1792751867.439 [DEBUG][3886225][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751867.449 [DEBUG][3886236][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751867.455 [DEBUG][3886246][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751867.466 [INFO][3886257][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751867.950 [DEBUG][3886749][Main] State=3 Safety=0 Mode=0
+1792751867.963 [DEBUG][3886749][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751867.973 [DEBUG][3886760][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751867.979 [DEBUG][3886770][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751867.990 [INFO][3886781][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751868.474 [DEBUG][3887273][Main] State=3 Safety=0 Mode=0
+1792751868.487 [DEBUG][3887273][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751868.497 [DEBUG][3887284][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751868.503 [DEBUG][3887294][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751868.514 [INFO][3887305][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751868.998 [DEBUG][3887797][Main] State=3 Safety=0 Mode=0
+1792751869.012 [DEBUG][3887797][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751869.021 [DEBUG][3887808][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751869.027 [DEBUG][3887818][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751869.038 [INFO][3887829][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751869.522 [DEBUG][3888321][Main] State=3 Safety=0 Mode=0
+1792751869.535 [DEBUG][3888321][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751869.545 [DEBUG][3888332][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751869.551 [DEBUG][3888342][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751869.562 [INFO][3888353][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751870.046 [DEBUG][3888845][Main] State=3 Safety=0 Mode=0
+1792751870.059 [DEBUG][3888845][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751870.069 [DEBUG][3888856][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751870.075 [DEBUG][3888866][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751870.086 [INFO][3888877][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751870.570 [DEBUG][3889369][Main] State=3 Safety=0 Mode=0
+1792751870.583 [DEBUG][3889369][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751870.593 [DEBUG][3889380][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751870.599 [DEBUG][3889390][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751870.610 [INFO][3889401][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751871.094 [DEBUG][3889893][Main] State=3 Safety=0 Mode=0
+1792751871.107 [DEBUG][3889893][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751871.117 [DEBUG][3889904][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751871.123 [DEBUG][3889914][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751871.134 [INFO][3889925][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751871.618 [DEBUG][3890417][Main] State=3 Safety=0 Mode=0
+1792751871.631 [DEBUG][3890417][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751871.641 [DEBUG][3890428][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751871.647 [DEBUG][3890438][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751871.658 [INFO][3890449][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751872.142 [DEBUG][3890941][Main] State=3 Safety=0 Mode=0
+1792751872.155 [DEBUG][3890941][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751872.165 [DEBUG][3890952][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751872.171 [DEBUG][3890962][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751872.182 [INFO][3890973][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751872.666 [DEBUG][3891465][Main] State=3 Safety=0 Mode=0
+1792751872.679 [DEBUG][3891465][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751872.689 [DEBUG][3891476][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751872.695 [DEBUG][3891486][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751872.706 [INFO][3891497][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751873.190 [DEBUG][3891989][Main] State=3 Safety=0 Mode=0
+1792751873.203 [DEBUG][3891989][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751873.213 [DEBUG][3892000][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751873.219 [DEBUG][3892010][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751873.230 [INFO][3892021][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751873.714 [DEBUG][3892513][Main] State=3 Safety=0 Mode=0
+1792751873.727 [DEBUG][3892513][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751873.737 [DEBUG][3892524][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751873.743 [DEBUG][3892534][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751873.754 [INFO][3892545][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751874.238 [DEBUG][3893037][Main] State=3 Safety=0 Mode=0
+1792751874.251 [DEBUG][3893037][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751874.261 [DEBUG][3893048][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751874.267 [DEBUG][3893058][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751874.278 [INFO][3893069][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751874.762 [DEBUG][3893561][Main] State=3 Safety=0 Mode=0
+1792751874.775 [DEBUG][3893561][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751874.785 [DEBUG][3893572][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751874.791 [DEBUG][3893582][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751874.802 [INFO][3893593][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751875.287 [DEBUG][3894085][Main] State=3 Safety=0 Mode=0
+1792751875.299 [DEBUG][3894085][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751875.309 [DEBUG][3894096][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751875.315 [DEBUG][3894106][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751875.326 [INFO][3894117][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751875.810 [DEBUG][3894609][Main] State=3 Safety=0 Mode=0
+1792751875.824 [DEBUG][3894609][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751875.833 [DEBUG][3894620][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751875.839 [DEBUG][3894630][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751875.850 [INFO][3894641][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751876.334 [DEBUG][3895133][Main] State=3 Safety=0 Mode=0
+1792751876.347 [DEBUG][3895133][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751876.357 [DEBUG][3895144][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751876.363 [DEBUG][3895154][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751876.374 [INFO][3895165][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751876.858 [DEBUG][3895657][Main] State=3 Safety=0 Mode=0
+1792751876.871 [DEBUG][3895657][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751876.881 [DEBUG][3895668][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751876.887 [DEBUG][3895678][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751876.898 [INFO][3895689][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751877.382 [DEBUG][3896181][Main] State=3 Safety=0 Mode=0
+1792751877.395 [DEBUG][3896181][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751877.405 [DEBUG][3896192][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751877.411 [DEBUG][3896202][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751877.422 [INFO][3896213][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751877.906 [DEBUG][3896705][Main] State=3 Safety=0 Mode=0
+1792751877.919 [DEBUG][3896705][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751877.929 [DEBUG][3896716][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751877.935 [DEBUG][3896726][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751877.946 [INFO][3896737][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751878.430 [DEBUG][3897229][Main] State=3 Safety=0 Mode=0
+1792751878.443 [DEBUG][3897229][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751878.453 [DEBUG][3897240][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751878.459 [DEBUG][3897250][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751878.470 [INFO][3897261][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751878.954 [DEBUG][3897753][Main] State=3 Safety=0 Mode=0
+1792751878.967 [DEBUG][3897753][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751878.977 [DEBUG][3897764][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751878.983 [DEBUG][3897774][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751878.994 [INFO][3897785][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751879.478 [DEBUG][3898277][Main] State=3 Safety=0 Mode=0
+1792751879.491 [DEBUG][3898277][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751879.501 [DEBUG][3898288][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751879.507 [DEBUG][3898298][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751879.518 [INFO][3898309][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751880.002 [DEBUG][3898801][Main] State=3 Safety=0 Mode=0
+1792751880.015 [DEBUG][3898801][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751880.025 [DEBUG][3898812][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751880.031 [DEBUG][3898822][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751880.042 [INFO][3898833][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751880.526 [DEBUG][3899325][Main] State=3 Safety=0 Mode=0
+1792751880.539 [DEBUG][3899325][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751880.549 [DEBUG][3899336][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751880.555 [DEBUG][3899346][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751880.566 [INFO][3899357][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751881.050 [DEBUG][3899849][Main] State=3 Safety=0 Mode=0
+1792751881.063 [DEBUG][3899849][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751881.073 [DEBUG][3899860][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751881.079 [DEBUG][3899870][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751881.090 [INFO][3899881][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751881.574 [DEBUG][3900373][Main] State=3 Safety=0 Mode=0
+1792751881.587 [DEBUG][3900373][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751881.597 [DEBUG][3900384][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751881.603 [DEBUG][3900394][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751881.614 [INFO][3900405][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751882.098 [DEBUG][3900897][Main] State=3 Safety=0 Mode=0
+1792751882.111 [DEBUG][3900897][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751882.121 [DEBUG][3900908][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751882.127 [DEBUG][3900918][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751882.138 [INFO][3900929][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751882.622 [DEBUG][3901421][Main] State=3 Safety=0 Mode=0
+1792751882.635 [DEBUG][3901421][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751882.645 [DEBUG][3901432][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751882.651 [DEBUG][3901442][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751882.662 [INFO][3901453][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751883.146 [DEBUG][3901945][Main] State=3 Safety=0 Mode=0
+1792751883.159 [DEBUG][3901945][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751883.169 [DEBUG][3901956][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751883.175 [DEBUG][3901966][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751883.186 [INFO][3901977][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751883.670 [DEBUG][3902469][Main] State=3 Safety=0 Mode=0
+1792751883.683 [DEBUG][3902469][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751883.693 [DEBUG][3902480][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751883.699 [DEBUG][3902490][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751883.710 [INFO][3902501][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751884.194 [DEBUG][3902993][Main] State=3 Safety=0 Mode=0
+1792751884.207 [DEBUG][3902993][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751884.217 [DEBUG][3903004][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751884.223 [DEBUG][3903014][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751884.234 [INFO][3903025][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751884.718 [DEBUG][3903517][Main] State=3 Safety=0 Mode=0
+1792751884.731 [DEBUG][3903517][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751884.741 [DEBUG][3903528][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751884.747 [DEBUG][3903538][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751884.758 [INFO][3903549][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751885.242 [DEBUG][3904041][Main] State=3 Safety=0 Mode=0
+1792751885.255 [DEBUG][3904041][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751885.265 [DEBUG][3904052][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751885.271 [DEBUG][3904062][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751885.282 [INFO][3904073][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751885.766 [DEBUG][3904565][Main] State=3 Safety=0 Mode=0
+1792751885.779 [DEBUG][3904565][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751885.789 [DEBUG][3904576][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751885.796 [DEBUG][3904586][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751885.806 [INFO][3904597][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751886.290 [DEBUG][3905089][Main] State=3 Safety=0 Mode=0
+1792751886.303 [DEBUG][3905089][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751886.313 [DEBUG][3905100][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751886.319 [DEBUG][3905110][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751886.330 [INFO][3905121][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751886.814 [DEBUG][3905613][Main] State=3 Safety=0 Mode=0
+1792751886.827 [DEBUG][3905613][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751886.837 [DEBUG][3905624][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751886.843 [DEBUG][3905634][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751886.854 [INFO][3905645][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751887.338 [DEBUG][3906137][Main] State=3 Safety=0 Mode=0
+1792751887.351 [DEBUG][3906137][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751887.361 [DEBUG][3906148][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751887.367 [DEBUG][3906158][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751887.378 [INFO][3906169][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751887.862 [DEBUG][3906661][Main] State=3 Safety=0 Mode=0
+1792751887.875 [DEBUG][3906661][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751887.885 [DEBUG][3906672][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751887.891 [DEBUG][3906682][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751887.902 [INFO][3906693][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751888.387 [DEBUG][3907185][Main] State=3 Safety=0 Mode=0
+1792751888.399 [DEBUG][3907185][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751888.409 [DEBUG][3907196][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751888.415 [DEBUG][3907206][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751888.426 [INFO][3907217][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751888.910 [DEBUG][3907709][Main] State=3 Safety=0 Mode=0
+1792751888.923 [DEBUG][3907709][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751888.933 [DEBUG][3907720][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751888.939 [DEBUG][3907730][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751888.950 [INFO][3907741][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751889.434 [DEBUG][3908233][Main] State=3 Safety=0 Mode=0
+1792751889.447 [DEBUG][3908233][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751889.457 [DEBUG][3908244][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751889.463 [DEBUG][3908254][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751889.474 [INFO][3908265][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751889.958 [DEBUG][3908757][Main] State=3 Safety=0 Mode=0
+1792751889.971 [DEBUG][3908757][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751889.981 [DEBUG][3908768][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751889.987 [DEBUG][3908778][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751889.998 [INFO][3908789][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751890.482 [DEBUG][3909281][Main] State=3 Safety=0 Mode=0
+1792751890.495 [DEBUG][3909281][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751890.505 [DEBUG][3909292][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751890.511 [DEBUG][3909302][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751890.522 [INFO][3909313][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751891.006 [DEBUG][3909805][Main] State=3 Safety=0 Mode=0
+1792751891.019 [DEBUG][3909805][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751891.029 [DEBUG][3909816][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751891.035 [DEBUG][3909826][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751891.046 [INFO][3909837][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751891.530 [DEBUG][3910329][Main] State=3 Safety=0 Mode=0
+1792751891.543 [DEBUG][3910329][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751891.553 [DEBUG][3910340][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751891.559 [DEBUG][3910350][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751891.570 [INFO][3910361][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751892.054 [DEBUG][3910853][Main] State=3 Safety=0 Mode=0
+1792751892.067 [DEBUG][3910853][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751892.077 [DEBUG][3910864][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751892.083 [DEBUG][3910874][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751892.094 [INFO][3910885][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751892.578 [DEBUG][3911377][Main] State=3 Safety=0 Mode=0
+1792751892.591 [DEBUG][3911377][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751892.601 [DEBUG][3911388][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751892.607 [DEBUG][3911398][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751892.618 [INFO][3911409][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751893.102 [DEBUG][3911901][Main] State=3 Safety=0 Mode=0
+1792751893.115 [DEBUG][3911901][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751893.125 [DEBUG][3911912][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751893.131 [DEBUG][3911922][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751893.142 [INFO][3911933][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751893.626 [DEBUG][3912425][Main] State=3 Safety=0 Mode=0
+1792751893.639 [DEBUG][3912425][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751893.649 [DEBUG][3912436][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751893.655 [DEBUG][3912446][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751893.666 [INFO][3912457][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751894.150 [DEBUG][3912949][Main] State=3 Safety=0 Mode=0
+1792751894.163 [DEBUG][3912949][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751894.173 [DEBUG][3912960][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751894.179 [DEBUG][3912970][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751894.190 [INFO][3912981][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751894.673 [DEBUG][3913473][Main] State=3 Safety=0 Mode=0
+1792751894.687 [DEBUG][3913473][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751894.697 [DEBUG][3913484][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751894.703 [DEBUG][3913494][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751894.714 [INFO][3913505][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751895.198 [DEBUG][3913997][Main] State=3 Safety=0 Mode=0
+1792751895.211 [DEBUG][3913997][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751895.221 [DEBUG][3914008][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751895.227 [DEBUG][3914018][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751895.238 [INFO][3914029][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751895.722 [DEBUG][3914521][Main] State=3 Safety=0 Mode=0
+1792751895.735 [DEBUG][3914521][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751895.745 [DEBUG][3914532][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751895.751 [DEBUG][3914542][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751895.762 [INFO][3914553][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751896.245 [DEBUG][3915045][Main] State=3 Safety=0 Mode=0
+1792751896.259 [DEBUG][3915045][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751896.269 [DEBUG][3915056][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751896.275 [DEBUG][3915066][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751896.286 [INFO][3915077][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751896.770 [DEBUG][3915569][Main] State=3 Safety=0 Mode=0
+1792751896.783 [DEBUG][3915569][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751896.793 [DEBUG][3915580][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751896.799 [DEBUG][3915590][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751896.810 [INFO][3915601][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751897.294 [DEBUG][3916093][Main] State=3 Safety=0 Mode=0
+1792751897.307 [DEBUG][3916093][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751897.317 [DEBUG][3916104][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751897.323 [DEBUG][3916114][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751897.334 [INFO][3916125][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751897.818 [DEBUG][3916617][Main] State=3 Safety=0 Mode=0
+1792751897.831 [DEBUG][3916617][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751897.841 [DEBUG][3916628][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751897.847 [DEBUG][3916638][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751897.858 [INFO][3916649][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751898.342 [DEBUG][3917141][Main] State=3 Safety=0 Mode=0
+1792751898.355 [DEBUG][3917141][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751898.365 [DEBUG][3917152][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751898.371 [DEBUG][3917162][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751898.382 [INFO][3917173][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751898.866 [DEBUG][3917665][Main] State=3 Safety=0 Mode=0
+1792751898.879 [DEBUG][3917665][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751898.889 [DEBUG][3917676][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751898.895 [DEBUG][3917686][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751898.906 [INFO][3917697][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751899.390 [DEBUG][3918189][Main] State=3 Safety=0 Mode=0
+1792751899.403 [DEBUG][3918189][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751899.413 [DEBUG][3918200][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751899.419 [DEBUG][3918210][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751899.430 [INFO][3918221][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751899.914 [DEBUG][3918713][Main] State=3 Safety=0 Mode=0
+1792751899.927 [DEBUG][3918713][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751899.937 [DEBUG][3918724][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751899.943 [DEBUG][3918734][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751899.954 [INFO][3918745][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751900.438 [DEBUG][3919237][Main] State=3 Safety=0 Mode=0
+1792751900.451 [DEBUG][3919237][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751900.461 [DEBUG][3919248][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751900.467 [DEBUG][3919258][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751900.478 [INFO][3919269][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751900.963 [DEBUG][3919761][Main] State=3 Safety=0 Mode=0
+1792751900.975 [DEBUG][3919761][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751900.985 [DEBUG][3919772][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751900.991 [DEBUG][3919782][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751901.002 [INFO][3919793][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751901.486 [DEBUG][3920285][Main] State=3 Safety=0 Mode=0
+1792751901.499 [DEBUG][3920285][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751901.509 [DEBUG][3920296][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751901.515 [DEBUG][3920306][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751901.526 [INFO][3920317][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751902.010 [DEBUG][3920809][Main] State=3 Safety=0 Mode=0
+1792751902.023 [DEBUG][3920809][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751902.033 [DEBUG][3920820][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751902.039 [DEBUG][3920830][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751902.050 [INFO][3920841][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751902.534 [DEBUG][3921333][Main] State=3 Safety=0 Mode=0
+1792751902.547 [DEBUG][3921333][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751902.557 [DEBUG][3921344][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751902.563 [DEBUG][3921354][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751902.574 [INFO][3921365][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751903.058 [DEBUG][3921857][Main] State=3 Safety=0 Mode=0
+1792751903.071 [DEBUG][3921857][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751903.081 [DEBUG][3921868][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751903.087 [DEBUG][3921878][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751903.098 [INFO][3921889][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751903.582 [DEBUG][3922381][Main] State=3 Safety=0 Mode=0
+1792751903.595 [DEBUG][3922381][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751903.605 [DEBUG][3922392][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751903.611 [DEBUG][3922402][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751903.622 [INFO][3922413][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751904.106 [DEBUG][3922905][Main] State=3 Safety=0 Mode=0
+1792751904.119 [DEBUG][3922905][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751904.129 [DEBUG][3922916][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751904.135 [DEBUG][3922926][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751904.146 [INFO][3922937][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751904.629 [DEBUG][3923429][Main] State=3 Safety=0 Mode=0
+1792751904.643 [DEBUG][3923429][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751904.653 [DEBUG][3923440][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751904.659 [DEBUG][3923450][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751904.670 [INFO][3923461][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751905.154 [DEBUG][3923953][Main] State=3 Safety=0 Mode=0
+1792751905.167 [DEBUG][3923953][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751905.177 [DEBUG][3923964][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751905.183 [DEBUG][3923974][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751905.194 [INFO][3923985][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751905.678 [DEBUG][3924477][Main] State=3 Safety=0 Mode=0
+1792751905.691 [DEBUG][3924477][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751905.701 [DEBUG][3924488][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751905.707 [DEBUG][3924498][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751905.718 [INFO][3924509][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751906.202 [DEBUG][3925001][Main] State=3 Safety=0 Mode=0
+1792751906.215 [DEBUG][3925001][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751906.225 [DEBUG][3925012][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751906.231 [DEBUG][3925022][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751906.242 [INFO][3925033][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751906.726 [DEBUG][3925525][Main] State=3 Safety=0 Mode=0
+1792751906.739 [DEBUG][3925525][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751906.749 [DEBUG][3925536][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751906.755 [DEBUG][3925546][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751906.766 [INFO][3925557][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751907.250 [DEBUG][3926049][Main] State=3 Safety=0 Mode=0
+1792751907.263 [DEBUG][3926049][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751907.273 [DEBUG][3926060][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751907.279 [DEBUG][3926070][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751907.290 [INFO][3926081][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751907.774 [DEBUG][3926573][Main] State=3 Safety=0 Mode=0
+1792751907.787 [DEBUG][3926573][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751907.797 [DEBUG][3926584][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751907.803 [DEBUG][3926594][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751907.814 [INFO][3926605][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751908.298 [DEBUG][3927097][Main] State=3 Safety=0 Mode=0
+1792751908.311 [DEBUG][3927097][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751908.321 [DEBUG][3927108][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751908.327 [DEBUG][3927118][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751908.338 [INFO][3927129][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751908.822 [DEBUG][3927621][Main] State=3 Safety=0 Mode=0
+1792751908.835 [DEBUG][3927621][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751908.845 [DEBUG][3927632][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751908.851 [DEBUG][3927642][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751908.862 [INFO][3927653][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751909.346 [DEBUG][3928145][Main] State=3 Safety=0 Mode=0
+1792751909.359 [DEBUG][3928145][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751909.369 [DEBUG][3928156][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751909.375 [DEBUG][3928166][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751909.386 [INFO][3928177][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751909.870 [DEBUG][3928669][Main] State=3 Safety=0 Mode=0
+1792751909.883 [DEBUG][3928669][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751909.893 [DEBUG][3928680][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751909.899 [DEBUG][3928690][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751909.910 [INFO][3928701][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751910.394 [DEBUG][3929193][Main] State=3 Safety=0 Mode=0
+1792751910.407 [DEBUG][3929193][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751910.417 [DEBUG][3929204][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751910.423 [DEBUG][3929214][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751910.434 [INFO][3929225][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751910.917 [DEBUG][3929717][Main] State=3 Safety=0 Mode=0
+1792751910.931 [DEBUG][3929717][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751910.941 [DEBUG][3929728][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751910.947 [DEBUG][3929738][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751910.958 [INFO][3929749][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751911.441 [DEBUG][3930241][Main] State=3 Safety=0 Mode=0
+1792751911.455 [DEBUG][3930241][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751911.465 [DEBUG][3930252][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751911.471 [DEBUG][3930262][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751911.482 [INFO][3930273][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751911.966 [DEBUG][3930765][Main] State=3 Safety=0 Mode=0
+1792751911.979 [DEBUG][3930765][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751911.989 [DEBUG][3930776][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751911.995 [DEBUG][3930786][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751912.006 [INFO][3930797][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751912.490 [DEBUG][3931289][Main] State=3 Safety=0 Mode=0
+1792751912.503 [DEBUG][3931289][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751912.513 [DEBUG][3931300][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751912.519 [DEBUG][3931310][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751912.530 [INFO][3931321][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751913.014 [DEBUG][3931813][Main] State=3 Safety=0 Mode=0
+1792751913.027 [DEBUG][3931813][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751913.037 [DEBUG][3931824][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751913.043 [DEBUG][3931834][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751913.054 [INFO][3931845][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751913.538 [DEBUG][3932337][Main] State=3 Safety=0 Mode=0
+1792751913.551 [DEBUG][3932337][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751913.561 [DEBUG][3932348][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751913.567 [DEBUG][3932358][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751913.578 [INFO][3932369][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751914.062 [DEBUG][3932861][Main] State=3 Safety=0 Mode=0
+1792751914.075 [DEBUG][3932861][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751914.085 [DEBUG][3932872][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751914.091 [DEBUG][3932882][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751914.102 [INFO][3932893][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751914.586 [DEBUG][3933385][Main] State=3 Safety=0 Mode=0
+1792751914.599 [DEBUG][3933385][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751914.609 [DEBUG][3933396][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751914.615 [DEBUG][3933406][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751914.626 [INFO][3933417][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751915.110 [DEBUG][3933909][Main] State=3 Safety=0 Mode=0
+1792751915.123 [DEBUG][3933909][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751915.133 [DEBUG][3933920][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751915.139 [DEBUG][3933930][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751915.150 [INFO][3933941][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751915.634 [DEBUG][3934433][Main] State=3 Safety=0 Mode=0
+1792751915.647 [DEBUG][3934433][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751915.657 [DEBUG][3934444][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751915.663 [DEBUG][3934454][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751915.674 [INFO][3934465][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751916.158 [DEBUG][3934957][Main] State=3 Safety=0 Mode=0
+1792751916.171 [DEBUG][3934957][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751916.181 [DEBUG][3934968][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751916.187 [DEBUG][3934978][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751916.198 [INFO][3934989][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751916.682 [DEBUG][3935481][Main] State=3 Safety=0 Mode=0
+1792751916.695 [DEBUG][3935481][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751916.705 [DEBUG][3935492][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751916.711 [DEBUG][3935502][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751916.722 [INFO][3935513][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751917.206 [DEBUG][3936005][Main] State=3 Safety=0 Mode=0
+1792751917.219 [DEBUG][3936005][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751917.229 [DEBUG][3936016][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751917.235 [DEBUG][3936026][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751917.246 [INFO][3936037][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751917.730 [DEBUG][3936529][Main] State=3 Safety=0 Mode=0
+1792751917.743 [DEBUG][3936529][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751917.753 [DEBUG][3936540][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751917.759 [DEBUG][3936550][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751917.770 [INFO][3936561][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751918.253 [DEBUG][3937053][Main] State=3 Safety=0 Mode=0
+1792751918.267 [DEBUG][3937053][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751918.277 [DEBUG][3937064][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751918.283 [DEBUG][3937074][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751918.294 [INFO][3937085][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751918.777 [DEBUG][3937577][Main] State=3 Safety=0 Mode=0
+1792751918.791 [DEBUG][3937577][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751918.801 [DEBUG][3937588][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751918.807 [DEBUG][3937598][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751918.818 [INFO][3937609][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751919.302 [DEBUG][3938101][Main] State=3 Safety=0 Mode=0
+1792751919.315 [DEBUG][3938101][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751919.325 [DEBUG][3938112][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751919.331 [DEBUG][3938122][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751919.342 [INFO][3938133][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751919.826 [DEBUG][3938625][Main] State=3 Safety=0 Mode=0
+1792751919.839 [DEBUG][3938625][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751919.849 [DEBUG][3938636][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751919.855 [DEBUG][3938646][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751919.866 [INFO][3938657][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751920.350 [DEBUG][3939149][Main] State=3 Safety=0 Mode=0
+1792751920.363 [DEBUG][3939149][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751920.373 [DEBUG][3939160][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751920.379 [DEBUG][3939170][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751920.390 [INFO][3939181][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751920.873 [DEBUG][3939673][Main] State=3 Safety=0 Mode=0
+1792751920.887 [DEBUG][3939673][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751920.897 [DEBUG][3939684][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751920.903 [DEBUG][3939694][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751920.914 [INFO][3939705][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751921.397 [DEBUG][3940197][Main] State=3 Safety=0 Mode=0
+1792751921.411 [DEBUG][3940197][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751921.421 [DEBUG][3940208][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751921.427 [DEBUG][3940218][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751921.438 [INFO][3940229][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751921.922 [DEBUG][3940721][Main] State=3 Safety=0 Mode=0
+1792751921.935 [DEBUG][3940721][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751921.945 [DEBUG][3940732][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751921.951 [DEBUG][3940742][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751921.962 [INFO][3940753][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751922.445 [DEBUG][3941245][Main] State=3 Safety=0 Mode=0
+1792751922.459 [DEBUG][3941245][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751922.469 [DEBUG][3941256][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751922.475 [DEBUG][3941266][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751922.486 [INFO][3941277][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751922.969 [DEBUG][3941769][Main] State=3 Safety=0 Mode=0
+1792751922.983 [DEBUG][3941769][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751922.993 [DEBUG][3941780][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751922.999 [DEBUG][3941790][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751923.010 [INFO][3941801][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751923.494 [DEBUG][3942293][Main] State=3 Safety=0 Mode=0
+1792751923.507 [DEBUG][3942293][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751923.517 [DEBUG][3942304][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751923.523 [DEBUG][3942314][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751923.534 [INFO][3942325][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751924.017 [DEBUG][3942817][Main] State=3 Safety=0 Mode=0
+1792751924.031 [DEBUG][3942817][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751924.041 [DEBUG][3942828][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751924.047 [DEBUG][3942838][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751924.058 [INFO][3942849][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751924.542 [DEBUG][3943341][Main] State=3 Safety=0 Mode=0
+1792751924.555 [DEBUG][3943341][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751924.565 [DEBUG][3943352][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751924.571 [DEBUG][3943362][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751924.582 [INFO][3943373][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751925.066 [DEBUG][3943865][Main] State=3 Safety=0 Mode=0
+1792751925.079 [DEBUG][3943865][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751925.089 [DEBUG][3943876][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751925.095 [DEBUG][3943886][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751925.106 [INFO][3943897][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751925.590 [DEBUG][3944389][Main] State=3 Safety=0 Mode=0
+1792751925.603 [DEBUG][3944389][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751925.613 [DEBUG][3944400][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751925.619 [DEBUG][3944410][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751925.630 [INFO][3944421][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751926.114 [DEBUG][3944913][Main] State=3 Safety=0 Mode=0
+1792751926.127 [DEBUG][3944913][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751926.137 [DEBUG][3944924][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751926.143 [DEBUG][3944934][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751926.154 [INFO][3944945][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751926.638 [DEBUG][3945437][Main] State=3 Safety=0 Mode=0
+1792751926.651 [DEBUG][3945437][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751926.661 [DEBUG][3945448][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751926.667 [DEBUG][3945458][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751926.678 [INFO][3945469][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751927.161 [DEBUG][3945961][Main] State=3 Safety=0 Mode=0
+1792751927.175 [DEBUG][3945961][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751927.185 [DEBUG][3945972][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751927.191 [DEBUG][3945982][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751927.202 [INFO][3945993][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751927.685 [DEBUG][3946485][Main] State=3 Safety=0 Mode=0
+1792751927.699 [DEBUG][3946485][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751927.709 [DEBUG][3946496][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751927.715 [DEBUG][3946506][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751927.726 [INFO][3946517][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751928.211 [DEBUG][3947009][Main] State=3 Safety=0 Mode=0
+1792751928.223 [DEBUG][3947009][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751928.233 [DEBUG][3947020][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751928.239 [DEBUG][3947030][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751928.250 [INFO][3947041][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751928.734 [DEBUG][3947533][Main] State=3 Safety=0 Mode=0
+1792751928.747 [DEBUG][3947533][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751928.757 [DEBUG][3947544][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751928.763 [DEBUG][3947554][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751928.774 [INFO][3947565][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751929.257 [DEBUG][3948057][Main] State=3 Safety=0 Mode=0
+1792751929.271 [DEBUG][3948057][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751929.281 [DEBUG][3948068][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751929.287 [DEBUG][3948078][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751929.298 [INFO][3948089][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751929.781 [DEBUG][3948581][Main] State=3 Safety=0 Mode=0
+1792751929.795 [DEBUG][3948581][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751929.805 [DEBUG][3948592][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751929.811 [DEBUG][3948602][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751929.822 [INFO][3948613][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751930.305 [DEBUG][3949105][Main] State=3 Safety=0 Mode=0
+1792751930.319 [DEBUG][3949105][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751930.329 [DEBUG][3949116][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751930.335 [DEBUG][3949126][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751930.346 [INFO][3949137][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751930.830 [DEBUG][3949629][Main] State=3 Safety=0 Mode=0
+1792751930.843 [DEBUG][3949629][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751930.853 [DEBUG][3949640][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751930.859 [DEBUG][3949650][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751930.870 [INFO][3949661][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751931.353 [DEBUG][3950153][Main] State=3 Safety=0 Mode=0
+1792751931.367 [DEBUG][3950153][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751931.376 [DEBUG][3950164][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751931.383 [DEBUG][3950174][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751931.394 [INFO][3950185][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751931.877 [DEBUG][3950677][Main] State=3 Safety=0 Mode=0
+1792751931.891 [DEBUG][3950677][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751931.901 [DEBUG][3950688][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751931.907 [DEBUG][3950698][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751931.918 [INFO][3950709][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751932.402 [DEBUG][3951201][Main] State=3 Safety=0 Mode=0
+1792751932.415 [DEBUG][3951201][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751932.425 [DEBUG][3951212][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751932.431 [DEBUG][3951222][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751932.442 [INFO][3951233][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751932.925 [DEBUG][3951725][Main] State=3 Safety=0 Mode=0
+1792751932.939 [DEBUG][3951725][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751932.949 [DEBUG][3951736][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751932.955 [DEBUG][3951746][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751932.966 [INFO][3951757][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751933.449 [DEBUG][3952249][Main] State=3 Safety=0 Mode=0
+1792751933.463 [DEBUG][3952249][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751933.473 [DEBUG][3952260][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751933.479 [DEBUG][3952270][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751933.490 [INFO][3952281][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751933.973 [DEBUG][3952773][Main] State=3 Safety=0 Mode=0
+1792751933.987 [DEBUG][3952773][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751933.997 [DEBUG][3952784][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751934.003 [DEBUG][3952794][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751934.014 [INFO][3952805][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751934.497 [DEBUG][3953297][Main] State=3 Safety=0 Mode=0
+1792751934.511 [DEBUG][3953297][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751934.521 [DEBUG][3953308][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751934.527 [DEBUG][3953318][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751934.538 [INFO][3953329][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751935.021 [DEBUG][3953821][Main] State=3 Safety=0 Mode=0
+1792751935.035 [DEBUG][3953821][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751935.045 [DEBUG][3953832][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751935.051 [DEBUG][3953842][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751935.062 [INFO][3953853][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751935.545 [DEBUG][3954345][Main] State=3 Safety=0 Mode=0
+1792751935.559 [DEBUG][3954345][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751935.568 [DEBUG][3954356][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751935.575 [DEBUG][3954366][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751935.586 [INFO][3954377][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751936.069 [DEBUG][3954869][Main] State=3 Safety=0 Mode=0
+1792751936.083 [DEBUG][3954869][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751936.092 [DEBUG][3954880][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751936.099 [DEBUG][3954890][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751936.110 [INFO][3954901][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751936.593 [DEBUG][3955393][Main] State=3 Safety=0 Mode=0
+1792751936.607 [DEBUG][3955393][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751936.617 [DEBUG][3955404][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751936.623 [DEBUG][3955414][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751936.634 [INFO][3955425][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751937.118 [DEBUG][3955917][Main] State=3 Safety=0 Mode=0
+1792751937.131 [DEBUG][3955917][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751937.141 [DEBUG][3955928][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751937.147 [DEBUG][3955938][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751937.158 [INFO][3955949][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751937.641 [DEBUG][3956441][Main] State=3 Safety=0 Mode=0
+1792751937.655 [DEBUG][3956441][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751937.665 [DEBUG][3956452][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751937.671 [DEBUG][3956462][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751937.682 [INFO][3956473][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751938.165 [DEBUG][3956965][Main] State=3 Safety=0 Mode=0
+1792751938.179 [DEBUG][3956965][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751938.189 [DEBUG][3956976][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751938.195 [DEBUG][3956986][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751938.206 [INFO][3956997][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751938.690 [DEBUG][3957489][Main] State=3 Safety=0 Mode=0
+1792751938.703 [DEBUG][3957489][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575173 dir=-1 rpm=-0.71 pulses=1 idx=2235 inv=1 st=2 rsn=NONE
+1792751938.713 [DEBUG][3957500][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.21 deg (-0.650 rad) v=-0.00 m/s w=-0.02 rad/s valid=1
+1792751938.719 [DEBUG][3957510][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751938.730 [INFO][3957521][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751939.214 [DEBUG][3958013][Main] State=3 Safety=0 Mode=0
+1792751939.226 [DEBUG][3958013][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575172 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751939.237 [DEBUG][3958024][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.26 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751939.243 [DEBUG][3958034][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751939.254 [INFO][3958045][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751939.737 [DEBUG][3958537][Main] State=3 Safety=0 Mode=0
+1792751939.751 [DEBUG][3958537][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575172 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751939.761 [DEBUG][3958548][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.26 deg (-0.650 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751939.767 [DEBUG][3958558][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751939.778 [INFO][3958569][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751940.262 [DEBUG][3959061][Main] State=3 Safety=0 Mode=0
+1792751940.275 [DEBUG][3959061][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575174 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751940.285 [DEBUG][3959072][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.17 deg (-0.649 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751940.291 [DEBUG][3959082][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751940.302 [INFO][3959093][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751940.785 [DEBUG][3959585][Main] State=3 Safety=0 Mode=0
+1792751940.799 [DEBUG][3959585][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575174 dir=1 rpm=0.71 pulses=1 idx=2235 inv=1 st=2 rsn=NONE
+1792751940.809 [DEBUG][3959596][Odometry] Pose: x=-0.151 m y=0.051 m th=-37.17 deg (-0.649 rad) v=0.00 m/s w=0.02 rad/s valid=1
+1792751940.815 [DEBUG][3959606][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=1 Z(GPIO14)=0
+1792751940.826 [INFO][3959617][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751941.309 [DEBUG][3960109][Main] State=3 Safety=0 Mode=0
+1792751941.323 [DEBUG][3960109][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575185 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751941.333 [DEBUG][3960120][Odometry] Pose: x=-0.149 m y=0.049 m th=-36.67 deg (-0.640 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751941.339 [DEBUG][3960130][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751941.350 [INFO][3960141][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751941.833 [DEBUG][3960633][Main] State=3 Safety=0 Mode=0
+1792751941.847 [DEBUG][3960633][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751941.857 [DEBUG][3960644][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751941.863 [DEBUG][3960654][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751941.874 [INFO][3960665][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751942.357 [DEBUG][3961157][Main] State=3 Safety=0 Mode=0
+1792751942.371 [DEBUG][3961157][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751942.381 [DEBUG][3961168][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751942.387 [DEBUG][3961178][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751942.398 [INFO][3961189][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751942.881 [DEBUG][3961681][Main] State=3 Safety=0 Mode=0
+1792751942.895 [DEBUG][3961681][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751942.905 [DEBUG][3961692][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751942.910 [DEBUG][3961702][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751942.922 [INFO][3961713][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751943.405 [DEBUG][3962205][Main] State=3 Safety=0 Mode=0
+1792751943.419 [DEBUG][3962205][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751943.428 [DEBUG][3962216][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751943.435 [DEBUG][3962226][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751943.446 [INFO][3962237][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751943.930 [DEBUG][3962729][Main] State=3 Safety=0 Mode=0
+1792751943.943 [DEBUG][3962729][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751943.953 [DEBUG][3962740][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751943.959 [DEBUG][3962750][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751943.970 [INFO][3962761][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751944.453 [DEBUG][3963253][Main] State=3 Safety=0 Mode=0
+1792751944.467 [DEBUG][3963253][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751944.477 [DEBUG][3963264][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751944.482 [DEBUG][3963274][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751944.494 [INFO][3963285][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751944.977 [DEBUG][3963777][Main] State=3 Safety=0 Mode=0
+1792751944.991 [DEBUG][3963777][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751945.000 [DEBUG][3963788][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751945.007 [DEBUG][3963798][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751945.018 [INFO][3963809][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751945.501 [DEBUG][3964301][Main] State=3 Safety=0 Mode=0
+1792751945.515 [DEBUG][3964301][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751945.525 [DEBUG][3964312][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751945.531 [DEBUG][3964322][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751945.542 [INFO][3964333][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751946.025 [DEBUG][3964825][Main] State=3 Safety=0 Mode=0
+1792751946.039 [DEBUG][3964825][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751946.049 [DEBUG][3964836][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751946.055 [DEBUG][3964846][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751946.066 [INFO][3964857][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751946.550 [DEBUG][3965349][Main] State=3 Safety=0 Mode=0
+1792751946.563 [DEBUG][3965349][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575181 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751946.572 [DEBUG][3965360][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.85 deg (-0.643 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751946.579 [DEBUG][3965370][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751946.590 [INFO][3965381][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751947.073 [DEBUG][3965873][Main] State=3 Safety=0 Mode=0
+1792751947.087 [DEBUG][3965873][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575181 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751947.097 [DEBUG][3965884][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.85 deg (-0.643 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751947.103 [DEBUG][3965894][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751947.114 [INFO][3965905][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751947.597 [DEBUG][3966397][Main] State=3 Safety=0 Mode=0
+1792751947.611 [DEBUG][3966397][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751947.621 [DEBUG][3966408][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751947.627 [DEBUG][3966418][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751947.638 [INFO][3966429][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751948.122 [DEBUG][3966921][Main] State=3 Safety=0 Mode=0
+1792751948.135 [DEBUG][3966921][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751948.145 [DEBUG][3966932][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751948.151 [DEBUG][3966942][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751948.162 [INFO][3966953][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751948.646 [DEBUG][3967445][Main] State=3 Safety=0 Mode=0
+1792751948.658 [DEBUG][3967445][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751948.669 [DEBUG][3967456][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751948.675 [DEBUG][3967466][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751948.686 [INFO][3967477][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751949.170 [DEBUG][3967969][Main] State=3 Safety=0 Mode=0
+1792751949.183 [DEBUG][3967969][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751949.193 [DEBUG][3967980][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751949.199 [DEBUG][3967990][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751949.210 [INFO][3968001][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751949.693 [DEBUG][3968493][Main] State=3 Safety=0 Mode=0
+1792751949.707 [DEBUG][3968493][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751949.716 [DEBUG][3968504][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751949.723 [DEBUG][3968514][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751949.734 [INFO][3968525][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751950.217 [DEBUG][3969017][Main] State=3 Safety=0 Mode=0
+1792751950.231 [DEBUG][3969017][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751950.241 [DEBUG][3969028][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751950.247 [DEBUG][3969038][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751950.258 [INFO][3969049][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751950.741 [DEBUG][3969541][Main] State=3 Safety=0 Mode=0
+1792751950.755 [DEBUG][3969541][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751950.764 [DEBUG][3969552][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751950.770 [DEBUG][3969562][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751950.782 [INFO][3969573][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751951.265 [DEBUG][3970065][Main] State=3 Safety=0 Mode=0
+1792751951.279 [DEBUG][3970065][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751951.289 [DEBUG][3970076][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751951.295 [DEBUG][3970086][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751951.306 [INFO][3970097][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751951.790 [DEBUG][3970589][Main] State=3 Safety=0 Mode=0
+1792751951.803 [DEBUG][3970589][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751951.812 [DEBUG][3970600][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751951.819 [DEBUG][3970610][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751951.830 [INFO][3970621][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751952.313 [DEBUG][3971113][Main] State=3 Safety=0 Mode=0
+1792751952.326 [DEBUG][3971113][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751952.337 [DEBUG][3971124][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751952.343 [DEBUG][3971134][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751952.354 [INFO][3971145][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751952.837 [DEBUG][3971637][Main] State=3 Safety=0 Mode=0
+1792751952.850 [DEBUG][3971637][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751952.861 [DEBUG][3971648][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751952.867 [DEBUG][3971658][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751952.878 [INFO][3971669][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751953.361 [DEBUG][3972161][Main] State=3 Safety=0 Mode=0
+1792751953.375 [DEBUG][3972161][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751953.385 [DEBUG][3972172][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751953.390 [DEBUG][3972182][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751953.402 [INFO][3972193][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751953.885 [DEBUG][3972685][Main] State=3 Safety=0 Mode=0
+1792751953.898 [DEBUG][3972685][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575180 dir=0 rpm=0.00 pulses=0 idx=2235 inv=1 st=2 rsn=NONE
+1792751953.908 [DEBUG][3972696][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.90 deg (-0.644 rad) v=0.00 m/s w=0.00 rad/s valid=1
+1792751953.915 [DEBUG][3972706][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751953.925 [INFO][3972717][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751954.409 [DEBUG][3973209][Main] State=3 Safety=0 Mode=0
+1792751954.423 [DEBUG][3973209][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=575182 dir=1 rpm=1.43 pulses=2 idx=2235 inv=1 st=2 rsn=NONE
+1792751954.433 [DEBUG][3973220][Odometry] Pose: x=-0.150 m y=0.050 m th=-36.81 deg (-0.642 rad) v=0.01 m/s w=0.04 rad/s valid=1
+1792751954.439 [DEBUG][3973230][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=1 Z(GPIO14)=0
+1792751954.450 [INFO][3973241][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751954.933 [DEBUG][3973733][Main] State=3 Safety=0 Mode=0
+1792751954.947 [DEBUG][3973733][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=576153 dir=1 rpm=30.71 pulses=43 idx=2235 inv=1 st=2 rsn=NONE
+1792751954.956 [DEBUG][3973744][Odometry] Pose: x=0.030 m y=0.002 m th=6.89 deg (0.120 rad) v=0.24 m/s w=0.94 rad/s valid=1
+1792751954.963 [DEBUG][3973754][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=1 Z(GPIO14)=0
+1792751954.973 [INFO][3973765][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751955.457 [DEBUG][3974257][Main] State=3 Safety=0 Mode=0
+1792751955.471 [DEBUG][3974257][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=576602 dir=1 rpm=27.86 pulses=39 idx=2235 inv=1 st=2 rsn=NONE
+1792751955.481 [DEBUG][3974268][Odometry] Pose: x=0.114 m y=0.027 m th=27.09 deg (0.473 rad) v=0.23 m/s w=0.90 rad/s valid=1
+1792751955.486 [DEBUG][3974278][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751955.497 [INFO][3974289][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751955.982 [DEBUG][3974781][Main] State=3 Safety=0 Mode=0
+1792751955.995 [DEBUG][3974781][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=576943 dir=1 rpm=17.14 pulses=24 idx=2236 inv=1 st=2 rsn=NONE
+1792751956.004 [DEBUG][3974792][Odometry] Pose: x=0.169 m y=0.065 m th=42.44 deg (0.741 rad) v=0.14 m/s w=0.57 rad/s valid=1
+1792751956.011 [DEBUG][3974802][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751956.021 [INFO][3974813][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751956.505 [DEBUG][3975305][Main] State=3 Safety=0 Mode=0
+1792751956.519 [DEBUG][3975305][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=577331 dir=1 rpm=25.00 pulses=35 idx=2236 inv=1 st=2 rsn=NONE
+1792751956.528 [DEBUG][3975316][Odometry] Pose: x=0.216 m y=0.125 m th=59.90 deg (1.045 rad) v=0.19 m/s w=0.77 rad/s valid=1
+1792751956.535 [DEBUG][3975326][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=1 Z(GPIO14)=0
+1792751956.545 [INFO][3975337][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751957.029 [DEBUG][3975829][Main] State=3 Safety=0 Mode=0
+1792751957.043 [DEBUG][3975829][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=577678 dir=1 rpm=15.71 pulses=22 idx=2236 inv=1 st=2 rsn=NONE
+1792751957.052 [DEBUG][3975840][Odometry] Pose: x=0.242 m y=0.187 m th=75.51 deg (1.318 rad) v=0.12 m/s w=0.47 rad/s valid=1
+1792751957.059 [DEBUG][3975850][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751957.069 [INFO][3975861][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751957.553 [DEBUG][3976353][Main] State=3 Safety=0 Mode=0
+1792751957.567 [DEBUG][3976353][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=577887 dir=1 rpm=12.86 pulses=18 idx=2236 inv=1 st=2 rsn=NONE
+1792751957.576 [DEBUG][3976364][Odometry] Pose: x=0.249 m y=0.228 m th=84.92 deg (1.482 rad) v=0.10 m/s w=0.39 rad/s valid=1
+1792751957.583 [DEBUG][3976374][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751957.594 [INFO][3976385][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751958.077 [DEBUG][3976877][Main] State=3 Safety=0 Mode=0
+1792751958.091 [DEBUG][3976877][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=578132 dir=1 rpm=12.14 pulses=17 idx=2236 inv=1 st=2 rsn=NONE
+1792751958.100 [DEBUG][3976888][Odometry] Pose: x=0.249 m y=0.276 m th=95.94 deg (1.674 rad) v=0.09 m/s w=0.37 rad/s valid=1
+1792751958.107 [DEBUG][3976898][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=1 Z(GPIO14)=0
+1792751958.117 [INFO][3976909][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751958.601 [DEBUG][3977401][Main] State=3 Safety=0 Mode=0
+1792751958.615 [DEBUG][3977401][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=578391 dir=1 rpm=10.00 pulses=14 idx=2236 inv=1 st=2 rsn=NONE
+1792751958.624 [DEBUG][3977412][Odometry] Pose: x=0.238 m y=0.326 m th=107.60 deg (1.878 rad) v=0.07 m/s w=0.29 rad/s valid=1
+1792751958.631 [DEBUG][3977422][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=1 Z(GPIO14)=0
+1792751958.642 [INFO][3977433][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751959.125 [DEBUG][3977925][Main] State=3 Safety=0 Mode=0
+1792751959.139 [DEBUG][3977925][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=578662 dir=1 rpm=18.57 pulses=26 idx=2236 inv=1 st=2 rsn=NONE
+1792751959.149 [DEBUG][3977936][Odometry] Pose: x=0.217 m y=0.374 m th=119.79 deg (2.091 rad) v=0.13 m/s w=0.53 rad/s valid=1
+1792751959.154 [DEBUG][3977946][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751959.166 [INFO][3977957][Ultrasonic] US0=-1.0(st=7) US1=-1.0(st=7) US2=-1.0(st=7) US3=-1.0(st=7) US4=-1.0(st=0) US5=-1.0(st=7) min=-1.0
+1792751959.649 [DEBUG][3978449][Main] State=3 Safety=0 Mode=0

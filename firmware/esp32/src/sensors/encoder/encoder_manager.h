@@ -50,6 +50,7 @@ public:
      * @brief Update both encoder drivers and aggregate readings.
      */
     void update();
+    void update(uint32_t timestampMs);
 
     /**
      * @brief Get aggregated wheel encoder readings.

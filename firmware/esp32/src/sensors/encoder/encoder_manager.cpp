@@ -74,6 +74,14 @@ void EncoderManager::update() {
     _wheelData.right = _rightDriver.getReading();
 }
 
+void EncoderManager::update(uint32_t timestampMs) {
+    _leftDriver.update(timestampMs);
+    _rightDriver.update(timestampMs);
+
+    _wheelData.left  = _leftDriver.getReading();
+    _wheelData.right = _rightDriver.getReading();
+}
+
 void EncoderManager::resetCounts() {
     _leftDriver.resetCount();
     _rightDriver.resetCount();

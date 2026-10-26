@@ -1,0 +1,261 @@
+1792751063.650 O] R_ENC raw: A(GPIO32)=1 B(GPIO17)=1 Z(GPIO14)=0
+1792751063.650 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.651 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.651 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.652 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.652 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.652 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.652 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.653 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.653 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.653 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.653 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.654 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.654 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.655 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.655 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.655 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.655 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.655 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.656 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.656 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.656 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.656 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.657 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.657 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.657 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.657 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.657 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.658 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.658 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.658 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.658 [INFO][30824417)=1 Z(GPIO14)=0
+1792751063.659 [INFO][30824417)=1 Z(GPIO14)=0
+1792751064.155 [DEBUG][3082933][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=553094 dir=0 rpm=0.00 pulses=0 idx=2226 inv=1 st=2 rsn=NONE
+1792751064.170 [DEBUG][3082954][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=1 Z(GPIO14)=0
+1792751064.679 [DEBUG][3083457][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=553092 dir=0 rpm=0.00 pulses=0 idx=2226 inv=1 st=2 rsn=NONE
+1792751064.694 [DEBUG][3083478][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751065.203 [DEBUG][3083981][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=553170 dir=1 rpm=22.14 pulses=31 idx=2226 inv=1 st=2 rsn=NONE
+1792751065.219 [DEBUG][3084002][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=1 Z(GPIO14)=0
+1792751065.727 [DEBUG][3084505][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=553594 dir=1 rpm=35.00 pulses=49 idx=2226 inv=1 st=2 rsn=NONE
+1792751065.743 [DEBUG][3084526][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751066.251 [DEBUG][3085029][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=554021 dir=1 rpm=10.00 pulses=14 idx=2226 inv=1 st=2 rsn=NONE
+1792751066.267 [DEBUG][3085050][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751066.775 [DEBUG][3085553][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=554408 dir=1 rpm=29.29 pulses=41 idx=2226 inv=1 st=2 rsn=NONE
+1792751066.791 [DEBUG][3085574][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=1 Z(GPIO14)=0
+1792751067.299 [DEBUG][3086078][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=555117 dir=1 rpm=17.86 pulses=25 idx=2227 inv=1 st=2 rsn=NONE
+1792751067.315 [DEBUG][3086098][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=1 Z(GPIO14)=0
+1792751067.823 [DEBUG][3086601][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=555603 dir=1 rpm=27.14 pulses=38 idx=2227 inv=1 st=2 rsn=NONE
+1792751067.839 [DEBUG][3086622][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751068.347 [DEBUG][3087126][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=556022 dir=1 rpm=28.57 pulses=40 idx=2227 inv=1 st=2 rsn=NONE
+1792751068.363 [DEBUG][3087146][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=1 Z(GPIO14)=0
+1792751068.871 [DEBUG][3087649][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=556313 dir=1 rpm=5.00 pulses=7 idx=2227 inv=1 st=2 rsn=NONE
+1792751068.887 [DEBUG][3087670][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=1 Z(GPIO14)=0
+1792751069.395 [DEBUG][3088174][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=556577 dir=1 rpm=16.43 pulses=23 idx=2227 inv=1 st=2 rsn=NONE
+1792751069.411 [DEBUG][3088194][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751069.919 [DEBUG][3088697][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=556841 dir=1 rpm=20.71 pulses=29 idx=2227 inv=1 st=2 rsn=NONE
+1792751069.935 [DEBUG][3088718][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=1 Z(GPIO14)=0
+1792751070.443 [DEBUG][3089222][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557286 dir=1 rpm=17.86 pulses=25 idx=2227 inv=1 st=2 rsn=NONE
+1792751070.459 [DEBUG][3089242][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751070.967 [DEBUG][3089745][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751070.983 [DEBUG][3089766][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751071.491 [DEBUG][3090269][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751071.507 [DEBUG][3090290][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751072.014 [DEBUG][3090793][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751072.031 [DEBUG][3090814][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751072.539 [DEBUG][3091317][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751072.555 [DEBUG][3091338][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751073.063 [DEBUG][3091841][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751073.079 [DEBUG][3091862][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751073.587 [DEBUG][3092365][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751073.603 [DEBUG][3092386][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751074.111 [DEBUG][3092889][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751074.127 [DEBUG][3092910][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751074.635 [DEBUG][3093413][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751074.651 [DEBUG][3093434][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751075.158 [DEBUG][3093937][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751075.175 [DEBUG][3093958][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751075.683 [DEBUG][3094461][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751075.699 [DEBUG][3094482][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751076.206 [DEBUG][3094985][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751076.223 [DEBUG][3095006][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751076.731 [DEBUG][3095509][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751076.747 [DEBUG][3095530][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751077.255 [DEBUG][3096033][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751077.271 [DEBUG][3096054][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751077.779 [DEBUG][3096557][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751077.795 [DEBUG][3096578][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751078.303 [DEBUG][3097081][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751078.319 [DEBUG][3097102][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751078.827 [DEBUG][3097605][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751078.843 [DEBUG][3097626][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751079.351 [DEBUG][3098129][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751079.367 [DEBUG][3098150][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751079.875 [DEBUG][3098653][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751079.891 [DEBUG][3098674][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751080.399 [DEBUG][3099177][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751080.415 [DEBUG][3099198][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751080.923 [DEBUG][3099701][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751080.939 [DEBUG][3099722][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751081.447 [DEBUG][3100225][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751081.463 [DEBUG][3100246][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751081.971 [DEBUG][3100749][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751081.987 [DEBUG][3100770][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751082.495 [DEBUG][3101273][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751082.511 [DEBUG][3101294][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751083.018 [DEBUG][3101797][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751083.035 [DEBUG][3101818][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751083.542 [DEBUG][3102321][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751083.559 [DEBUG][3102342][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751084.066 [DEBUG][3102845][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751084.083 [DEBUG][3102866][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751084.590 [DEBUG][3103369][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751084.607 [DEBUG][3103390][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751085.115 [DEBUG][3103893][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751085.131 [DEBUG][3103914][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751085.638 [DEBUG][3104417][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751085.655 [DEBUG][3104438][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751086.162 [DEBUG][3104941][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751086.179 [DEBUG][3104962][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751086.687 [DEBUG][3105465][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751086.703 [DEBUG][3105486][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751087.210 [DEBUG][3105989][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751087.227 [DEBUG][3106010][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751087.735 [DEBUG][3106513][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751087.750 [DEBUG][3106534][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751088.258 [DEBUG][3107037][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751088.275 [DEBUG][3107058][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751088.783 [DEBUG][3107561][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751088.798 [DEBUG][3107582][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751089.306 [DEBUG][3108085][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751089.323 [DEBUG][3108106][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751089.830 [DEBUG][3108609][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751089.846 [DEBUG][3108630][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751090.355 [DEBUG][3109133][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751090.371 [DEBUG][3109154][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751090.878 [DEBUG][3109657][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751090.895 [DEBUG][3109678][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751091.402 [DEBUG][3110181][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751091.419 [DEBUG][3110202][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751091.927 [DEBUG][3110705][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751091.943 [DEBUG][3110726][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751092.450 [DEBUG][3111229][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751092.467 [DEBUG][3111250][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751092.975 [DEBUG][3111753][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751092.990 [DEBUG][3111774][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751093.498 [DEBUG][3112277][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751093.514 [DEBUG][3112298][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751094.023 [DEBUG][3112801][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751094.038 [DEBUG][3112822][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751094.546 [DEBUG][3113325][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751094.562 [DEBUG][3113346][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751095.070 [DEBUG][3113849][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751095.087 [DEBUG][3113870][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751095.594 [DEBUG][3114373][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751095.611 [DEBUG][3114394][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751096.118 [DEBUG][3114897][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751096.134 [DEBUG][3114918][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751096.642 [DEBUG][3115421][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751096.659 [DEBUG][3115442][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751097.166 [DEBUG][3115945][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751097.182 [DEBUG][3115966][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751097.690 [DEBUG][3116469][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751097.707 [DEBUG][3116490][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751098.214 [DEBUG][3116993][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557508 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751098.230 [DEBUG][3117014][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751098.738 [DEBUG][3117517][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=557511 dir=1 rpm=1.43 pulses=2 idx=2228 inv=1 st=2 rsn=NONE
+1792751098.754 [DEBUG][3117538][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751099.262 [DEBUG][3118041][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=558180 dir=1 rpm=22.14 pulses=31 idx=2228 inv=1 st=2 rsn=NONE
+1792751099.279 [DEBUG][3118062][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=1 Z(GPIO14)=0
+1792751099.786 [DEBUG][3118565][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=558719 dir=1 rpm=20.00 pulses=28 idx=2228 inv=1 st=2 rsn=NONE
+1792751099.803 [DEBUG][3118586][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=1 Z(GPIO14)=0
+1792751100.310 [DEBUG][3119089][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=559168 dir=1 rpm=17.14 pulses=24 idx=2228 inv=1 st=2 rsn=NONE
+1792751100.327 [DEBUG][3119110][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751100.834 [DEBUG][3119613][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=559402 dir=0 rpm=0.00 pulses=0 idx=2228 inv=1 st=2 rsn=NONE
+1792751100.851 [DEBUG][3119634][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=1 Z(GPIO14)=0
+1792751101.358 [DEBUG][3120137][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=559651 dir=1 rpm=39.29 pulses=55 idx=2228 inv=1 st=2 rsn=NONE
+1792751101.374 [DEBUG][3120158][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751101.882 [DEBUG][3120661][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=560201 dir=1 rpm=20.00 pulses=28 idx=2229 inv=1 st=2 rsn=NONE
+1792751101.898 [DEBUG][3120682][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751102.407 [DEBUG][3121185][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=560810 dir=1 rpm=32.14 pulses=45 idx=2229 inv=1 st=2 rsn=NONE
+1792751102.422 [DEBUG][3121206][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751102.930 [DEBUG][3121709][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=561153 dir=1 rpm=15.00 pulses=21 idx=2229 inv=1 st=2 rsn=NONE
+1792751102.946 [DEBUG][3121730][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=1 Z(GPIO14)=0
+1792751103.454 [DEBUG][3122233][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=561637 dir=1 rpm=12.14 pulses=17 idx=2229 inv=1 st=2 rsn=NONE
+1792751103.470 [DEBUG][3122254][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751103.978 [DEBUG][3122757][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=561931 dir=1 rpm=7.86 pulses=11 idx=2229 inv=1 st=2 rsn=NONE
+1792751103.994 [DEBUG][3122778][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=0 Z(GPIO14)=0
+1792751104.502 [DEBUG][3123282][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562248 dir=1 rpm=46.43 pulses=65 idx=2230 inv=1 st=2 rsn=NONE
+1792751104.518 [DEBUG][3123302][GPIO] R_ENC raw: A(GPIO32)=0 B(GPIO17)=1 Z(GPIO14)=0
+1792751105.026 [DEBUG][3123805][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562433 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751105.042 [DEBUG][3123826][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751105.551 [DEBUG][3124329][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562832 dir=1 rpm=18.57 pulses=26 idx=2230 inv=1 st=2 rsn=NONE
+1792751105.566 [DEBUG][3124350][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=1 Z(GPIO14)=0
+1792751106.074 [DEBUG][3124853][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562996 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751106.090 [DEBUG][3124874][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751106.598 [DEBUG][3125377][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751106.614 [DEBUG][3125398][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751107.122 [DEBUG][3125901][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751107.138 [DEBUG][3125922][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751107.646 [DEBUG][3126425][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751107.662 [DEBUG][3126446][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751108.170 [DEBUG][3126949][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751108.186 [DEBUG][3126970][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751108.694 [DEBUG][3127473][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751108.710 [DEBUG][3127494][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751109.218 [DEBUG][3127997][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751109.234 [DEBUG][3128018][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751109.742 [DEBUG][3128521][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751109.758 [DEBUG][3128542][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751110.266 [DEBUG][3129045][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751110.282 [DEBUG][3129066][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751110.790 [DEBUG][3129569][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751110.806 [DEBUG][3129590][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751111.314 [DEBUG][3130093][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751111.330 [DEBUG][3130114][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751111.838 [DEBUG][3130617][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751111.854 [DEBUG][3130638][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751112.362 [DEBUG][3131141][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751112.378 [DEBUG][3131162][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751112.886 [DEBUG][3131665][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751112.902 [DEBUG][3131686][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751113.410 [DEBUG][3132189][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751113.426 [DEBUG][3132210][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751113.934 [DEBUG][3132713][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751113.950 [DEBUG][3132734][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751114.458 [DEBUG][3133237][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751114.474 [DEBUG][3133258][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751114.982 [DEBUG][3133761][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751114.998 [DEBUG][3133782][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751115.506 [DEBUG][3134285][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751115.522 [DEBUG][3134306][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751116.030 [DEBUG][3134809][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751116.046 [DEBUG][3134830][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751116.554 [DEBUG][3135333][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751116.570 [DEBUG][3135354][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751117.078 [DEBUG][3135857][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751117.094 [DEBUG][3135878][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751117.602 [DEBUG][3136381][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751117.618 [DEBUG][3136402][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751118.126 [DEBUG][3136905][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751118.142 [DEBUG][3136926][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751118.650 [DEBUG][3137429][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751118.666 [DEBUG][3137450][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751119.174 [DEBUG][3137953][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751119.190 [DEBUG][3137974][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751119.698 [DEBUG][3138477][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751119.714 [DEBUG][3138498][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751120.222 [DEBUG][3139001][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751120.238 [DEBUG][3139022][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751120.746 [DEBUG][3139525][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751120.762 [DEBUG][3139546][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751121.270 [DEBUG][3140049][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751121.286 [DEBUG][3140070][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751121.794 [DEBUG][3140573][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751121.810 [DEBUG][3140594][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751122.318 [DEBUG][3141097][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751122.334 [DEBUG][3141118][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751122.842 [DEBUG][3141621][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751122.858 [DEBUG][3141642][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0
+1792751123.366 [DEBUG][3142145][Encoder] L: cnt=0 dir=0 rpm=0.00 pulses=0 idx=0 inv=0 st=2 rsn=NONE | R: cnt=562997 dir=0 rpm=0.00 pulses=0 idx=2230 inv=1 st=2 rsn=NONE
+1792751123.382 [DEBUG][3142166][GPIO] R_ENC raw: A(GPIO32)=1 B(GPIO17)=0 Z(GPIO14)=0

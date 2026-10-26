@@ -106,15 +106,15 @@ constexpr uint32_t IMU_SAMPLE_INTERVAL_MS  = 20;   ///< 50 Hz initial; validate.
 constexpr uint16_t ENCODER_PPR = 600;  ///< Pulses per revolution (manufacturer spec).
 // counts/revolution may be different depending on decoding mode — verify.
 
-// Temporary GPIO assignment for Physical Bench Test (Phase 6):
-// Left Encoder: A = GPIO25, B = GPIO26, Z = GPIO27
-// Right Encoder: Disabled (0)
+// Dual Encoder GPIO assignment for Physical Bench Test (Phase 6):
+// Left Encoder:  A = GPIO25, B = GPIO26, Z = GPIO27
+// Right Encoder: A = GPIO16, B = GPIO17, Z = GPIO14
 constexpr uint8_t ENCODER_LEFT_A_PIN  = 25;
 constexpr uint8_t ENCODER_LEFT_B_PIN  = 26;
 constexpr uint8_t ENCODER_LEFT_Z_PIN  = 27;
-constexpr uint8_t ENCODER_RIGHT_A_PIN = 0;  // DISABLED / UNCONFIGURED
-constexpr uint8_t ENCODER_RIGHT_B_PIN = 0;  // DISABLED / UNCONFIGURED
-constexpr uint8_t ENCODER_RIGHT_Z_PIN = 0;  // DISABLED / UNCONFIGURED
+constexpr uint8_t ENCODER_RIGHT_A_PIN = 16;
+constexpr uint8_t ENCODER_RIGHT_B_PIN = 17;
+constexpr uint8_t ENCODER_RIGHT_Z_PIN = 14;
 
 // =============================================================================
 // Emergency stop  (ESP32_CONTROLLER_PRD.md §12)
