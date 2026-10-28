@@ -1,0 +1,112 @@
+{
+  "name": "AutoChair Standalone Pi-ESP32 Serial Protocol Specification",
+  "version": 1,
+  "transport": "USB_CDC_SERIAL",
+  "baud_rate": 115200,
+  "framing": "NEWLINE_DELIMITED_JSON",
+  "max_frame_bytes": 512,
+  "timing": {
+    "heartbeat_interval_ms": 250,
+    "heartbeat_timeout_ms": 1500,
+    "telemetry_interval_ms": 500,
+    "command_timeout_ms": 1000
+  },
+  "sequence_policy": {
+    "type": "RFC_1982_SERIAL_NUMBER_ARITHMETIC",
+    "word_size_bits": 32,
+    "rule": "diff = (uint32_t)(seq - last_seq); valid_advance = (diff > 0) && (diff < 0x80000000UL)",
+    "duplicate_rule": "diff == 0; rejected, watchdog NOT refreshed",
+    "stale_rule": "diff >= 0x80000000UL; rejected, watchdog NOT refreshed",
+    "rollover_rule": "Handled naturally across 2^32-1 boundary without heuristic threshold magic numbers",
+    "first_heartbeat_rule": "Establishes baseline sequence; arming prohibited prior to first heartbeat"
+  },
+  "duplicate_command_handling": {
+    "type": "BOUNDED_FIFO_CIRCULAR_CACHE",
+    "size": 16,
+    "eviction": "FIFO after 16 unique command IDs",
+    "scope": "Suppresses immediate and burst retries; does not claim infinite replay protection"
+  },
+  "states": [
+    "BOOT",
+    "IDLE",
+    "READY",
+    "ACTIVE_TEST",
+    "SAFE",
+    "FAULT"
+  ],
+  "modes": [
+    "NONE",
+    "MANUAL",
+    "ASSISTED"
+  ],
+  "message_types": [
+    "COMMAND",
+    "RESPONSE",
+    "TELEMETRY",
+    "HEARTBEAT",
+    "EVENT"
+  ],
+  "required_top_level_fields": {
+    "version": "strictly integer == 1 (not boolean)",
+    "msg_type": "string matching message_types",
+    "msg_id": "strictly integer >= 0 (not boolean)",
+    "timestamp_ms": "strictly integer >= 0 (not boolean)",
+    "payload": "dictionary / object"
+  },
+  "heartbeat_acknowledgement": {
+    "description": "ESP32 response to incoming HEARTBEAT message",
+    "payload_fields": {
+      "seq": "strictly integer matching incoming heartbeat sequence",
+      "ack": "boolean (true for fresh advance, false for stale/duplicate)",
+      "status": "ACCEPTED or REJECTED",
+      "reason": "HEARTBEAT_OK or STALE_OR_DUPLICATE_HEARTBEAT",
+      "state": "current State string"
+    }
+  },
+  "commands": {
+    "PING": {
+      "description": "Connection liveness test",
+      "payload_fields": {},
+      "allowed_states": ["BOOT", "IDLE", "READY", "ACTIVE_TEST", "SAFE", "FAULT"]
+    },
+    "GET_STATUS": {
+      "description": "Current state machine inquiry",
+      "payload_fields": {},
+      "allowed_states": ["BOOT", "IDLE", "READY", "ACTIVE_TEST", "SAFE", "FAULT"]
+    },
+    "SET_MODE": {
+      "description": "Select operating mode",
+      "payload_fields": {
+        "mode": ["NONE", "MANUAL", "ASSISTED"]
+      },
+      "allowed_states": ["BOOT", "IDLE", "READY"]
+    },
+    "MOVE": {
+      "description": "Simulated motion control command",
+      "payload_fields": {
+        "action": ["STOP", "TEST_FORWARD", "TEST_LEFT", "TEST_RIGHT"],
+        "speed_pct": "integer 0..100 (optional)"
+      },
+      "allowed_states": ["READY", "ACTIVE_TEST"]
+    },
+    "RESET": {
+      "description": "Explicit safety recovery and arming",
+      "payload_fields": {},
+      "prerequisites": "First heartbeat received AND heartbeat age <= 1500 ms",
+      "allowed_states": ["IDLE", "READY", "SAFE", "FAULT"]
+    },
+    "HEARTBEAT": {
+      "description": "Periodic link health ping from Pi",
+      "payload_fields": {
+        "seq": "strictly integer >= 0 (not boolean)",
+        "expected_state": "string (optional)"
+      },
+      "allowed_states": ["BOOT", "IDLE", "READY", "ACTIVE_TEST", "SAFE", "FAULT"]
+    }
+  },
+  "sensor_field_labels": {
+    "ultrasonic": "NOT_CONNECTED",
+    "imu": "NOT_CONNECTED",
+    "encoders": "NOT_CONNECTED"
+  }
+}
